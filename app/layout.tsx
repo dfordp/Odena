@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Space_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 // Correct variable assignments to match CSS custom properties
 const fontSans = Outfit({
@@ -72,6 +73,7 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontMono.variable} antialiased`}
       >
         {children}
+        <Analytics/>
       </body>
     </html>
   );
