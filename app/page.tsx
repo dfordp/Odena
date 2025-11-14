@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -102,7 +101,7 @@ export default function Home() {
 
         <p className="mt-4 text-muted-foreground text-center max-w-2xl">
           We build operators that generalize. This network map shows what domains 
-          we've already built for — and what’s coming next.
+          we&apos;ve already built for — and what’s coming next.
         </p>
 
         {/* Placeholder for your network graph UI */}
@@ -203,7 +202,7 @@ export default function Home() {
         <h2 className="text-3xl font-semibold">Connect With Us</h2>
 
         <p className="mt-4 text-muted-foreground max-w-xl leading-relaxed">
-          Whether you're exploring research collaboration, need custom data 
+          Whether you&apos;re exploring research collaboration, need custom data 
           infrastructure, or want to join our experiments — we’re open to talking.
         </p>
 
