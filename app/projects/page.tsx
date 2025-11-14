@@ -97,7 +97,7 @@ export default function Projects() {
 
           <Link
             href="https://github.com/odena-ai"
-            className="inline-block mt-4 text-primary font-medium hover:underline"
+            className="inline-block mt-4 text-primary font-medium hover:underline cursor-pointer"
           >
             View details →
           </Link>
@@ -123,7 +123,7 @@ export default function Projects() {
 
           <Link
             href="https://github.com/odena-ai"
-            className="inline-block mt-4 text-primary font-medium hover:underline"
+            className="inline-block mt-4 text-primary font-medium hover:underline cursor-pointer"
           >
             Explore →
           </Link>
@@ -148,7 +148,7 @@ export default function Projects() {
 
           <Link
             href="https://github.com/odena-ai"
-            className="inline-block mt-4 text-primary font-medium hover:underline"
+            className="inline-block mt-4 text-primary font-medium hover:underline cursor-pointer"
           >
             Browse projects →
           </Link>
@@ -172,7 +172,7 @@ export default function Projects() {
 
           <Link
             href="https://github.com/odena-ai"
-            className="inline-block mt-4 text-primary font-medium hover:underline"
+            className="inline-block mt-4 text-primary font-medium hover:underline cursor-pointer"
           >
             Read notebooks →
           </Link>
@@ -191,7 +191,7 @@ export default function Projects() {
 
         <a
           href="mailto:team@odena.ai"
-          className="mt-8 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition inline-block"
+          className="mt-8 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition inline-block cursor-pointer"
         >
           Reach Out
         </a>
