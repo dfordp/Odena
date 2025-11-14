@@ -88,8 +88,8 @@ export default function ServicesPage() {
         <h2 className="text-2xl sm:text-3xl font-semibold">Need systems that scale with ambition?</h2>
         <p className="text-muted-foreground max-w-xl mx-auto mt-4 leading-relaxed text-sm sm:text-base px-4">
           We collaborate with teams that want to build beyond templates.
-          If you're trying something unconventional or ambitious good.  
-          That's where we work best.
+          If you&apos;re trying something unconventional or ambitious good.  
+          That&apos;s where we work best.
         </p>
 
         <a

@@ -19,7 +19,7 @@ export default function About() {
           We are a competitive, research-driven collective of engineers who
           experiment, prototype, and build because we love the craft not 
           because someone asked us to.  
-          Every system we ship begins as someone's obsession.
+          Every system we ship begins as someone&apos;s obsession.
         </p>
       </section>
 
@@ -53,7 +53,7 @@ export default function About() {
         </h2>
 
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed text-sm sm:text-base px-4">
-          We aren't defined by titles.  
+          We aren&apos;t defined by titles.  
           These are people who build out of passion, curiosity, and competitive drive  
           contributors, researchers, engineers and tinkerers who treat problems as sports.
         </p>

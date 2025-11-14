@@ -70,7 +70,7 @@ export default function TargetingDial() {
           </svg>
 
           {/* Titles placed on the arc */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-full">
+          <div className="absolute left-0 top-[90%] -translate-y-1/2 w-full h-full">
             {items.map((item, i) => {
               const offset = i - active;
 

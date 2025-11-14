@@ -10,7 +10,7 @@ export default function Projects() {
       ========================== */}
       <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-14 md:pb-16 px-4 sm:px-6 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight max-w-4xl mx-auto">
-          Experiments, Systems, and Research We're Proud Of
+          Experiments, Systems, and Research We&apos;re Proud Of
         </h1>
 
         <p className="mt-4 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto text-muted-foreground leading-relaxed px-4">

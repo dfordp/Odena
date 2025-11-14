@@ -42,7 +42,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none mx-2">
       <nav
         className={`
           pointer-events-auto flex items-center justify-between 

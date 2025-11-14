@@ -77,9 +77,9 @@ function clamp(v: number, a: number, b: number) {
 }
 
 function getColor(type: NodeType) {
-  if (type === "captured") return "var(--primary)";
-  if (type === "current") return "var(--secondary)";
-  return "var(--accent)";
+  if (type === "captured") return "#ff419d";
+  if (type === "current") return "#3de6f2";
+  return "#ffb818";
 }
 
 export default function DomainNetworkMap() {
@@ -203,18 +203,18 @@ export default function DomainNetworkMap() {
       className="relative w-full mx-auto py-4 sm:py-6"
       style={{ minHeight: Math.max(size.height, 400) }}
     >
-      <div className="flex flex-wrap items-center justify-center sm:justify-between mb-3 sm:mb-4 px-2 sm:px-4 gap-3 sm:gap-6">
+      <div className="flex flex-wrap items-center justify-center mb-3 sm:mb-4 px-2 sm:px-4 gap-3 sm:gap-6">
         <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style={{ background: "var(--primary)" }} />
-          <span>Captured</span>
+          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-black" style={{ background: "#ffb818" }} />
+          <span>Next</span>
         </div>
         <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style={{ background: "var(--secondary)" }} />
+          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-black" style={{ background: "#3de6f2" }} />
           <span>Current</span>
         </div>
         <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style={{ background: "var(--accent)" }} />
-          <span>Next</span>
+          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-black" style={{ background: "#ff419d" }} />
+          <span>Captured</span>
         </div>
       </div>
       <div className="relative" style={{ minHeight: size.height }}>
