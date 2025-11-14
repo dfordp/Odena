@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import Navbar from "@/components/navbar";
 
 // Correct variable assignments to match CSS custom properties
 const fontSans = Outfit({
@@ -72,6 +73,9 @@ export default function RootLayout({
         // Only use the relevant font variable classes, not the font constructor variable names (avoid duplicating geistMono)
         className={`${fontSans.variable} ${fontMono.variable} antialiased`}
       >
+        <div className="bg-background text-foreground font-sans">
+          <Navbar />
+        </div>
         {children}
         <Analytics/>
       </body>
