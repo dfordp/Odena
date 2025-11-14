@@ -8,28 +8,28 @@ export default function About() {
       {/* =========================
           HERO
       ========================== */}
-      <section className="pt-32 pb-20 px-6 text-center">
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight max-w-4xl mx-auto leading-tight">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight max-w-4xl mx-auto leading-tight">
           A Collective of People Who Build From Curiosity,
           Not Obligation
         </h1>
 
-        <p className="mt-6 text-lg max-w-2xl mx-auto text-muted-foreground leading-relaxed">
+        <p className="mt-4 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto text-muted-foreground leading-relaxed px-4">
           Odena is not a traditional organization.  
           We are a competitive, research-driven collective of engineers who
           experiment, prototype, and build because we love the craft not 
           because someone asked us to.  
-          Every system we ship begins as someone’s obsession.
+          Every system we ship begins as someone's obsession.
         </p>
       </section>
 
       {/* =========================
           ORIGIN + ETHOS
       ========================== */}
-      <section className="py-20 px-6 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6">How Odena Works</h2>
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">How Odena Works</h2>
 
-        <p className="text-muted-foreground leading-relaxed text-lg">
+        <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
           We don’t operate like a company with rigid structure.  
           Our people join from competitions, personal projects, research clubs, or
           late-night experiments that spiraled into real systems.  
@@ -37,7 +37,7 @@ export default function About() {
           problem like a sandbox to test an idea that shouldn’t work but somehow does.
         </p>
 
-        <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
+        <p className="mt-4 sm:mt-6 text-muted-foreground leading-relaxed text-base sm:text-lg">
           Most of us met through hackathons, national contests, open-source
           contributions, and deep technical rabbit holes.  
           Everyone here is self-selected: if you love building, you belong.
@@ -47,19 +47,19 @@ export default function About() {
       {/* =========================
           PEOPLE / CONTRIBUTORS
       ========================== */}
-      <section className="py-20 px-6 bg-card/40 rounded-xl mx-4 sm:mx-8 lg:mx-auto max-w-5xl">
-        <h2 className="text-3xl font-semibold text-center mb-10">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-card/40 rounded-xl mx-4 sm:mx-8 lg:mx-auto max-w-5xl">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-8 sm:mb-10">
           People Building Odena
         </h2>
 
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-          We aren’t defined by titles.  
+        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed text-sm sm:text-base px-4">
+          We aren't defined by titles.  
           These are people who build out of passion, curiosity, and competitive drive  
           contributors, researchers, engineers and tinkerers who treat problems as sports.
         </p>
 
         {/* People Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {[
             {
               name: "Dilpreet",
@@ -118,14 +118,14 @@ export default function About() {
           ))}
         </div>
 
-        <p className="text-center mt-10 text-muted-foreground">
+        <p className="text-center mt-8 sm:mt-10 text-muted-foreground text-sm sm:text-base px-4">
           Want to contribute to Odena?  
           No applications, no formalities just reach out.
         </p>
 
         <a
           href="mailto:team@odena.ai"
-          className="block mt-6 mx-auto text-center px-6 py-3 rounded-full bg-primary text-primary-foreground w-max hover:opacity-90 transition cursor-pointer"
+          className="block mt-4 sm:mt-6 mx-auto text-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-primary text-primary-foreground w-max hover:opacity-90 transition cursor-pointer text-sm sm:text-base"
         >
           Contact Us
         </a>
@@ -134,10 +134,10 @@ export default function About() {
       {/* =========================
           WHY WE EXIST
       ========================== */}
-      <section className="py-20 px-6 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6">Why We Build</h2>
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">Why We Build</h2>
 
-        <p className="text-muted-foreground text-lg leading-relaxed">
+        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
           Odena exists because the current state of data tooling is noisy, slow,
           and filled with teams duct-taping solutions that never scale.  
           We build alternative systems from scratch because we believe

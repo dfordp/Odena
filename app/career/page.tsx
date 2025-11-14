@@ -7,18 +7,18 @@ export default function CareerPage() {
       {/* ===========================
           HERO SECTION
       ============================ */}
-      <section className="pt-28 pb-20 px-6 text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-          Build What Hasn’t Been Built Yet
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 text-center max-w-4xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+          Build What Hasn't Been Built Yet
         </h1>
 
-        <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-4">
           Odena is not a traditional company. We are a research collective made up of 
           people who enjoy solving ambitious problems, competing in technical challenges, 
           and building systems that push capability across domains.
         </p>
 
-        <p className="mt-3 text-base text-muted-foreground max-w-xl mx-auto">
+        <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-4">
           If you want a place where you can experiment, break things, ship fast, and 
           genuinely learn with people who care you might be the right fit.
         </p>
@@ -27,7 +27,7 @@ export default function CareerPage() {
       {/* ===========================
           WHY ODENA
       ============================ */}
-      <section className="py-12 px-6 max-w-6xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 max-w-6xl mx-auto grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 
         <div className="p-6 rounded-xl bg-card border border-border shadow hover:shadow-lg transition">
           <h3 className="text-xl font-semibold">Research-first culture</h3>
@@ -83,15 +83,15 @@ export default function CareerPage() {
       {/* ===========================
           OPEN ROLES (FLEXIBLE)
       ============================ */}
-      <section className="py-20 px-6 max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold">We Don’t Hire for Positions</h2>
-        <p className="text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 max-w-4xl mx-auto text-center">
+        <h2 className="text-2xl sm:text-3xl font-semibold">We Don't Hire for Positions</h2>
+        <p className="text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed text-sm sm:text-base px-4">
           We bring in people who are genuinely obsessed with solving technical problems.  
-          If you’re good, curious, and willing to build we’ll find the right place for you.
+          If you're good, curious, and willing to build we'll find the right place for you.
         </p>
 
         {/* Role Categories */}
-        <div className="grid gap-6 sm:grid-cols-2 mt-12">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 mt-8 sm:mt-12">
 
           <div className="p-6 rounded-xl bg-card border border-border shadow hover:shadow-lg transition text-left">
             <h3 className="text-xl font-semibold">Systems & Infra</h3>

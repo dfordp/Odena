@@ -30,7 +30,16 @@ export default function TargetingDial() {
   }, []);
 
   // ----- ARC CALCULATIONS -----
-  const RADIUS = 190;          // Wheel radius
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const RADIUS = isMobile ? 120 : 190;          // Wheel radius
   const START_ANGLE = 0;     // top-left
   const SPREAD = 100;          // how wide the semicircle is
 
@@ -38,23 +47,23 @@ export default function TargetingDial() {
     <section ref={ref} className="relative min-h-[260vh] bg-background">
 
       {/* Sticky container */}
-      <div className="sticky top-0 h-screen flex items-center px-10">
+      <div className="sticky top-0 h-screen flex flex-col lg:flex-row items-center px-4 sm:px-6 lg:px-10 py-8">
 
         {/* LEFT AREA - PIVOT + ARC + TITLES */}
-        <div className="relative w-[45vw] h-[65vh] flex items-center">
+        <div className="relative w-full lg:w-[45vw] h-[40vh] lg:h-[65vh] flex items-center justify-center">
 
           {/* Pivot semicircle */}
           <svg
-            width="180"
-            height="360"
-            viewBox="0 0 180 360"
+            width={isMobile ? "120" : "180"}
+            height={isMobile ? "240" : "360"}
+            viewBox={isMobile ? "0 0 120 240" : "0 0 180 360"}
             className="absolute left-0"
             style={{ transform: "translateX(-50%)" }}
           >
             <path
-              d="M90 10 A 80 80 0 0 1 90 350"
+              d={isMobile ? "M60 10 A 50 50 0 0 1 60 230" : "M90 10 A 80 80 0 0 1 90 350"}
               stroke="var(--foreground)"
-              strokeWidth="3"
+              strokeWidth={isMobile ? "2" : "3"}
               fill="none"
               opacity="0.35"
             />
@@ -75,12 +84,12 @@ export default function TargetingDial() {
               return (
                 <motion.div
                   key={i}
-                  className="absolute text-xl font-medium whitespace-nowrap"
+                  className={`absolute font-medium whitespace-nowrap ${isMobile ? 'text-sm' : 'text-xl'}`}
                   animate={{
                     x,
                     y,
                     opacity: Math.abs(offset) > 2.3 ? 0 : 1,
-                    scale: offset === 0 ? 1.15 : 0.87,
+                    scale: offset === 0 ? (isMobile ? 1.1 : 1.15) : (isMobile ? 0.85 : 0.87),
                     rotate: angle * 0.18
                   }}
                   transition={{ duration: 0.45, ease: "easeOut" }}
@@ -102,11 +111,11 @@ export default function TargetingDial() {
         </div>
 
         {/* RIGHT SIDE – DETAILS ALIGNED WITH ACTIVE TITLE */}
-        <div className="w-[55vw] relative">
+        <div className="w-full lg:w-[55vw] relative mt-8 lg:mt-0 px-4 lg:px-0">
           {items.map((item, i) => (
             <motion.div
               key={i}
-              className="absolute"
+              className="absolute w-full"
               animate={{
                 opacity: active === i ? 1 : 0,
                 x: active === i ? 0 : 20,
@@ -117,8 +126,8 @@ export default function TargetingDial() {
                 ease: "easeOut",
               }}
             >
-              <h3 className="text-4xl font-semibold mb-4">{item.title}</h3>
-              <p className="text-lg text-muted-foreground max-w-xl">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4">{item.title}</h3>
+              <p className="text-base sm:text-lg text-muted-foreground max-w-xl">
                 {item.desc}
               </p>
             </motion.div>

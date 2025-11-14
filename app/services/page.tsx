@@ -8,12 +8,12 @@ export default function ServicesPage() {
       {/* ===========================
           HERO
       ============================ */}
-      <section className="pt-32 pb-20 px-6 text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 text-center max-w-4xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
           Systems That Organize, Rank, and Understand Data
         </h1>
 
-        <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-4">
           Odena builds research-grade pipelines for ranking, segmenting,
           cleaning, and interpreting multimodal datasets.  
           Everything we make comes from first-principles experiments, competition-level problem solving, 
@@ -24,7 +24,7 @@ export default function ServicesPage() {
       {/* ===========================
           SERVICES GRID
       ============================ */}
-      <section className="py-12 px-6 max-w-6xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 max-w-6xl mx-auto grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 
         {/* Service 1 */}
         <div className="p-6 rounded-xl bg-card border border-border shadow hover:shadow-lg transition group">
@@ -84,17 +84,17 @@ export default function ServicesPage() {
       {/* ===========================
           CTA (FOMO SECTION)
       ============================ */}
-      <section className="py-24 text-center px-6">
-        <h2 className="text-3xl font-semibold">Need systems that scale with ambition?</h2>
-        <p className="text-muted-foreground max-w-xl mx-auto mt-4 leading-relaxed">
+      <section className="py-16 sm:py-20 md:py-24 text-center px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl font-semibold">Need systems that scale with ambition?</h2>
+        <p className="text-muted-foreground max-w-xl mx-auto mt-4 leading-relaxed text-sm sm:text-base px-4">
           We collaborate with teams that want to build beyond templates.
-          If you’re trying something unconventional or ambitious good.  
-          That’s where we work best.
+          If you're trying something unconventional or ambitious good.  
+          That's where we work best.
         </p>
 
         <a
           href="mailto:team@odena.ai"
-          className="mt-8 inline-block px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition cursor-pointer"
+          className="mt-6 sm:mt-8 inline-block px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition cursor-pointer text-sm sm:text-base"
         >
           Start a Conversation
         </a>

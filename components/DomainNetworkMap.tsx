@@ -200,23 +200,21 @@ export default function DomainNetworkMap() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full mx-auto py-6"
-      style={{ minHeight: Math.max(size.height, 500) }}
+      className="relative w-full mx-auto py-4 sm:py-6"
+      style={{ minHeight: Math.max(size.height, 400) }}
     >
-      <div className="flex items-center justify-between mb-4 px-2">
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2 text-sm">
-            <span className="inline-block w-3 h-3 rounded-full" style={{ background: "var(--primary)" }} />
-            <span className="text-sm">Captured</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <span className="inline-block w-3 h-3 rounded-full" style={{ background: "var(--secondary)" }} />
-            <span className="text-sm">Current</span>
-          </div>
-          <div className="flex items-center gap-2 text-sm">
-            <span className="inline-block w-3 h-3 rounded-full" style={{ background: "var(--accent)" }} />
-            <span className="text-sm">Next</span>
-          </div>
+      <div className="flex flex-wrap items-center justify-center sm:justify-between mb-3 sm:mb-4 px-2 sm:px-4 gap-3 sm:gap-6">
+        <div className="flex items-center gap-2 text-xs sm:text-sm">
+          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style={{ background: "var(--primary)" }} />
+          <span>Captured</span>
+        </div>
+        <div className="flex items-center gap-2 text-xs sm:text-sm">
+          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style={{ background: "var(--secondary)" }} />
+          <span>Current</span>
+        </div>
+        <div className="flex items-center gap-2 text-xs sm:text-sm">
+          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style={{ background: "var(--accent)" }} />
+          <span>Next</span>
         </div>
       </div>
       <div className="relative" style={{ minHeight: size.height }}>
@@ -298,21 +296,21 @@ export default function DomainNetworkMap() {
               style={{
                 position: "absolute",
                 transform: `translate(${pos.left}px, ${pos.top}px)`,
-                minWidth: 260,
-                maxWidth: 320,
+                minWidth: 220,
+                maxWidth: 300,
               }}
             >
-              <div className="rounded-xl bg-card border border-border px-6 py-5 text-base shadow-2xl"
+              <div className="rounded-xl bg-card border border-border px-4 sm:px-6 py-4 sm:py-5 text-sm sm:text-base shadow-2xl"
                 style={{
                   color: "var(--card-foreground)",
                   boxShadow: "0 8px 32px 0 rgba(0,0,0,0.18)",
                   fontWeight: 500,
                   backdropFilter: "blur(10px)",
                 }}>
-                <div className="font-bold mb-2 text-lg">{node.label}</div>
-                <div className="text-muted-foreground text-base mb-2">{node.desc}</div>
+                <div className="font-bold mb-2 text-base sm:text-lg">{node.label}</div>
+                <div className="text-muted-foreground text-sm sm:text-base mb-2">{node.desc}</div>
                 {node.sub && (
-                  <ul className="list-disc pl-5 text-sm text-muted-foreground">
+                  <ul className="list-disc pl-4 sm:pl-5 text-xs sm:text-sm text-muted-foreground">
                     {node.sub.map((s, i) => <li key={i}>{s}</li>)}
                   </ul>
                 )}
