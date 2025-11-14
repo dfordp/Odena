@@ -39,7 +39,7 @@ export default function Projects() {
           <h3 className="text-xl font-semibold mt-5">Adaptive Zero-Shot Data Ranking</h3>
           <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
             A containerized zero-shot operator that automatically ranks,
-            segments, and labels arbitrary datasets — code, media, or text —
+            segments, and labels arbitrary datasets code, media, or text —
             with no fine-tuning.  
             Designed for high throughput pipelines and multimodal workflows.
           </p>
@@ -92,7 +92,7 @@ export default function Projects() {
           <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
             A unified engine that detects duplicates, anomalies,
             contradictions, hallucination-prone segments, and bad samples
-            across any dataset — images, text, or structured data.
+            across any dataset images, text, or structured data.
           </p>
 
           <Link
@@ -142,7 +142,7 @@ export default function Projects() {
           <h3 className="text-xl font-semibold mt-5">Competition-Grade Systems</h3>
           <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
             A collection of national-level competition projects that evolved into
-            real systems — ranking models, inference pipelines, optimization
+            real systems ranking models, inference pipelines, optimization
             engines, and constraint-based solvers.
           </p>
 
@@ -186,7 +186,7 @@ export default function Projects() {
         <h2 className="text-3xl font-semibold">Want to Collaborate?</h2>
         <p className="mt-4 max-w-xl mx-auto text-muted-foreground leading-relaxed">
           If you have datasets, scaling problems, or research ideas that feel
-          too ambitious for a normal team — we want to hear about it.
+          too ambitious for a normal team we want to hear about it.
         </p>
 
         <a

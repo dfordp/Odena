@@ -20,7 +20,7 @@ export default function CareerPage() {
 
         <p className="mt-3 text-base text-muted-foreground max-w-xl mx-auto">
           If you want a place where you can experiment, break things, ship fast, and 
-          genuinely learn with people who care — you might be the right fit.
+          genuinely learn with people who care you might be the right fit.
         </p>
       </section>
 
@@ -50,7 +50,7 @@ export default function CareerPage() {
           <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
             Many of us actively participate in national competitions and  
             independent research sprints.  
-            If you like doing hard things for fun — you’ll fit in.
+            If you like doing hard things for fun you’ll fit in.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export default function CareerPage() {
         <h2 className="text-3xl font-semibold">We Don’t Hire for Positions</h2>
         <p className="text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
           We bring in people who are genuinely obsessed with solving technical problems.  
-          If you’re good, curious, and willing to build — we’ll find the right place for you.
+          If you’re good, curious, and willing to build we’ll find the right place for you.
         </p>
 
         {/* Role Categories */}
@@ -146,7 +146,7 @@ export default function CareerPage() {
         <h2 className="text-3xl font-semibold">If You Want Easy Work, This Isn’t It</h2>
         <p className="text-muted-foreground max-w-xl mx-auto mt-4 leading-relaxed">
           If you want a place where you’re challenged, trusted, and surrounded by people 
-          who build out of passion — welcome to Odena.
+          who build out of passion welcome to Odena.
         </p>
 
         <a
