@@ -11,8 +11,7 @@ export default function Home() {
       ========================== */}
       <section className="pt-32 pb-24 px-6 flex flex-col items-center text-center">
         <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight max-w-4xl leading-tight">
-          Systems That Organize, Rank, and Understand Data —  
-          Built From First Principles
+          Data that understands iteself
         </h1>
 
         <p className="mt-6 text-lg max-w-2xl text-muted-foreground leading-relaxed">
@@ -45,7 +44,7 @@ export default function Home() {
         
         <p className="mt-6 text-muted-foreground max-w-3xl leading-relaxed text-lg">
           Odena is a competitive research collective that iterates like tournament 
-          engineers — fast cycles, prototype-first thinking, and a habit of 
+          engineers fast cycles, prototype-first thinking, and a habit of 
           outperforming traditional solutions through experimentation.  
           We treat datasets like evolving systems and build technology that adapts 
           faster than industry norms.
@@ -69,7 +68,7 @@ export default function Home() {
           Our research focuses on building general-purpose data operators that 
           outperform hand-tuned pipelines.  
           The goal is simple: enable teams to process, cluster, rank, and interpret 
-          any dataset — without requiring retraining or domain-specific heuristics.
+          any dataset without requiring retraining or domain-specific heuristics.
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 w-full max-w-6xl">
@@ -102,7 +101,7 @@ export default function Home() {
 
         <p className="mt-4 text-muted-foreground text-center max-w-2xl">
           We build operators that generalize. This network map shows what domains 
-          we've already built for — and what’s coming next.
+          we&apos;ve already built for and what’s coming next.
         </p>
 
         {/* Placeholder for your network graph UI */}
@@ -203,8 +202,8 @@ export default function Home() {
         <h2 className="text-3xl font-semibold">Connect With Us</h2>
 
         <p className="mt-4 text-muted-foreground max-w-xl leading-relaxed">
-          Whether you're exploring research collaboration, need custom data 
-          infrastructure, or want to join our experiments — we’re open to talking.
+          Whether you&apos;re exploring research collaboration, need custom data 
+          infrastructure, or want to join our experiments we’re open to talking.
         </p>
 
         <a

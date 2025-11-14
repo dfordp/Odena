@@ -31,7 +31,7 @@ export default function ServicesPage() {
           <SlidersHorizontal className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition" />
           <h3 className="text-xl font-semibold">Data Ranking Pipelines</h3>
           <p className="text-sm mt-2 text-muted-foreground leading-relaxed">
-            Zero-shot ranking systems that score any dataset — code, media, text — 
+            Zero-shot ranking systems that score any dataset code, media, text 
             based on relevance, quality, anomaly likelihood, or custom criteria.
           </p>
           <Link href="/services/data-ranking" className="text-primary font-medium text-sm mt-4 inline-block hover:underline">
@@ -72,7 +72,7 @@ export default function ServicesPage() {
           <p className="text-sm mt-2 text-muted-foreground leading-relaxed">
             We help teams design custom pipelines, operator networks,
             and high-throughput architectures.  
-            If your data stack feels too slow or too messy — we can fix it.
+            If your data stack feels too slow or too messy we can fix it.
           </p>
           <Link href="/services/consulting" className="text-primary font-medium text-sm mt-4 inline-block hover:underline">
             Learn more →
@@ -88,7 +88,7 @@ export default function ServicesPage() {
         <h2 className="text-3xl font-semibold">Need systems that scale with ambition?</h2>
         <p className="text-muted-foreground max-w-xl mx-auto mt-4 leading-relaxed">
           We collaborate with teams that want to build beyond templates.
-          If you’re trying something unconventional or ambitious — good.  
+          If you’re trying something unconventional or ambitious good.  
           That’s where we work best.
         </p>
 

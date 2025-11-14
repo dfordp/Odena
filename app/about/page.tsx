@@ -17,7 +17,7 @@ export default function About() {
         <p className="mt-6 text-lg max-w-2xl mx-auto text-muted-foreground leading-relaxed">
           Odena is not a traditional organization.  
           We are a competitive, research-driven collective of engineers who
-          experiment, prototype, and build because we love the craft — not 
+          experiment, prototype, and build because we love the craft not 
           because someone asked us to.  
           Every system we ship begins as someone’s obsession.
         </p>
@@ -34,7 +34,7 @@ export default function About() {
           Our people join from competitions, personal projects, research clubs, or
           late-night experiments that spiraled into real systems.  
           We bring first-principles thinking, debate everything, and treat every 
-          problem like a sandbox to test an idea that shouldn’t work — but somehow does.
+          problem like a sandbox to test an idea that shouldn’t work but somehow does.
         </p>
 
         <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
@@ -54,7 +54,7 @@ export default function About() {
 
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
           We aren’t defined by titles.  
-          These are people who build out of passion, curiosity, and competitive drive —  
+          These are people who build out of passion, curiosity, and competitive drive  
           contributors, researchers, engineers and tinkerers who treat problems as sports.
         </p>
 
@@ -120,7 +120,7 @@ export default function About() {
 
         <p className="text-center mt-10 text-muted-foreground">
           Want to contribute to Odena?  
-          No applications, no formalities — just reach out.
+          No applications, no formalities just reach out.
         </p>
 
         <a
@@ -140,14 +140,14 @@ export default function About() {
         <p className="text-muted-foreground text-lg leading-relaxed">
           Odena exists because the current state of data tooling is noisy, slow,
           and filled with teams duct-taping solutions that never scale.  
-          We build alternative systems — from scratch — because we believe
+          We build alternative systems from scratch because we believe
           infrastructure should be as intelligent as the models it serves.
         </p>
 
         <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
           If you partner with us, you get people who care deeply about the
           craft.  
-          If not — someone else will, and they’ll move faster.
+          If not someone else will, and they’ll move faster.
         </p>
       </section>
 
