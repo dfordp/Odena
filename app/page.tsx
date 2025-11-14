@@ -9,30 +9,42 @@ export default function Home() {
       {/* =========================
           HERO SECTION
       ========================== */}
-      <section className="pt-32 pb-24 px-6 flex flex-col items-center text-center">
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight max-w-4xl leading-tight">
-          Data that understands iteself
-        </h1>
+      <section className="flex items-center justify-center min-h-[calc(100vh-300px)] px-6 py-4 lg:py-0">
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 lg:flex-row lg:gap-12 w-full">
+          
+          {/* Hero Content - Left Side */}
+          <div className="flex-1 text-center lg:text-left w-full">
+            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
+              Data that understands iteself
+            </h1>
 
-        <p className="mt-6 text-lg max-w-2xl text-muted-foreground leading-relaxed">
-          We engineer adaptive operators, high-throughput pipelines, and 
-          self-organizing data systems that generalize across codebases, media, 
-          telemetry, and complex enterprise datasets.
-        </p>
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+              We engineer adaptive operators, high-throughput pipelines, and 
+              self-organizing data systems that generalize across codebases, media, 
+              telemetry, and complex enterprise datasets.
+            </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-10">
-          <Link
-            href="/projects"
-            className="h-12 px-8 flex items-center justify-center rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition"
-          >
-            View Our Systems
-          </Link>
-          <a
-            href="mailto:team@odena.ai"
-            className="h-12 px-8 flex items-center justify-center rounded-full border border-border hover:bg-muted transition"
-          >
-            Partner With Us
-          </a>
+            <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
+              <Link
+                href="/projects"
+                className="h-12 px-8 flex items-center justify-center rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition"
+              >
+                View Our Systems
+              </Link>
+              <a
+                href="mailto:team@odena.ai"
+                className="h-12 px-8 flex items-center justify-center rounded-full border border-border hover:bg-muted transition"
+              >
+                Partner With Us
+              </a>
+            </div>
+          </div>
+
+          {/* Spline Element - Right Side */}
+          <div className="hidden md:flex flex-1 w-full md:h-[550px] lg:h-[650px] items-center justify-center">
+            <iframe src='https://my.spline.design/database-gz136BnSzn7JiItLByWnyxzo/' frameBorder='0' width='100%' height='100%'></iframe>
+          </div>
+
         </div>
       </section>
 
