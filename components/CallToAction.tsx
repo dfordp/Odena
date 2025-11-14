@@ -16,7 +16,7 @@ export default function CallToAction() {
     calLink="dilpreet-grover/odena-discussion"
     style={{width:"100%",height:"100%",overflow:"scroll"}}
     config={{"layout":"month_view"}}
-    />;
+    />
     </div>
   );
 }

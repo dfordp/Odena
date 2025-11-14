@@ -2,23 +2,10 @@
 
 import Link from "next/link";
 import DomainNetworkMap from "@/components/DomainNetworkMap";
-import Image from "next/image";
-import { useState, useEffect } from "react";
 import TargetingSection from "@/components/TargetingSection";
 import CallToAction from "@/components/CallToAction";
 
-// simple scroll reveal utility
-function useReveal() {
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 80) setVisible(true);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return visible;
-}
+
 
 export default function Home() {
 

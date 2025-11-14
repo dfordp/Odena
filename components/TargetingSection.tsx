@@ -5,9 +5,10 @@ import { useRef, useEffect, useState } from "react";
 
 export default function TargetingDial() {
   const ref = useRef<HTMLDivElement | null>(null);
+  // Adjust scroll offset so animation starts after 20% and ends at 80% of the section
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 80%", "end 20%"],
+    offset: ["start 20%", "end 80%"],
   });
 
   const items = [
@@ -21,7 +22,6 @@ export default function TargetingDial() {
 
   const [active, setActive] = useState(0);
 
-  // ----- MAP SCROLL TO ACTIVE ITEM -----
   useEffect(() => {
     return scrollYProgress.on("change", (v) => {
       const idx = Math.floor(v * (items.length + 0.3));
@@ -29,21 +29,14 @@ export default function TargetingDial() {
     });
   }, []);
 
-  // ----- ARC CALCULATIONS -----
-  const RADIUS = 190;          // Wheel radius
-  const START_ANGLE = 0;     // top-left
-  const SPREAD = 100;          // how wide the semicircle is
+  const RADIUS = 190;
+  const START_ANGLE = 0;
+  const SPREAD = 100;
 
   return (
     <section ref={ref} className="relative min-h-[260vh] bg-background">
-
-      {/* Sticky container */}
       <div className="sticky top-0 h-screen flex items-center px-10">
-
-        {/* LEFT AREA - PIVOT + ARC + TITLES */}
         <div className="relative w-[45vw] h-[65vh] flex items-center">
-
-          {/* Pivot semicircle */}
           <svg
             width="180"
             height="360"
@@ -59,19 +52,12 @@ export default function TargetingDial() {
               opacity="0.35"
             />
           </svg>
-
-          {/* Titles placed on the arc */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-full">
+          <div className="absolute left-0 top-9/10 -translate-y-1/2 w-full h-full">
             {items.map((item, i) => {
               const offset = i - active;
-
-              // Angle on arc
               const angle = START_ANGLE + offset * (SPREAD / (items.length - 1));
-
-              // Convert polar → cartesian
               const x = Math.cos((angle * Math.PI) / 180) * RADIUS;
               const y = Math.sin((angle * Math.PI) / 180) * RADIUS;
-
               return (
                 <motion.div
                   key={i}
@@ -100,8 +86,6 @@ export default function TargetingDial() {
             })}
           </div>
         </div>
-
-        {/* RIGHT SIDE – DETAILS ALIGNED WITH ACTIVE TITLE */}
         <div className="w-[55vw] relative">
           {items.map((item, i) => (
             <motion.div
@@ -124,7 +108,6 @@ export default function TargetingDial() {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
