@@ -1,309 +1,321 @@
+/* eslint-disable react-hooks/refs */
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-
-
-/**
- * Lightweight force layout network.
- * - nodes: { id, label, type: "captured" | "current" | "next", desc, value }
- * - links: { source, target }
- *
- * Usage: <DomainNetworkMap />
- *
- * Replace sampleNodes/sampleLinks with dynamic data from API or props.
- */
+import React, { useEffect, useRef, useState } from "react";
 
 type NodeType = "captured" | "current" | "next";
-
 type Node = {
   id: string;
   label: string;
   type: NodeType;
   desc?: string;
-  value?: number; // used for visual sizing
+  value?: number;
+  sub?: string[];
   x?: number;
   y?: number;
-  vx?: number;
-  vy?: number;
 };
 
-type LinkT = { source: string; target: string };
+type LinkT = { source: string; target: string; weight?: number };
 
-const WIDTH = 920;
-const HEIGHT = 480;
+const nodes: Node[] = [
+  { id: "coding", label: "Coding", type: "captured", desc: "Repository insights, code dependency mapping, PR ranking", value: 10, sub: ["Code analysis", "Impact mapping"] },
+  { id: "education", label: "Education", type: "captured", desc: "Assignment scoring, conceptual understanding patterns", value: 9, sub: ["Grading", "Learning analytics"] },
+  { id: "satellite", label: "Satellite Imagery", type: "captured", desc: "Land use classification, cloud removal, region segmentation", value: 10, sub: ["Geosegmentation", "Change detection"] },
+  { id: "social", label: "Social Data", type: "captured", desc: "Trend detection, content clustering, noise filtering", value: 8, sub: ["Trend mapping", "Signal extraction"] },
+  { id: "research", label: "Research Data", type: "captured", desc: "Paper classification, citation mapping, topic discovery", value: 8, sub: ["Topic mapping", "Citation graphing"] },
+  { id: "telemetry", label: "Telemetry Streams", type: "current", desc: "High-frequency event signals from distributed systems", value: 8, sub: ["Event flows", "Live segmentation"] },
+  { id: "logistics", label: "Logistics", type: "current", desc: "Routing signals, delivery events, warehouse telemetry", value: 8, sub: ["Route scoring", "Node bottlenecks"] },
+  { id: "finance", label: "Finance Signals", type: "current", desc: "Transaction patterns, risk events, anomaly flows", value: 7, sub: ["Risk scoring", "Micro-pattern detection"] },
+  { id: "climate", label: "Climate Data", type: "current", desc: "Weather patterns, region shifts, environmental signals", value: 7, sub: ["Weather segmentation", "Geo-temporal shifts"] },
+  { id: "security", label: "Security Events", type: "current", desc: "Access logs, network flows, intrusion pattern signals", value: 7, sub: ["Threat patterns", "Access anomalies"] },
+  { id: "health", label: "Health Signals", type: "current", desc: "Vital signs, waveform changes, patient trends", value: 7, sub: ["ECG events", "Vitals segmentation"] },
+  { id: "commerce", label: "E-Commerce", type: "current", desc: "Browsing flows, demand curves, customer signals", value: 8, sub: ["Demand curves", "Product activity"] },
+  { id: "gaming", label: "Gaming Telemetry", type: "current", desc: "Player behavior, match signals, anti-cheat patterns", value: 7, sub: ["Match data", "Behavior signals"] },
+  { id: "travel", label: "Travel Systems", type: "current", desc: "Flight delays, route flows, airport congestion patterns", value: 7, sub: ["Delay patterns", "Traffic flows"] },
+  { id: "agri", label: "Agriculture", type: "next", desc: "Crop health signals, soil patterns, farm activity data", value: 7, sub: ["Plant health", "Soil signals"] },
+  { id: "manufacturing", label: "Manufacturing", type: "next", desc: "Machine telemetry, defect patterns, process streams", value: 7, sub: ["Machine events", "Quality signals"] },
+  { id: "energy", label: "Energy", type: "next", desc: "Grid flows, consumption patterns, sensor events", value: 7, sub: ["Load curves", "Consumption spikes"] },
+  { id: "mobility", label: "Mobility", type: "next", desc: "Vehicle signals, traffic telemetry, route behaviors", value: 8, sub: ["Traffic patterns", "Vehicle events"] },
+  { id: "telecom", label: "Telecom", type: "next", desc: "Tower performance, packet loss flows, network routing", value: 7, sub: ["Network flows", "Signal stability"] },
+  { id: "public", label: "Public Data", type: "next", desc: "Civic signals, government datasets, population shifts", value: 6, sub: ["Census patterns", "Public signals"] },
+  { id: "sports", label: "Sports Analytics", type: "next", desc: "Player stats, motion tracking, event flow", value: 7, sub: ["Match flow", "Player segmentation"] },
+  { id: "retail", label: "Retail", type: "next", desc: "Footfall signals, product movement, store operations", value: 6, sub: ["Footfall maps", "Store telemetry"] },
+  { id: "realestate", label: "Real Estate", type: "next", desc: "Price movement, locality shifts, amenity signals", value: 6, sub: ["Price curves", "Locality signals"] },
+  { id: "entertainment", label: "Entertainment", type: "next", desc: "Viewership patterns, scene segmentation, engagement flows", value: 6, sub: ["Scene changes", "Engagement tracks"] },
+  { id: "legal", label: "Legal Data", type: "next", desc: "Case networks, citation chains, pattern matching", value: 6, sub: ["Case clustering", "Citation flows"] },
+  { id: "supplychain", label: "Supply Chain", type: "next", desc: "Inventory signals, movement flows, bottlenecks", value: 7, sub: ["Inventory shifts", "Warehouse telemetry"] }
+];
 
-function rand(min = 0, max = 1) {
-  return Math.random() * (max - min) + min;
+const links: LinkT[] = [
+  { source: "coding", target: "security", weight: 1 },
+  { source: "satellite", target: "climate", weight: 1 },
+  { source: "education", target: "finance", weight: 0.9 },
+  { source: "social", target: "commerce", weight: 1 },
+  { source: "research", target: "health", weight: 0.8 },
+  { source: "logistics", target: "supplychain", weight: 1 },
+  { source: "commerce", target: "retail", weight: 1 },
+  { source: "finance", target: "security", weight: 1 },
+  { source: "telemetry", target: "mobility", weight: 1 },
+  { source: "climate", target: "agri", weight: 1 },
+  { source: "health", target: "public", weight: 0.8 },
+  { source: "gaming", target: "security", weight: 0.7 },
+  { source: "travel", target: "mobility", weight: 0.7 },
+  { source: "logistics", target: "manufacturing", weight: 0.9 },
+  { source: "telemetry", target: "telecom", weight: 0.9 },
+  { source: "commerce", target: "entertainment", weight: 0.8 },
+  { source: "finance", target: "realestate", weight: 0.7 },
+  { source: "security", target: "energy", weight: 0.8 },
+  { source: "energy", target: "manufacturing", weight: 1 },
+  { source: "agri", target: "public", weight: 0.6 },
+  { source: "sports", target: "entertainment", weight: 0.6 },
+  { source: "realestate", target: "public", weight: 0.5 },
+  { source: "supplychain", target: "manufacturing", weight: 0.8 }
+];
+
+function clamp(v: number, a: number, b: number) {
+  return Math.max(a, Math.min(b, v));
+}
+
+function getColor(type: NodeType) {
+  if (type === "captured") return "var(--primary)";
+  if (type === "current") return "var(--secondary)";
+  return "var(--accent)";
 }
 
 export default function DomainNetworkMap() {
-  // sample data — swap out with real data
-  const sampleNodes: Node[] = [
-    { id: "code", label: "Codebases", type: "captured", desc: "Dependency mapping, PR ranking", value: 8 },
-    { id: "media", label: "Media", type: "captured", desc: "Video/image ranking & cleaning", value: 6 },
-    { id: "tabular", label: "Tabular", type: "captured", desc: "Feature ranking, anomaly detection", value: 5 },
-    { id: "telemetry", label: "Telemetry", type: "current", desc: "Stream segmentation & routing", value: 7 },
-    { id: "nlp", label: "NLP", type: "next", desc: "Controlled fine-grain scoring pipelines", value: 6 },
-    { id: "multimodal", label: "Multimodal", type: "next", desc: "Cross-modal operator graphs", value: 7 },
-    { id: "infra", label: "Infra", type: "captured", desc: "Queue & routing meshes", value: 6 },
-  ];
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [size, setSize] = useState({ width: 1200, height: 600 });
+  const [positions, setPositions] = useState<Node[]>([]);
+  const [hover, setHover] = useState<{ id: string; clientX: number; clientY: number } | null>(null);
 
-  const sampleLinks: LinkT[] = [
-    { source: "code", target: "telemetry" },
-    { source: "code", target: "nlp" },
-    { source: "media", target: "multimodal" },
-    { source: "telemetry", target: "infra" },
-    { source: "tabular", target: "nlp" },
-    { source: "infra", target: "multimodal" },
-    { source: "code", target: "media" },
-  ];
-
-  const svgRef = useRef<SVGSVGElement | null>(null);
-  const rafRef = useRef<number | null>(null);
-  const [nodes, setNodes] = useState<Node[]>(() =>
-    sampleNodes.map((n) => ({
-      ...n,
-      x: rand(WIDTH * 0.2, WIDTH * 0.8),
-      y: rand(HEIGHT * 0.2, HEIGHT * 0.8),
-      vx: 0,
-      vy: 0,
-    }))
-  );
-  const [links] = useState<LinkT[]>(sampleLinks);
-  const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
-  const [selected, setSelected] = useState<string | null>(null);
-
-  // physics parameters
-  const REPULSION = 6000; // higher = more spread out
-  const LINK_STRENGTH = 0.07;
-  const CENTERING = 0.02;
-  const DAMPING = 0.85;
-  const NODE_RADIUS_BASE = 20;
-
+  // Responsive sizing
   useEffect(() => {
-    let running = true;
+    function updateSize() {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const width = Math.max(rect.width, 400);
+        const height = Math.max(width * 0.5, 400);
+        setSize({ width, height });
+      }
+    }
+    updateSize();
+    const ro = new window.ResizeObserver(updateSize);
+    if (containerRef.current) ro.observe(containerRef.current);
+    return () => ro.disconnect();
+  }, []);
 
-    function step() {
-      setNodes((prev) => {
-        // create quick lookup for positions
-        const nodeMap: Record<string, Node> = {};
-        prev.forEach((n) => (nodeMap[n.id] = n));
+  // Place nodes on concentric rings by type, animate rotation
+  useEffect(() => {
+    const { width, height } = size;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const captured = nodes.filter((n) => n.type === "captured");
+    const current = nodes.filter((n) => n.type === "current");
+    const next = nodes.filter((n) => n.type === "next");
 
-        // clone array for mutation
-        const next = prev.map((n) => ({ ...n }));
+    const radii = [
+      Math.min(width, height) * 0.13,
+      Math.min(width, height) * 0.25,
+      Math.min(width, height) * 0.38,
+    ];
 
-        // repulsion (Coulomb)
-        for (let i = 0; i < next.length; i++) {
-          for (let j = i + 1; j < next.length; j++) {
-            const a = next[i];
-            const b = next[j];
-            const dx = a.x! - b.x!;
-            const dy = a.y! - b.y!;
-            let dist2 = dx * dx + dy * dy;
-            if (dist2 < 0.01) dist2 = 0.01;
-            const force = REPULSION / dist2;
-            const dist = Math.sqrt(dist2);
-            const ux = dx / dist;
-            const uy = dy / dist;
-            a.vx = (a.vx || 0) + ux * force;
-            a.vy = (a.vy || 0) + uy * force;
-            b.vx = (b.vx || 0) - ux * force;
-            b.vy = (b.vy || 0) - uy * force;
-          }
-        }
-
-        // link attraction
-        for (const l of links) {
-          const a = nodeMap[l.source];
-          const b = nodeMap[l.target];
-          if (!a || !b) continue;
-          const ax = a.x!;
-          const ay = a.y!;
-          const bx = b.x!;
-          const by = b.y!;
-          const dx = bx - ax;
-          const dy = by - ay;
-          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          const desired = 120; // ideal link length
-          const diff = dist - desired;
-          const aVal = a.value ?? 1;
-          const bVal = b.value ?? 1;
-          const k = LINK_STRENGTH * (1 + Math.min(3, (aVal + bVal) / 6));
-          const fx = (dx / dist) * diff * k;
-          const fy = (dy / dist) * diff * k;
-          a.vx = (a.vx || 0) + fx;
-          a.vy = (a.vy || 0) + fy;
-          b.vx = (b.vx || 0) - fx;
-          b.vy = (b.vy || 0) - fy;
-        }
-
-        // centering force & integrate
-        for (const n of next) {
-          // centering toward middle
-          const cx = WIDTH / 2;
-          const cy = HEIGHT / 2;
-          n.vx = (n.vx || 0) + (cx - n.x!) * CENTERING * (1 / (n.value ?? 1));
-          n.vy = (n.vy || 0) + (cy - n.y!) * CENTERING * (1 / (n.value ?? 1));
-          // apply velocity
-          n.x = (n.x || 0) + (n.vx || 0) * 0.02;
-          n.y = (n.y || 0) + (n.vy || 0) * 0.02;
-          // damping
-          n.vx = (n.vx || 0) * DAMPING;
-          n.vy = (n.vy || 0) * DAMPING;
-
-          // bound
-          n.x = Math.max(40, Math.min(WIDTH - 40, n.x!));
-          n.y = Math.max(40, Math.min(HEIGHT - 40, n.y!));
-        }
-
-        return next;
-      });
-
-      if (running) rafRef.current = requestAnimationFrame(step);
+    function place(arr: Node[], radius: number, phase = 0) {
+      const step = (2 * Math.PI) / arr.length;
+      return arr.map((n, i) => ({
+        ...n,
+        x: centerX + Math.cos(i * step + phase) * radius,
+        y: centerY + Math.sin(i * step + phase) * radius,
+      }));
     }
 
-    rafRef.current = requestAnimationFrame(step);
+    setPositions([
+      ...place(captured, radii[0], 0.1),
+      ...place(current, radii[1], Math.PI / 8),
+      ...place(next, radii[2], Math.PI / 6),
+    ]);
+  }, [size]);
 
-    return () => {
-      running = false;
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [links]);
+  // Animate rotation
+  useEffect(() => {
+    let frame: number;
+    let t = 0;
+    function animate() {
+      t += 0.002;
+      setPositions((prev) => {
+        const { width, height } = size;
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const captured = prev.filter((n) => n.type === "captured");
+        const current = prev.filter((n) => n.type === "current");
+        const next = prev.filter((n) => n.type === "next");
+        const radii = [
+          Math.min(width, height) * 0.13,
+          Math.min(width, height) * 0.25,
+          Math.min(width, height) * 0.38,
+        ];
+        function place(arr: Node[], radius: number, phase = 0, speed = 1) {
+          const step = (2 * Math.PI) / arr.length;
+          return arr.map((n, i) => ({
+            ...n,
+            x: centerX + Math.cos(i * step + phase + t * speed) * radius,
+            y: centerY + Math.sin(i * step + phase + t * speed) * radius,
+          }));
+        }
+        return [
+          ...place(captured, radii[0], 0.1, 1.2),
+          ...place(current, radii[1], Math.PI / 8, 0.8),
+          ...place(next, radii[2], Math.PI / 6, 0.5),
+        ];
+      });
+      frame = requestAnimationFrame(animate);
+    }
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
+  }, [size]);
 
-  function nodeRadius(n: Node) {
-    return NODE_RADIUS_BASE + (n.value ?? 1) * 2;
+  function nodeById(id: string) {
+    return positions.find((p) => p.id === id);
+  }
+
+  function tooltipStyle(clientX: number, clientY: number) {
+    const box = containerRef.current?.getBoundingClientRect();
+    if (!box) return { left: clientX + 12, top: clientY + 12 };
+    return { left: clientX - box.left + 12, top: clientY - box.top + 12 };
+  }
+
+  function linkPath(sx: number, sy: number, tx: number, ty: number) {
+    const mx = (sx + tx) / 2;
+    const my = (sy + ty) / 2;
+    const dx = tx - sx;
+    const dy = ty - sy;
+    const nx = -dy;
+    const ny = dx;
+    const nl = Math.sqrt(nx * nx + ny * ny) || 1;
+    const offset = clamp(0.06 * Math.sqrt(dx * dx + dy * dy), 8, 40);
+    const cx = mx + (nx / nl) * offset * Math.sin((sx + sy + tx + ty) * 0.0003);
+    const cy = my + (ny / nl) * offset * Math.cos((sx + sy + tx + ty) * 0.0003);
+    return `M ${sx} ${sy} Q ${cx} ${cy} ${tx} ${ty}`;
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex gap-3 items-center">
+    <div
+      ref={containerRef}
+      className="relative w-full mx-auto py-6"
+      style={{ minHeight: Math.max(size.height, 500) }}
+    >
+      <div className="flex items-center justify-between mb-4 px-2">
+        <div className="flex items-center gap-6">
           <div className="flex items-center gap-2 text-sm">
-            <span className="inline-block w-3 h-3 rounded-full bg-primary" />
-            <span>Captured</span>
+            <span className="inline-block w-3 h-3 rounded-full" style={{ background: "var(--primary)" }} />
+            <span className="text-sm">Captured</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <span className="inline-block w-3 h-3 rounded-full border-2 border-primary bg-transparent" />
-            <span>Current / Target</span>
+            <span className="inline-block w-3 h-3 rounded-full" style={{ background: "var(--secondary)" }} />
+            <span className="text-sm">Current</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm">
+            <span className="inline-block w-3 h-3 rounded-full" style={{ background: "var(--accent)" }} />
+            <span className="text-sm">Next</span>
           </div>
         </div>
       </div>
-
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="relative" style={{ minHeight: size.height }}>
         <svg
-          ref={svgRef}
-          viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-          width="100%"
-          height="400"
-          className="w-full"
+          viewBox={`0 0 ${size.width} ${size.height}`}
+          width={size.width}
+          height={size.height}
+          style={{ width: "100%", height: "auto", display: "block" }}
+          preserveAspectRatio="xMidYMid meet"
         >
-          {/* links */}
-          {links.map((l, idx) => {
-            const s = nodes.find((n) => n.id === l.source);
-            const t = nodes.find((n) => n.id === l.target);
-            if (!s || !t) return null;
-            const strokeOpacity = 0.12 + Math.min(0.4, ((s.value ?? 1) + (t.value ?? 1)) / 20);
-            return (
-              <line
-                key={idx}
-                x1={s.x}
-                y1={s.y}
-                x2={t.x}
-                y2={t.y}
-                stroke="currentColor"
-                strokeWidth={1.2}
-                strokeOpacity={strokeOpacity}
-                className="text-muted-foreground"
-              />
-            );
-          })}
-
-          {/* nodes */}
-          {nodes.map((n) => {
-            const r = nodeRadius(n);
-            const isCaptured = n.type === "captured";
-            const isNext = n.type === "next";
-            const cx = n.x!;
-            const cy = n.y!;
-            return (
-              <g
-                key={n.id}
-                transform={`translate(${cx}, ${cy})`}
-                style={{ cursor: "pointer" }}
-                onMouseEnter={(e) => {
-                  setHover({ id: n.id, x: (e.nativeEvent.clientX || 0), y: (e.nativeEvent.clientY || 0) });
-                }}
-                onMouseLeave={() => setHover(null)}
-                onClick={() => {
-                  setSelected(n.id === selected ? null : n.id);
-                  // Example: navigate to /domains/[id] if you have such a page
-                  // use router.push(`/domains/${n.id}`)
-                }}
-              >
-                {/* pulsing ring for 'next' */}
-                {isNext && (
-                  <circle
-                    r={r + 10}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeOpacity={0.06}
-                    className="animate-pulse"
-                  />
-                )}
-
-                {/* node circle */}
-                <circle
-                  r={r}
-                  fill={isCaptured ? "currentColor" : "transparent"}
-                  stroke="currentColor"
-                  strokeWidth={isCaptured ? 0 : 2}
-                  className={isCaptured ? "text-primary" : "text-accent"}
-                />
-
-                {/* label */}
-                <text
-                  x={0}
-                  y={r + 16}
-                  textAnchor="middle"
-                  fontSize={12}
-                  fill="currentColor"
-                  opacity={0.9}
-                  className="text-foreground"
+          <defs>
+            <radialGradient id="bgGrad" cx="50%" cy="40%">
+              <stop offset="0%" stopColor="rgba(255,255,255,0.04)" />
+              <stop offset="45%" stopColor="rgba(0,0,0,0.02)" />
+              <stop offset="100%" stopColor="rgba(0,0,0,0.0)" />
+            </radialGradient>
+          </defs>
+          <rect x={0} y={0} width={size.width} height={size.height} fill="url(#bgGrad)" rx={8} />
+          {/* Concentric rings */}
+          <g opacity={0.08} stroke="currentColor" className="text-muted-foreground">
+            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.13} fill="none" strokeWidth={3} strokeDasharray="6 6" />
+            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.25} fill="none" strokeWidth={2} strokeDasharray="8 8" />
+            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.38} fill="none" strokeWidth={1.6} strokeDasharray="10 10" />
+          </g>
+          {/* Links */}
+          <g stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+            {links.map((l, idx) => {
+              const s = nodeById(l.source);
+              const t = nodeById(l.target);
+              if (!s || !t) return null;
+              const strokeOpacity = clamp(0.08 + (l.weight ?? 0.8) * 0.16, 0.08, 0.9);
+              const strokeW = clamp((l.weight ?? 0.8) * 2, 0.8, 3.2);
+              const d = linkPath(s.x!, s.y!, t.x!, t.y!);
+              return <path key={idx} d={d} stroke="currentColor" strokeOpacity={strokeOpacity} strokeWidth={strokeW} fill="none" />;
+            })}
+          </g>
+          {/* Nodes */}
+          <g>
+            {positions.map((n) => {
+              const r = 12 + (n.value ?? 6) * 1.2;
+              const cx = n.x ?? size.width / 2;
+              const cy = n.y ?? size.height / 2;
+              return (
+                <g
+                  key={n.id}
+                  transform={`translate(${cx}, ${cy})`}
+                  style={{ cursor: "pointer" }}
+                  onMouseEnter={(e: React.MouseEvent<SVGGElement, MouseEvent>) => setHover({ id: n.id, clientX: e.clientX, clientY: e.clientY })}
+                  onMouseMove={(e: React.MouseEvent<SVGGElement, MouseEvent>) => setHover({ id: n.id, clientX: e.clientX, clientY: e.clientY })}
+                  onMouseLeave={() => setHover(null)}
+                  role="button"
+                  aria-label={n.label}
                 >
-                  {n.label}
-                </text>
-
-                {/* small badge if selected */}
-                {selected === n.id && (
-                  <g transform={`translate(${r + 14}, ${-r - 8})`}>
-                    <rect x={-6} y={-14} rx={6} ry={6} width={160} height={44} fill="var(--card)" stroke="var(--border)" />
-                    <text x={2} y={-2} fontSize={11} fill="var(--foreground)">
-                      {n.desc}
-                    </text>
-                  </g>
-                )}
-              </g>
-            );
-          })}
+                  <circle
+                    cx={0}
+                    cy={0}
+                    r={r}
+                    fill={getColor(n.type)}
+                    stroke="var(--border)"
+                    strokeWidth={2}
+                    style={{ transition: "fill 0.2s, stroke 0.2s" }}
+                  />
+                  <text x={0} y={4} textAnchor="middle" fontSize={14} fill="var(--card-foreground)" style={{ pointerEvents: "none", fontWeight: 600 }}>
+                    {n.label}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
         </svg>
-
-        {/* tooltip */}
+        {/* Tooltip */}
         {hover && (() => {
-          const node = nodes.find((x) => x.id === hover.id);
+          const node = nodeById(hover.id);
           if (!node) return null;
+          const pos = tooltipStyle(hover.clientX, hover.clientY);
           return (
             <div
-              className="absolute z-50 pointer-events-none"
+              className="pointer-events-none z-50"
               style={{
-                transform: `translate(${hover.x}px, ${hover.y}px)`,
-                left: 0,
-                top: 0,
+                position: "absolute",
+                transform: `translate(${pos.left}px, ${pos.top}px)`,
+                minWidth: 260,
+                maxWidth: 320,
               }}
             >
-              <div className="max-w-xs rounded-md bg-card border border-border px-4 py-3 text-sm shadow-lg">
-                <div className="font-medium">{node.label}</div>
-                <div className="text-muted-foreground text-xs mt-1">{node.desc}</div>
-                <div className="text-xs text-muted-foreground mt-2">Status: {node.type}</div>
+              <div className="rounded-xl bg-card border border-border px-6 py-5 text-base shadow-2xl"
+                style={{
+                  color: "var(--card-foreground)",
+                  boxShadow: "0 8px 32px 0 rgba(0,0,0,0.18)",
+                  fontWeight: 500,
+                  backdropFilter: "blur(10px)",
+                }}>
+                <div className="font-bold mb-2 text-lg">{node.label}</div>
+                <div className="text-muted-foreground text-base mb-2">{node.desc}</div>
+                {node.sub && (
+                  <ul className="list-disc pl-5 text-sm text-muted-foreground">
+                    {node.sub.map((s, i) => <li key={i}>{s}</li>)}
+                  </ul>
+                )}
               </div>
             </div>
           );
