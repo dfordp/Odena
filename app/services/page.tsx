@@ -93,7 +93,7 @@ export default function ServicesPage() {
         </p>
 
         <a
-          href="mailto:team@odena.ai"
+          href="mailto:dilpreetgrover2@gmail.com"
           className="mt-6 sm:mt-8 inline-block px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition cursor-pointer text-sm sm:text-base"
         >
           Start a Conversation

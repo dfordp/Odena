@@ -1,3 +1,4 @@
+import CallToAction from "@/components/CallToAction";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -189,12 +190,7 @@ export default function Projects() {
           too ambitious for a normal team we want to hear about it.
         </p>
 
-        <a
-          href="mailto:team@odena.ai"
-          className="mt-6 sm:mt-8 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition inline-block cursor-pointer text-sm sm:text-base"
-        >
-          Reach Out
-        </a>
+       <CallToAction/>
       </section>
 
     </div>

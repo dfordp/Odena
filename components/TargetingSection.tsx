@@ -5,9 +5,10 @@ import { useRef, useEffect, useState } from "react";
 
 export default function TargetingDial() {
   const ref = useRef<HTMLDivElement | null>(null);
+  // Adjust scroll offset so animation starts after 20% and ends at 80% of the section
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 80%", "end 20%"],
+    offset: ["start 20%", "end 80%"],
   });
 
   const items = [
@@ -21,7 +22,6 @@ export default function TargetingDial() {
 
   const [active, setActive] = useState(0);
 
-  // ----- MAP SCROLL TO ACTIVE ITEM -----
   useEffect(() => {
     return scrollYProgress.on("change", (v) => {
       const idx = Math.floor(v * (items.length + 0.3));
@@ -68,19 +68,12 @@ export default function TargetingDial() {
               opacity="0.35"
             />
           </svg>
-
-          {/* Titles placed on the arc */}
-          <div className="absolute left-0 top-[90%] -translate-y-1/2 w-full h-full">
+          <div className="absolute left-0 top-9/10 -translate-y-1/2 w-full h-full">
             {items.map((item, i) => {
               const offset = i - active;
-
-              // Angle on arc
               const angle = START_ANGLE + offset * (SPREAD / (items.length - 1));
-
-              // Convert polar → cartesian
               const x = Math.cos((angle * Math.PI) / 180) * RADIUS;
               const y = Math.sin((angle * Math.PI) / 180) * RADIUS;
-
               return (
                 <motion.div
                   key={i}
@@ -133,7 +126,6 @@ export default function TargetingDial() {
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

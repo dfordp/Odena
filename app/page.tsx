@@ -2,23 +2,10 @@
 
 import Link from "next/link";
 import DomainNetworkMap from "@/components/DomainNetworkMap";
-import Image from "next/image";
-import { useState, useEffect } from "react";
 import TargetingSection from "@/components/TargetingSection";
 import CallToAction from "@/components/CallToAction";
 
-// simple scroll reveal utility
-function useReveal() {
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 80) setVisible(true);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return visible;
-}
+
 
 export default function Home() {
 
@@ -51,7 +38,7 @@ export default function Home() {
                 Explore Our Systems
               </Link>
               <a
-                href="mailto:team@odena.ai"
+                href="mailto:dilpreetgrover2@gmail.com"
                 className="h-11 sm:h-12 px-6 sm:px-8 rounded-full border border-border flex items-center justify-center hover:bg-muted transition cursor-pointer text-sm sm:text-base"
               >
                 Collaborate With Us
