@@ -51,7 +51,7 @@ export default function Navbar() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium"
+                className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium hover:cursor-pointer"
               >
                 Services
                 <ChevronDown
@@ -62,29 +62,29 @@ export default function Navbar() {
               {isServicesOpen && (
                 <div className="absolute top-full mt-2 left-0 w-64 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
                   
-                  <Link href="/services/data-ranking" className="flex gap-3 px-4 py-3 items-center hover:bg-muted transition">
+                  <Link href="/services/data-ranking" className="flex gap-3 px-4 py-3 items-center hover:bg-background transition">
                     <SlidersHorizontal className="w-4 h-4 text-primary" />
                     <span>Data Ranking</span>
                   </Link>
 
-                  <Link href="/services/data-segregation" className="flex gap-3 px-4 py-3 items-center hover:bg-muted transition">
+                  <Link href="/services/data-segregation" className="flex gap-3 px-4 py-3 items-center hover:bg-background transition">
                     <Layers className="w-4 h-4 text-primary" />
                     <span>Data Segregation</span>
                   </Link>
 
-                  <Link href="/services/insights" className="flex gap-3 px-4 py-3 items-center hover:bg-muted transition">
+                  <Link href="/services/insights" className="flex gap-3 px-4 py-3 items-center hover:bg-background transition">
                     <BarChart3 className="w-4 h-4 text-primary" />
                     <span>Data Insights</span>
                   </Link>
 
-                  <Link href="/services/consulting" className="flex gap-3 px-4 py-3 items-center hover:bg-muted transition">
+                  <Link href="/services/consulting" className="flex gap-3 px-4 py-3 items-center hover:bg-background transition">
                     <Sparkles className="w-4 h-4 text-primary" />
                     <span>Consulting</span>
                   </Link>
 
                   <div className="border-t border-border my-2" />
 
-                  <Link href="/projects" className="flex gap-3 px-4 py-3 items-center hover:bg-muted transition">
+                  <Link href="/projects" className="flex gap-3 px-4 py-3 items-center hover:bg-background transition">
                     <PackageSearch className="w-4 h-4 text-primary" />
                     <span>Projects</span>
                   </Link>
