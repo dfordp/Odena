@@ -34,7 +34,7 @@ export default function ServicesPage() {
             Zero-shot ranking systems that score any dataset code, media, text 
             based on relevance, quality, anomaly likelihood, or custom criteria.
           </p>
-          <Link href="/services/data-ranking" className="text-primary font-medium text-sm mt-4 inline-block hover:underline">
+          <Link href="/services/data-ranking" className="text-primary font-medium text-sm mt-4 inline-block hover:underline cursor-pointer">
             Learn more →
           </Link>
         </div>
@@ -47,7 +47,7 @@ export default function ServicesPage() {
             Segmentation, clustering, and adaptive filtering for large-scale datasets.  
             Built for high-throughput environments and multimodal inputs.
           </p>
-          <Link href="/services/data-segregation" className="text-primary font-medium text-sm mt-4 inline-block hover:underline">
+          <Link href="/services/data-segregation" className="text-primary font-medium text-sm mt-4 inline-block hover:underline cursor-pointer">
             Learn more →
           </Link>
         </div>
@@ -60,7 +60,7 @@ export default function ServicesPage() {
             Models that generate actionable insights across datasets by combining embeddings,
             routing heuristics, and high-dimensional comparisons.
           </p>
-          <Link href="/services/insights" className="text-primary font-medium text-sm mt-4 inline-block hover:underline">
+          <Link href="/services/insights" className="text-primary font-medium text-sm mt-4 inline-block hover:underline cursor-pointer">
             Learn more →
           </Link>
         </div>
@@ -74,7 +74,7 @@ export default function ServicesPage() {
             and high-throughput architectures.  
             If your data stack feels too slow or too messy we can fix it.
           </p>
-          <Link href="/services/consulting" className="text-primary font-medium text-sm mt-4 inline-block hover:underline">
+          <Link href="/services/consulting" className="text-primary font-medium text-sm mt-4 inline-block hover:underline cursor-pointer">
             Learn more →
           </Link>
         </div>
@@ -94,7 +94,7 @@ export default function ServicesPage() {
 
         <a
           href="mailto:team@odena.ai"
-          className="mt-8 inline-block px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition"
+          className="mt-8 inline-block px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition cursor-pointer"
         >
           Start a Conversation
         </a>

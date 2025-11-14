@@ -125,7 +125,7 @@ export default function About() {
 
         <a
           href="mailto:team@odena.ai"
-          className="block mt-6 mx-auto text-center px-6 py-3 rounded-full bg-primary text-primary-foreground w-max hover:opacity-90 transition"
+          className="block mt-6 mx-auto text-center px-6 py-3 rounded-full bg-primary text-primary-foreground w-max hover:opacity-90 transition cursor-pointer"
         >
           Contact Us
         </a>
@@ -163,7 +163,7 @@ export default function About() {
 
         <a
           href="mailto:team@odena.ai"
-          className="mt-8 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition inline-block"
+          className="mt-8 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition inline-block cursor-pointer"
         >
           Start a Conversation
         </a>

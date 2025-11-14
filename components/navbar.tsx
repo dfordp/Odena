@@ -81,16 +81,9 @@ export default function Navbar() {
               </button>
 
               {isServicesOpen && (
-                <div
-                  className="
-                    absolute top-full mt-3 left-0 w-64 bg-card border border-border 
-                    rounded-xl shadow-lg py-3 z-50 animate-fade-in
-                  "
-                >
-                  <Link
-                    href="/services/data-ranking"
-                    className="flex gap-3 px-4 py-3 items-center hover:bg-muted/40 transition rounded-lg"
-                  >
+                <div className="absolute top-full mt-2 left-0 w-64 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
+                  
+                  <Link href="/services/data-ranking" className="flex gap-3 px-4 py-3 items-center hover:bg-background transition cursor-pointer">
                     <SlidersHorizontal className="w-4 h-4 text-primary" />
                     <span>Data Ranking</span>
                   </Link>

@@ -128,7 +128,7 @@ export default function CareerPage() {
         <div className="mt-12">
           <a
             href="mailto:team@odena.ai"
-            className="inline-block px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition"
+            className="inline-block px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition cursor-pointer"
           >
             Send Your Work
           </a>
@@ -151,7 +151,7 @@ export default function CareerPage() {
 
         <a
           href="mailto:team@odena.ai"
-          className="mt-8 inline-block px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition"
+          className="mt-8 inline-block px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition cursor-pointer"
         >
           Start a Conversation
         </a>
