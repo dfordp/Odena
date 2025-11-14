@@ -1,3 +1,5 @@
+"use client"
+
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
@@ -10,7 +12,7 @@ export default function CallToAction() {
   }, []);
 
   return (
-    <div className="w-full h-[600px] flex items-center justify-center">
+    <div className="w-full h-[500px] sm:h-[600px] md:h-[650px] flex items-center justify-center px-2 sm:px-4">
       <Cal 
     namespace="openlens-discussion"
     calLink="dilpreet-grover/odena-discussion"
