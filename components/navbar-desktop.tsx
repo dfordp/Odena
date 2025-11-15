@@ -133,7 +133,7 @@ export default function NavbarDesktop() {
                 </button>
 
                 {isServicesOpen && (
-                    <div className="absolute top-full mt-3 left-0 w-64 bg-white/95 backdrop-blur-md border border-border rounded-xl shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                    <div className="absolute top-full mt-3 left-0 w-64 border border-border/40 rounded-xl shadow-2xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200" style={{ background: 'rgba(255, 255, 255, 0.98)', backdropFilter: 'blur(40px) saturate(180%)', WebkitBackdropFilter: 'blur(40px) saturate(180%)' }}>
                     
                     <Link 
                         href="/services/data-ranking" 

@@ -31,9 +31,13 @@ export default function TargetingDial() {
 
   // ----- ARC CALCULATIONS -----
   const [isMobile, setIsMobile] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(1920); // Default to desktop size
   
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+      setScreenWidth(window.innerWidth);
+    };
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -54,16 +58,16 @@ export default function TargetingDial() {
 
           {/* Pivot semicircle */}
           <svg
-            width={isMobile ? "120" : window.innerWidth < 1280 ? "280" : "360"}
-            height={isMobile ? "240" : window.innerWidth < 1280 ? "300" : "360"}
-            viewBox={isMobile ? "0 0 220 240" : window.innerWidth < 1280 ? "0 0 260 300" : "0 0 280 360"}
-            className="absolute left-0 top-7 lg:top-16"
+            width={isMobile ? "120" : screenWidth < 1280 ? "280" : "360"}
+            height={isMobile ? "240" : screenWidth < 1280 ? "300" : "360"}
+            viewBox={isMobile ? "0 0 220 240" : screenWidth < 1280 ? "0 0 260 300" : "0 0 280 360"}
+            className="absolute left-10 top-7 lg:top-1.5 opacity-50"
             style={{ transform: "translateX(-80%)" }}
           >
             <path
-              d={isMobile ? "M60 0 A 55 60 0 0 1 60 240" : window.innerWidth < 1280 ? "M70 0 A 65 75 0 0 1 70 300" : "M90 0 A 75 90 0 0 1 90 360"}
+              d={isMobile ? "M60 0 A 55 60 0 0 1 60 240" : screenWidth < 1280 ? "M70 0 A 65 75 0 0 1 70 300" : "M90 0 A 75 90 0 0 1 90 360"}
               stroke="var(--foreground)"
-              strokeWidth={isMobile ? "2" : window.innerWidth < 1280 ? "2.5" : "3"}
+              strokeWidth={isMobile ? "2" : screenWidth < 1280 ? "2.5" : "3"}
               fill="none"
               opacity="0.35"
             />

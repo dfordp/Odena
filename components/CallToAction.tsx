@@ -12,11 +12,11 @@ export default function CallToAction() {
   }, []);
 
   return (
-    <div className="w-full h-[500px] sm:h-[600px] md:h-[650px] flex items-center px-2 sm:px-4">
+    <div className="w-full flex items-center px-2 sm:px-4 ">
       <Cal 
     namespace="openlens-discussion"
     calLink="dilpreet-grover/odena-discussion"
-    style={{width:"100%",height:"100%",overflow:"scroll"}}
+    style={{width:"100%",height:"100%",overflow:"hidden"}}
     config={{"layout":"month_view"}}
     />
     </div>
