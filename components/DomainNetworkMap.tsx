@@ -94,7 +94,7 @@ export default function DomainNetworkMap() {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
         const width = Math.max(rect.width, 400);
-        const height = Math.max(width * 0.5, 400);
+        const height = Math.max(width * 0.75, 500);
         setSize({ width, height });
       }
     }
@@ -114,9 +114,9 @@ export default function DomainNetworkMap() {
     const next = nodes.filter((n) => n.type === "next");
 
     const radii = [
-      Math.min(width, height) * 0.13,
-      Math.min(width, height) * 0.25,
-      Math.min(width, height) * 0.38,
+      Math.min(width, height) * 0.18,
+      Math.min(width, height) * 0.32,
+      Math.min(width, height) * 0.46,
     ];
 
     function place(arr: Node[], radius: number, phase = 0) {
@@ -149,9 +149,9 @@ export default function DomainNetworkMap() {
         const current = prev.filter((n) => n.type === "current");
         const next = prev.filter((n) => n.type === "next");
         const radii = [
-          Math.min(width, height) * 0.13,
-          Math.min(width, height) * 0.25,
-          Math.min(width, height) * 0.38,
+          Math.min(width, height) * 0.18,
+          Math.min(width, height) * 0.32,
+          Math.min(width, height) * 0.46,
         ];
         function place(arr: Node[], radius: number, phase = 0, speed = 1) {
           const step = (2 * Math.PI) / arr.length;
@@ -201,7 +201,7 @@ export default function DomainNetworkMap() {
     <div
       ref={containerRef}
       className="relative w-full mx-auto py-4 sm:py-6"
-      style={{ minHeight: Math.max(size.height, 400) }}
+      style={{ minHeight: Math.max(size.height, 500) }}
     >
       <div className="flex flex-wrap items-center justify-center mb-3 sm:mb-4 px-2 sm:px-4 gap-3 sm:gap-6">
         <div className="flex items-center gap-2 text-xs sm:text-sm">
@@ -235,9 +235,9 @@ export default function DomainNetworkMap() {
           <rect x={0} y={0} width={size.width} height={size.height} fill="url(#bgGrad)" rx={8} />
           {/* Concentric rings */}
           <g opacity={0.08} stroke="currentColor" className="text-muted-foreground">
-            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.13} fill="none" strokeWidth={3} strokeDasharray="6 6" />
-            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.25} fill="none" strokeWidth={2} strokeDasharray="8 8" />
-            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.38} fill="none" strokeWidth={1.6} strokeDasharray="10 10" />
+            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.18} fill="none" strokeWidth={3} strokeDasharray="6 6" />
+            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.32} fill="none" strokeWidth={2} strokeDasharray="8 8" />
+            <circle cx={size.width / 2} cy={size.height / 2} r={Math.min(size.width, size.height) * 0.46} fill="none" strokeWidth={1.6} strokeDasharray="10 10" />
           </g>
           {/* Links */}
           <g stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
