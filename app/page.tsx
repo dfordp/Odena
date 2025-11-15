@@ -20,63 +20,52 @@ export default function Home() {
           
           {/* Left: Text and Buttons */}
           <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Hero Text */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold tracking-tight max-w-2xl leading-tight animate-fade-in">
-              Make Sense of Your <span className="text-primary"> Data</span> Quickly, Accurately, Anytime
-            </h1>
+        {/* Hero Text */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-semibold tracking-tight max-w-2xl leading-tight animate-fade-in">
+          Make Sense of Your <span className="text-primary"> Data</span> Quickly, Accurately, Anytime
+        </h1>
 
-            <p className="mt-6 sm:mt-8 text-base sm:text-lg max-w-2xl text-muted-foreground leading-relaxed animate-fade-in delay-200">
-              Harness the power of high-throughput microservices, multimedia embeddings, and scalable AI workflows to transform how enterprises classify, rank, and segment data in real time, across any domain.
-            </p>
+        <p className="mt-6 sm:mt-8 text-sm sm:text-base max-w-2xl text-muted-foreground leading-relaxed animate-fade-in delay-200">
+          Harness the power of high-throughput microservices, multimedia embeddings, and scalable AI workflows to transform how enterprises classify, rank, and segment data in real time, across any domain.
+        </p>
 
-            {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 sm:mt-12 w-full sm:w-auto animate-fade-in delay-300">
-              <Link
-                href="/projects"
-                className="h-11 sm:h-12 px-6 sm:px-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-medium hover:opacity-90 transition cursor-pointer text-sm sm:text-base"
-              >
-                Explore Our Systems
-              </Link>
-              <a
-                href="mailto:dilpreetgrover2@gmail.com"
-                className="h-11 sm:h-12 px-6 sm:px-8 rounded-full border border-border flex items-center justify-center hover:bg-muted transition cursor-pointer text-sm sm:text-base"
-              >
-                Collaborate With Us
-              </a>
-            </div>
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 sm:mt-12 w-full sm:w-auto animate-fade-in delay-300">
+          <Link
+            href="/projects"
+            className="h-11 sm:h-12 px-6 sm:px-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-medium hover:opacity-90 transition cursor-pointer text-sm sm:text-base"
+          >
+            Explore Our Systems
+          </Link>
+          <a
+            href="#connect"
+            onClick={(e) => {
+          e.preventDefault();
+          document.querySelector('#connect')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="h-11 sm:h-12 px-6 sm:px-8 rounded-full border border-border flex items-center justify-center hover:bg-muted transition cursor-pointer text-sm sm:text-base"
+          >
+            Collaborate With Us
+          </a>
+        </div>
 
-            {/* Small stat row */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-10 mt-10 sm:mt-16 text-xs sm:text-sm opacity-80 animate-fade-in delay-500">
-              <div>
-                <span className="text-primary font-semibold">2M+ / sec</span>{" "}
-                throughput operators
-              </div>
-              <div>
-                <span className="text-primary font-semibold">Zero-shot</span>{" "}
-                ranking engines
-              </div>
-              <div>
-                <span className="text-primary font-semibold">Cross-domain</span>{" "}
-                generalization
-              </div>
-            </div>
           </div>
 
           {/* Right: Spline Element - Hidden on small screens */}
           <div className="hidden lg:flex flex-1 w-full h-[500px] xl:h-[650px] 2xl:h-[750px] items-center justify-center touch-none select-none relative">
-            <iframe 
-              src='https://my.spline.design/database-gz136BnSzn7JiItLByWnyxzo/' 
-              frameBorder='0' 
-              width='100%' 
-              height='100%'
-              title="3D Database Visualization"
-              className="touch-none"
-              style={{ 
-                overflow: 'hidden',
-                touchAction: 'none'
-              }}
-              suppressHydrationWarning
-            ></iframe>
+        <iframe 
+          src='https://my.spline.design/database-gz136BnSzn7JiItLByWnyxzo/' 
+          frameBorder='0' 
+          width='100%' 
+          height='100%'
+          title="3D Database Visualization"
+          className="touch-none"
+          style={{ 
+            overflow: 'hidden',
+            touchAction: 'none'
+          }}
+          suppressHydrationWarning
+        ></iframe>
             {/* Overlay to hide Spline logo */}
             <div 
               className="absolute bottom-3 right-3 w-37 h-11 pointer-events-none z-10 rounded-xl"
@@ -90,7 +79,7 @@ export default function Home() {
       {/* ===========================================================
           WHAT WE ARE TARGETING
       ============================================================ */}
-      <section className="py-32 px-6">
+      <section className="py-16 px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold text-center">
           WHAT WE ARE TARGETING?
         </h2>
@@ -100,7 +89,7 @@ export default function Home() {
       {/* ===========================================================
           DOMAIN NETWORK MAP
       ============================================================ */}
-      <section className="py-32 px-6 flex flex-col items-center ">
+      <section className="py-16 px-6 flex flex-col items-center ">
         <h2 className="text-3xl sm:text-4xl font-semibold text-center">
           Domains We’ve Captured And Where We’re Going Next
         </h2>
@@ -115,7 +104,7 @@ export default function Home() {
       {/* ===========================================================
           CONNECT WITH US
       ============================================================ */}
-      <section className="py-32 px-4 flex flex-col items-center text-center">
+      <section id="connect" className="py-16 px-4 flex flex-col items-center text-center">
         <h2 className="text-3xl sm:text-4xl font-semibold">Connect With Us</h2>
         <p className="mt-4 text-muted-foreground max-w-xl leading-relaxed mb-4">
           Whether you&apos;re building a new system, exploring research collaboration,

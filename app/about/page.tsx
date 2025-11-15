@@ -1,5 +1,6 @@
 import CallToAction from "@/components/CallToAction";
 import Image from "next/image";
+import { FaCode, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -14,8 +15,8 @@ export default function About() {
         </h1>
 
         <p className="mt-4 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto text-muted-foreground leading-relaxed">
-          We’re a competitive, research-driven group that prototypes, tests, and
-          ships because we’re obsessed with the problems not because a roadmap says so.
+          We&apos;re a competitive, research-driven group that prototypes, tests, and
+          ships because we&apos;re obsessed with the problems not because a roadmap says so.
         </p>
       </section>
 
@@ -28,7 +29,7 @@ export default function About() {
         <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
           People join Odena through competitions, personal research, open-source work,
           or late-night experiments that spiraled into real systems.  
-          There’s no hierarchy just people who can’t resist a difficult problem.
+          There&apos;s no hierarchy just people who can&apos;t resist a difficult problem.
         </p>
 
         <p className="mt-4 text-muted-foreground leading-relaxed text-base sm:text-lg">
@@ -50,44 +51,47 @@ export default function About() {
           No titles. No formal org chart.  
           Just contributors, engineers, and researchers who treat building like a sport.
         </p>
-
+        <div className="flex justify-center gap-4 mb-12">
+          <a href="https://x.com/Odenadotio" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
+            <FaTwitter/>
+          </a>
+          <a href="https://www.linkedin.com/company/odena" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
+            <FaLinkedinIn/>
+          </a>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {[
             {
-              name: "Dilpreet",
-              role: "Systems & Zero-Shot Operators",
-              img: "/profile-dummy.png",
-              desc: "Distributed pipelines, adaptive operators, and ranking systems."
+              name: "Paranjai Gusaria",
+              role: "Research Systems, Adaptive Pipelines, and Zero-Shot Automation",
+              img: "/dilpreet.png",
+              portfolio: "",
+              twitter: "",
+              linkedin: "https://linkedin.com/in/paranjai",
             },
             {
-              name: "Contributor 1",
-              role: "Multimodal Systems",
-              img: "/profile-dummy.png",
-              desc: "Cross-domain representations and clustering architectures."
+              name: "Anant Kumar Sharma",
+              role: "Product Architect, Developer, and Solutions Specialist",
+              img: "/anant.jpg",
+              portfolio: "https://www.anantx.dev/",
+              twitter: "https://x.com/anantXdev",
+              linkedin: "https://www.linkedin.com/in/anant-kr-sharma-341793273/",
             },
             {
-              name: "Contributor 2",
-              role: "Networks & Infra",
-              img: "/profile-dummy.png",
-              desc: "High-throughput queue meshes and routing graphs."
+              name: "Dhruv Singhal",
+              role: "Product Strategist, Outreach Lead, and Growth Catalyst",
+              img: "/dilpreet.png",
+              portfolio: "",
+              twitter: "",
+              linkedin: "https://www.linkedin.com/in/dhruvsinghal6888/",
             },
             {
-              name: "Contributor 3",
-              role: "Research Engineering",
-              img: "/profile-dummy.png",
-              desc: "Turns prototypes into stable, scalable systems."
-            },
-            {
-              name: "Contributor 4",
-              role: "Applied ML",
-              img: "/profile-dummy.png",
-              desc: "Generative ranking strategies and error-corrective operators."
-            },
-            {
-              name: "Contributor 5",
-              role: "Experimentation",
-              img: "/profile-dummy.png",
-              desc: "Stress-tests models and builds unconventional tooling."
+              name: "Dilpreet Grover",
+              role: "Solution Designer, Data Analyst, and Operations Specialist",
+              img: "/dilpreet.png",
+              portfolio: "https://www.dilpreetgrover.me/",
+              twitter: "https://x.com/dfordp11",
+              linkedin: "https://www.linkedin.com/in/dilpreet-grover-17726b224/",
             },
           ].map((person, i) => (
             <div
@@ -103,7 +107,23 @@ export default function About() {
               />
               <h3 className="text-lg font-medium">{person.name}</h3>
               <p className="text-primary text-sm">{person.role}</p>
-              <p className="text-sm text-muted-foreground mt-3">{person.desc}</p>
+                <div className="flex justify-center gap-3 mt-4">
+                {person.portfolio && (
+                  <a href={person.portfolio} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition text-xs font-medium">
+                  <FaCode className="w-4 h-4"/>
+                  </a>
+                )}
+                {person.twitter && (
+                  <a href={person.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
+                  <FaTwitter className="w-4 h-4" />
+                  </a>
+                )}
+                {person.linkedin && (
+                  <a href={person.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
+                  <FaLinkedinIn className="w-4 h-4" />
+                  </a>
+                )}
+                </div>
             </div>
           ))}
         </div>
@@ -122,7 +142,7 @@ export default function About() {
 
         <p className="mt-6 text-muted-foreground text-base sm:text-lg leading-relaxed">
           If you partner with us, you get people who care obsessively about the craft.  
-          If not someone else will, and they’ll move faster.
+          If not someone else will, and they&apos;ll move faster.
         </p>
       </section>
 
@@ -130,7 +150,7 @@ export default function About() {
           CTA
       ========================== */}
       <section className="py-24 px-4 text-center">
-        <h2 className="text-3xl font-semibold">Let’s Build Something Hard</h2>
+        <h2 className="text-3xl font-semibold">Let&apos;s Build Something Hard</h2>
         <p className="mt-4 max-w-xl mx-auto text-muted-foreground leading-relaxed">
           If you have complex datasets, scaling problems, or messy pipelines we want to work with you.
         </p>

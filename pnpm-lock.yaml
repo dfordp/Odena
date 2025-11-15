@@ -44,6 +44,9 @@ importers:
       react-force-graph-3d:
         specifier: ^1.29.0
         version: 1.29.0(react@19.2.0)
+      react-icons:
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.2.0)
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
@@ -1886,6 +1889,11 @@ packages:
   react-force-graph-3d@1.29.0:
     resolution: {integrity: sha512-YCD4W+SA9oeK7mMXZ9pXAGSbDZ3+6IYxv8nPZcqqYeiP1nqZIB/cbMveD3S2bH9EqsGrUMW5qFXjAm5topSblw==}
     engines: {node: '>=12'}
+    peerDependencies:
+      react: '*'
+
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
     peerDependencies:
       react: '*'
 
@@ -4105,6 +4113,10 @@ snapshots:
       prop-types: 15.8.1
       react: 19.2.0
       react-kapsule: 2.5.7(react@19.2.0)
+
+  react-icons@5.5.0(react@19.2.0):
+    dependencies:
+      react: 19.2.0
 
   react-is@16.13.1: {}
 
