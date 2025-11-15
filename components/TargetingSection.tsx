@@ -47,7 +47,7 @@ export default function TargetingDial() {
     <section ref={ref} className="relative min-h-[260vh] bg-background">
 
       {/* Sticky container */}
-      <div className="sticky top-0 h-screen flex flex-col lg:flex-row items-center px-4 sm:px-6 lg:px-10 py-8">
+      <div className="sticky top-0 h-screen flex flex-col lg:flex-row items-center px-4 sm:px-6 lg:px-10 py-4">
 
         {/* LEFT AREA - PIVOT + ARC + TITLES */}
         <div className="relative w-full lg:w-[45vw] h-[40vh] lg:h-[65vh] flex items-center justify-center">
