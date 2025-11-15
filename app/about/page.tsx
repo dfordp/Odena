@@ -64,7 +64,7 @@ export default function About() {
             {
               name: "Paranjai Gusaria",
               role: "Research Systems, Adaptive Pipelines, and Zero-Shot Automation",
-              img: "/dilpreet.png",
+              img: "/paranjai.jpeg",
               portfolio: "",
               twitter: "",
               linkedin: "https://linkedin.com/in/paranjai",
@@ -72,7 +72,7 @@ export default function About() {
             {
               name: "Anant Kumar Sharma",
               role: "Product Architect, Developer, and Solutions Specialist",
-              img: "/anant.jpg",
+              img: "/anant.png",
               portfolio: "https://www.anantx.dev/",
               twitter: "https://x.com/anantXdev",
               linkedin: "https://www.linkedin.com/in/anant-kr-sharma-341793273/",
@@ -80,7 +80,7 @@ export default function About() {
             {
               name: "Dhruv Singhal",
               role: "Product Strategist, Outreach Lead, and Growth Catalyst",
-              img: "/dilpreet.png",
+              img: "/dhruv.png",
               portfolio: "",
               twitter: "",
               linkedin: "https://www.linkedin.com/in/dhruvsinghal6888/",
@@ -98,32 +98,34 @@ export default function About() {
               key={i}
               className="p-6 rounded-xl bg-card border border-border shadow-sm hover:shadow-md transition text-center"
             >
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
               <Image
                 src={person.img}
                 alt={person.name}
-                width={90}
-                height={90}
-                className="rounded-full mx-auto mb-4"
+                width={96}
+                height={96}
+                className="w-full h-full object-cover"
               />
+              </div>
               <h3 className="text-lg font-medium">{person.name}</h3>
               <p className="text-primary text-sm">{person.role}</p>
-                <div className="flex justify-center gap-3 mt-4">
-                {person.portfolio && (
-                  <a href={person.portfolio} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition text-xs font-medium">
-                  <FaCode className="w-4 h-4"/>
-                  </a>
-                )}
-                {person.twitter && (
-                  <a href={person.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
-                  <FaTwitter className="w-4 h-4" />
-                  </a>
-                )}
-                {person.linkedin && (
-                  <a href={person.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
-                  <FaLinkedinIn className="w-4 h-4" />
-                  </a>
-                )}
-                </div>
+              <div className="flex justify-center gap-3 mt-4">
+              {person.portfolio && (
+                <a href={person.portfolio} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition text-xs font-medium">
+                <FaCode className="w-4 h-4"/>
+                </a>
+              )}
+              {person.twitter && (
+                <a href={person.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
+                <FaTwitter className="w-4 h-4" />
+                </a>
+              )}
+              {person.linkedin && (
+                <a href={person.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
+                <FaLinkedinIn className="w-4 h-4" />
+                </a>
+              )}
+              </div>
             </div>
           ))}
         </div>

@@ -54,26 +54,26 @@ export default function TargetingDial() {
 
           {/* Pivot semicircle */}
           <svg
-            width={isMobile ? "120" : "180"}
-            height={isMobile ? "240" : "360"}
-            viewBox={isMobile ? "0 0 120 240" : "0 0 180 360"}
-            className="absolute left-0"
-            style={{ transform: "translateX(-50%)" }}
+            width={isMobile ? "120" : window.innerWidth < 1280 ? "280" : "360"}
+            height={isMobile ? "240" : window.innerWidth < 1280 ? "300" : "360"}
+            viewBox={isMobile ? "0 0 220 240" : window.innerWidth < 1280 ? "0 0 260 300" : "0 0 280 360"}
+            className="absolute left-0 top-7 lg:top-16"
+            style={{ transform: "translateX(-80%)" }}
           >
             <path
-              d={isMobile ? "M60 10 A 50 50 0 0 1 60 230" : "M90 10 A 80 80 0 0 1 90 350"}
+              d={isMobile ? "M60 0 A 55 60 0 0 1 60 240" : window.innerWidth < 1280 ? "M70 0 A 65 75 0 0 1 70 300" : "M90 0 A 75 90 0 0 1 90 360"}
               stroke="var(--foreground)"
-              strokeWidth={isMobile ? "2" : "3"}
+              strokeWidth={isMobile ? "2" : window.innerWidth < 1280 ? "2.5" : "3"}
               fill="none"
               opacity="0.35"
             />
           </svg>
-          <div className="absolute left-0 top-9/10 -translate-y-1/2 w-full h-full">
+          <div className="absolute top-9/10 -translate-y-1/2 w-full h-full" style={{ transform: "translateX(-20%)" }}>
             {items.map((item, i) => {
               const offset = i - active;
               const angle = START_ANGLE + offset * (SPREAD / (items.length - 1));
-              const x = Math.cos((angle * Math.PI) / 180) * RADIUS;
-              const y = Math.sin((angle * Math.PI) / 180) * RADIUS;
+              const x = Math.cos((angle * Math.PI) / 144) * RADIUS;
+              const y = Math.sin((angle * Math.PI) / 128) * RADIUS;
               return (
                 <motion.div
                   key={i}
