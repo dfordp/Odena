@@ -34,7 +34,7 @@ export default function About() {
       {/* =========================
           CONTRIBUTORS
       ========================== */}
-      <section className="py-14 px-4 bg-card/10 rounded-xl mx-4 sm:mx-8 lg:mx-auto max-w-6xl border border-amber-900/10">
+      <section className="py-14 px-4 bg-card/50 rounded-xl mx-4 sm:mx-8 lg:mx-auto max-w-4xl md:max-w-6xl">
         <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-6">
           People Behind Odena
         </h2>
@@ -126,15 +126,15 @@ export default function About() {
       {/* =========================
           WHY WE EXIST
       ========================== */}
-      <section className="py-16 px-4 max-w-4xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Why We Build</h2>
+      <section className="py-8 px-4 max-w-6xl mx-auto">
+        <h2 className="text-2xl sm:text-2xl font-semibold mb-6">Why We Build</h2>
 
-        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+        <p className="text-muted-foreground text-base sm:text-md leading-relaxed">
           Most data tooling is patchwork: brittle pipelines, slow retrieval, noisy signals.  
           We build the systems we wish existed fast, adaptive, and grounded in operator-level control.
         </p>
 
-        <p className="mt-6 text-muted-foreground text-base sm:text-lg leading-relaxed">
+        <p className="mt-4 text-muted-foreground text-base sm:text-md leading-relaxed">
           If you partner with us, you get people who care obsessively about the craft.  
           If not someone else will, and they&apos;ll move faster.
         </p>
@@ -143,9 +143,9 @@ export default function About() {
       {/* =========================
           CTA
       ========================== */}
-      <section className="py-24 px-4 text-center">
+      <section className="py-6 px-4 text-center">
         <h2 className="text-3xl font-semibold">Let&apos;s Build Something Hard</h2>
-        <p className="mt-4 max-w-xl mx-auto text-muted-foreground leading-relaxed">
+        <p className="mt-2 max-w-xl md:max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-6">
           If you have complex datasets, scaling problems, or messy pipelines we want to work with you.
         </p>
         <CallToAction/>

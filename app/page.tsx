@@ -99,9 +99,9 @@ export default function Home() {
       {/* ===========================================================
           CONNECT WITH US
       ============================================================ */}
-      <section id="connect" className="py-16 px-4 flex flex-col items-center text-center">
+      <section id="connect" className="py-8 px-4 flex flex-col items-center text-center">
         <h2 className="text-3xl sm:text-4xl font-semibold">Connect With Us</h2>
-        <p className="mt-4 text-muted-foreground max-w-xl leading-relaxed mb-4">
+        <p className="mt-2 mb-6 text-muted-foreground max-w-xl md:max-w-2xl leading-relaxed">
           Whether you&apos;re building a new system, exploring research collaboration,
           or evaluating infrastructure we’d love to talk.
         </p>
