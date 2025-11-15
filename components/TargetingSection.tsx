@@ -61,7 +61,7 @@ export default function TargetingDial() {
             width={isMobile ? "120" : screenWidth < 1280 ? "280" : "360"}
             height={isMobile ? "240" : screenWidth < 1280 ? "300" : "360"}
             viewBox={isMobile ? "0 0 220 240" : screenWidth < 1280 ? "0 0 260 300" : "0 0 280 360"}
-            className="absolute left-10 top-7 lg:top-1.5 opacity-50"
+            className="absolute left-1 top-7 lg:top-16 opacity-50"
             style={{ transform: "translateX(-80%)" }}
           >
             <path
