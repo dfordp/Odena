@@ -11,6 +11,7 @@ type Node = {
   desc?: string;
   value?: number;
   sub?: string[];
+  bridge?: string;
   x?: number;
   y?: number;
 };
@@ -18,58 +19,133 @@ type Node = {
 type LinkT = { source: string; target: string; weight?: number };
 
 const nodes: Node[] = [
-  { id: "coding", label: "Coding", type: "captured", desc: "Repository insights, code dependency mapping, PR ranking", value: 10, sub: ["Code analysis", "Impact mapping"] },
-  { id: "education", label: "Education", type: "captured", desc: "Assignment scoring, conceptual understanding patterns", value: 9, sub: ["Grading", "Learning analytics"] },
-  { id: "satellite", label: "Satellite Imagery", type: "captured", desc: "Land use classification, cloud removal, region segmentation", value: 10, sub: ["Geosegmentation", "Change detection"] },
-  { id: "social", label: "Social Data", type: "captured", desc: "Trend detection, content clustering, noise filtering", value: 8, sub: ["Trend mapping", "Signal extraction"] },
-  { id: "research", label: "Research Data", type: "captured", desc: "Paper classification, citation mapping, topic discovery", value: 8, sub: ["Topic mapping", "Citation graphing"] },
-  { id: "telemetry", label: "Telemetry Streams", type: "current", desc: "High-frequency event signals from distributed systems", value: 8, sub: ["Event flows", "Live segmentation"] },
-  { id: "logistics", label: "Logistics", type: "current", desc: "Routing signals, delivery events, warehouse telemetry", value: 8, sub: ["Route scoring", "Node bottlenecks"] },
-  { id: "finance", label: "Finance Signals", type: "current", desc: "Transaction patterns, risk events, anomaly flows", value: 7, sub: ["Risk scoring", "Micro-pattern detection"] },
-  { id: "climate", label: "Climate Data", type: "current", desc: "Weather patterns, region shifts, environmental signals", value: 7, sub: ["Weather segmentation", "Geo-temporal shifts"] },
-  { id: "security", label: "Security Events", type: "current", desc: "Access logs, network flows, intrusion pattern signals", value: 7, sub: ["Threat patterns", "Access anomalies"] },
-  { id: "health", label: "Health Signals", type: "current", desc: "Vital signs, waveform changes, patient trends", value: 7, sub: ["ECG events", "Vitals segmentation"] },
-  { id: "commerce", label: "E-Commerce", type: "current", desc: "Browsing flows, demand curves, customer signals", value: 8, sub: ["Demand curves", "Product activity"] },
-  { id: "gaming", label: "Gaming Telemetry", type: "current", desc: "Player behavior, match signals, anti-cheat patterns", value: 7, sub: ["Match data", "Behavior signals"] },
-  { id: "travel", label: "Travel Systems", type: "current", desc: "Flight delays, route flows, airport congestion patterns", value: 7, sub: ["Delay patterns", "Traffic flows"] },
-  { id: "agri", label: "Agriculture", type: "next", desc: "Crop health signals, soil patterns, farm activity data", value: 7, sub: ["Plant health", "Soil signals"] },
-  { id: "manufacturing", label: "Manufacturing", type: "next", desc: "Machine telemetry, defect patterns, process streams", value: 7, sub: ["Machine events", "Quality signals"] },
-  { id: "energy", label: "Energy", type: "next", desc: "Grid flows, consumption patterns, sensor events", value: 7, sub: ["Load curves", "Consumption spikes"] },
-  { id: "mobility", label: "Mobility", type: "next", desc: "Vehicle signals, traffic telemetry, route behaviors", value: 8, sub: ["Traffic patterns", "Vehicle events"] },
-  { id: "telecom", label: "Telecom", type: "next", desc: "Tower performance, packet loss flows, network routing", value: 7, sub: ["Network flows", "Signal stability"] },
-  { id: "public", label: "Public Data", type: "next", desc: "Civic signals, government datasets, population shifts", value: 6, sub: ["Census patterns", "Public signals"] },
-  { id: "sports", label: "Sports Analytics", type: "next", desc: "Player stats, motion tracking, event flow", value: 7, sub: ["Match flow", "Player segmentation"] },
-  { id: "retail", label: "Retail", type: "next", desc: "Footfall signals, product movement, store operations", value: 6, sub: ["Footfall maps", "Store telemetry"] },
-  { id: "realestate", label: "Real Estate", type: "next", desc: "Price movement, locality shifts, amenity signals", value: 6, sub: ["Price curves", "Locality signals"] },
-  { id: "entertainment", label: "Entertainment", type: "next", desc: "Viewership patterns, scene segmentation, engagement flows", value: 6, sub: ["Scene changes", "Engagement tracks"] },
-  { id: "legal", label: "Legal Data", type: "next", desc: "Case networks, citation chains, pattern matching", value: 6, sub: ["Case clustering", "Citation flows"] },
-  { id: "supplychain", label: "Supply Chain", type: "next", desc: "Inventory signals, movement flows, bottlenecks", value: 7, sub: ["Inventory shifts", "Warehouse telemetry"] }
+  { id: "coding", label: "Coding", type: "captured", desc: "Repository insights, code dependency mapping, PR ranking", value: 10, sub: ["Code analysis","Impact mapping"], bridge: "Links engineering artefacts to security, compliance and research — Odena surfaces high-impact changes and risk exposures so teams act with confidence." },
+  { id: "education", label: "Education", type: "captured", desc: "Assignment scoring, conceptual understanding patterns", value: 9, sub: ["Grading","Learning analytics"], bridge: "Connects learner signals to curriculum, finance and research — Odena turns patterns into scalable personalization and outcome signals." },
+  { id: "satellite", label: "Satellite Imagery", type: "captured", desc: "Land use classification, cloud removal, region segmentation", value: 10, sub: ["Geosegmentation","Change detection"], bridge: "Bridges geospatial context with climate, agriculture and public planning — Odena converts pixels into decision-ready geosignals." },
+  { id: "social", label: "Social Data", type: "captured", desc: "Trend detection, content clustering, noise filtering", value: 8, sub: ["Trend mapping","Signal extraction"], bridge: "Maps social signal flows into commerce, entertainment and public insights — Odena separates true signal from hype for actionable trend detection." },
+  { id: "research", label: "Research Data", type: "captured", desc: "Paper classification, citation mapping, topic discovery", value: 8, sub: ["Topic mapping","Citation graphing"], bridge: "Links research to health, AI safety, and product teams — Odena turns literature into usable knowledge graphs and discovery trails." },
+
+  { id: "telemetry", label: "Telemetry Streams", type: "current", desc: "High-frequency event signals from distributed systems", value: 8, sub: ["Event flows","Live segmentation"], bridge: "Feeds live operational insight into mobility, telecom and manufacturing — Odena turns raw event streams into early-warning intelligence." },
+  { id: "logistics", label: "Logistics", type: "current", desc: "Routing signals, delivery events, warehouse telemetry", value: 8, sub: ["Route scoring","Node bottlenecks"], bridge: "Joins routing signals to supply chain and manufacturing operations — Odena exposes latent bottlenecks and optimization paths." },
+  { id: "finance", label: "Finance Signals", type: "current", desc: "Transaction patterns, risk events, anomaly flows", value: 7, sub: ["Risk scoring","Micro-pattern detection"], bridge: "Connects finance fingerprints to security, real estate and regulatory monitoring — Odena enables predictive risk decisions and anomaly prioritization." },
+  { id: "climate", label: "Climate Data", type: "current", desc: "Weather patterns, region shifts, environmental signals", value: 7, sub: ["Weather segmentation","Geo-temporal shifts"], bridge: "Ties climate trends to agriculture, satellite and public planning — Odena provides resilient forecasts that inform action." },
+  { id: "security", label: "Security Events", type: "current", desc: "Access logs, network flows, intrusion pattern signals", value: 7, sub: ["Threat patterns","Access anomalies"], bridge: "Integrates threat signals with coding, finance and energy operations — Odena elevates threat context so defenders respond faster." },
+  { id: "health", label: "Health Signals", type: "current", desc: "Vital signs, waveform changes, patient trends", value: 7, sub: ["ECG events","Vitals segmentation"], bridge: "Links patient trends to research, public health and regulatory oversight — Odena turns operational health data into safer workflows." },
+  { id: "commerce", label: "E-Commerce", type: "current", desc: "Browsing flows, demand curves, customer signals", value: 8, sub: ["Demand curves","Product activity"], bridge: "Bridges customer intent to retail, entertainment and supply chain — Odena drives conversion improvements with signal-backed actions." },
+  { id: "gaming", label: "Gaming Telemetry", type: "current", desc: "Player behavior, match signals, anti-cheat patterns", value: 7, sub: ["Match data","Behavior signals"], bridge: "Feeds player behaviour into security and engagement pipelines — Odena helps maintain fair play while improving retention." },
+  { id: "travel", label: "Travel Systems", type: "current", desc: "Flight delays, route flows, airport congestion patterns", value: 7, sub: ["Delay patterns","Traffic flows"], bridge: "Links travel signals to mobility and logistics — Odena uncovers delay root causes and optimizes flows." },
+
+  { id: "agri", label: "Agriculture", type: "next", desc: "Crop health signals, soil patterns, farm activity data", value: 7, sub: ["Plant health","Soil signals"], bridge: "Combines satellite, climate and ground telemetry for actionable agronomy — Odena helps maximize yield while minimizing risk." },
+  { id: "manufacturing", label: "Manufacturing", type: "next", desc: "Machine telemetry, defect patterns, process streams", value: 7, sub: ["Machine events","Quality signals"], bridge: "Links production telemetry to supply chain and energy signals — Odena surfaces maintenance windows and quality improvements." },
+  { id: "energy", label: "Energy", type: "next", desc: "Grid flows, consumption patterns, sensor events", value: 7, sub: ["Load curves","Consumption spikes"], bridge: "Joins grid data with manufacturing and security to reduce downtime — Odena enables smarter, more reliable energy operations." },
+  { id: "mobility", label: "Mobility", type: "next", desc: "Vehicle signals, traffic telemetry, route behaviors", value: 8, sub: ["Traffic patterns","Vehicle events"], bridge: "Integrates vehicle flows with telemetry and travel systems — Odena informs routing, congestion management and fleet ops." },
+  { id: "telecom", label: "Telecom", type: "next", desc: "Tower performance, packet loss flows, network routing", value: 7, sub: ["Network flows","Signal stability"], bridge: "Connects telecom telemetry to mobility and IoT streams — Odena helps prioritize infrastructure fixes by impact." },
+  { id: "public", label: "Public Data", type: "next", desc: "Civic signals, government datasets, population shifts", value: 6, sub: ["Census patterns","Public signals"], bridge: "Bridges civic datasets to urban planning, climate and regulatory teams — Odena helps translate public data into operational policy signals." },
+  { id: "sports", label: "Sports Analytics", type: "next", desc: "Player stats, motion tracking, event flow", value: 7, sub: ["Match flow","Player segmentation"], bridge: "Maps motion and event signals into entertainment and fan engagement pipelines — Odena reveals performance insights beyond box scores." },
+  { id: "retail", label: "Retail", type: "next", desc: "Footfall signals, product movement, store operations", value: 6, sub: ["Footfall maps","Store telemetry"], bridge: "Links in-store behaviour to commerce and supply chain — Odena turns footfall into profitable layout and stocking choices." },
+  { id: "realestate", label: "Real Estate", type: "next", desc: "Price movement, locality shifts, amenity signals", value: 6, sub: ["Price curves","Locality signals"], bridge: "Combines public, finance and satellite signals to reveal locality trends — Odena provides clearer investment signals." },
+  { id: "entertainment", label: "Entertainment", type: "next", desc: "Viewership patterns, scene segmentation, engagement flows", value: 6, sub: ["Scene changes","Engagement tracks"], bridge: "Ties audience data to social and commerce — Odena helps creators anticipate what resonates next." },
+  { id: "legal", label: "Legal Data", type: "next", desc: "Case networks, citation chains, pattern matching", value: 6, sub: ["Case clustering","Citation flows"], bridge: "Connects legal patterns to regulatory and research signals — Odena accelerates case discovery and compliance research." },
+  { id: "supplychain", label: "Supply Chain", type: "next", desc: "Inventory signals, movement flows, bottlenecks", value: 7, sub: ["Inventory shifts","Warehouse telemetry"], bridge: "Joins logistics, manufacturing and retail signals into a single operational view — Odena reveals supply choke points and recovery actions." },
+
+  { id: "ai_safety", label: "AI Safety & Governance", type: "next", desc: "Model audits, behaviour tracing, misuse detection", value: 9, sub: ["Audit trails","Behaviour monitoring"], bridge: "Connects model outputs to engineering, legal and public accountability — Odena provides traceable oversight and safety signals for deployed AI." },
+  { id: "regulatory", label: "Regulatory Intelligence", type: "next", desc: "Policy alignment, compliance signals, audit reporting", value: 8, sub: ["Policy mapping","Compliance dashboards"], bridge: "Bridges operational logs, model outputs and public policy — Odena turns regulation into continuous, practical observability." },
+  { id: "model_drift", label: "Model Drift & Misuse Detection", type: "next", desc: "Continuous monitoring, anomaly detection, misuse flags", value: 8, sub: ["Drift alerts","Misuse patterns"], bridge: "Links telemetry, user signals and model outputs to quickly detect drift and potential misuse — Odena keeps AI reliable in production." },
+  { id: "ai_risk", label: "AI Risk Prediction", type: "next", desc: "Forecasting safety-sensitive events and systemic risks", value: 8, sub: ["Risk scoring","Scenario forecasting"], bridge: "Aggregates cross-domain signals (finance, health, public) to predict AI-related risks — Odena provides early warning for high-impact scenarios." }
 ];
 
-const links: LinkT[] = [
+
+const links = [
   { source: "coding", target: "security", weight: 1 },
-  { source: "satellite", target: "climate", weight: 1 },
+  { source: "coding", target: "ai_safety", weight: 0.95 },
+  { source: "coding", target: "model_drift", weight: 0.8 },
+
+  { source: "education", target: "research", weight: 0.9 },
   { source: "education", target: "finance", weight: 0.9 },
+  { source: "education", target: "ai_safety", weight: 0.6 },
+
+  { source: "satellite", target: "climate", weight: 1 },
+  { source: "satellite", target: "agri", weight: 0.95 },
+  { source: "satellite", target: "public", weight: 0.8 },
+
   { source: "social", target: "commerce", weight: 1 },
+  { source: "social", target: "entertainment", weight: 0.85 },
+  { source: "social", target: "public", weight: 0.7 },
+
   { source: "research", target: "health", weight: 0.8 },
-  { source: "logistics", target: "supplychain", weight: 1 },
-  { source: "commerce", target: "retail", weight: 1 },
-  { source: "finance", target: "security", weight: 1 },
+  { source: "research", target: "ai_safety", weight: 0.9 },
+
   { source: "telemetry", target: "mobility", weight: 1 },
-  { source: "climate", target: "agri", weight: 1 },
-  { source: "health", target: "public", weight: 0.8 },
-  { source: "gaming", target: "security", weight: 0.7 },
-  { source: "travel", target: "mobility", weight: 0.7 },
-  { source: "logistics", target: "manufacturing", weight: 0.9 },
   { source: "telemetry", target: "telecom", weight: 0.9 },
-  { source: "commerce", target: "entertainment", weight: 0.8 },
+  { source: "telemetry", target: "model_drift", weight: 0.95 },
+
+  { source: "logistics", target: "supplychain", weight: 1 },
+  { source: "logistics", target: "manufacturing", weight: 0.9 },
+
+  { source: "finance", target: "security", weight: 1 },
   { source: "finance", target: "realestate", weight: 0.7 },
+  { source: "finance", target: "regulatory", weight: 0.95 },
+
+  { source: "climate", target: "agri", weight: 1 },
+  { source: "climate", target: "public", weight: 0.8 },
+
   { source: "security", target: "energy", weight: 0.8 },
-  { source: "energy", target: "manufacturing", weight: 1 },
+  { source: "security", target: "ai_safety", weight: 0.9 },
+
+  { source: "health", target: "public", weight: 0.8 },
+  { source: "health", target: "regulatory", weight: 0.9 },
+
+  { source: "commerce", target: "retail", weight: 1 },
+  { source: "commerce", target: "entertainment", weight: 0.8 },
+
+  { source: "gaming", target: "security", weight: 0.7 },
+  { source: "gaming", target: "entertainment", weight: 0.75 },
+
+  { source: "travel", target: "mobility", weight: 0.7 },
+  { source: "travel", target: "logistics", weight: 0.6 },
+
   { source: "agri", target: "public", weight: 0.6 },
+  { source: "agri", target: "ai_risk", weight: 0.5 },
+
+  { source: "manufacturing", target: "supplychain", weight: 0.8 },
+  { source: "manufacturing", target: "energy", weight: 1 },
+
+  { source: "energy", target: "manufacturing", weight: 1 },
+  { source: "energy", target: "telecom", weight: 0.6 },
+
+  { source: "mobility", target: "telecom", weight: 0.7 },
+  { source: "mobility", target: "public", weight: 0.6 },
+
+  { source: "telecom", target: "model_drift", weight: 0.7 },
+
+  { source: "public", target: "regulatory", weight: 0.85 },
+  { source: "public", target: "realestate", weight: 0.5 },
+
   { source: "sports", target: "entertainment", weight: 0.6 },
+
+  { source: "retail", target: "supplychain", weight: 0.7 },
+
   { source: "realestate", target: "public", weight: 0.5 },
-  { source: "supplychain", target: "manufacturing", weight: 0.8 }
+
+  { source: "entertainment", target: "social", weight: 0.7 },
+
+  { source: "legal", target: "regulatory", weight: 0.9 },
+  { source: "legal", target: "research", weight: 0.6 },
+
+  { source: "supplychain", target: "manufacturing", weight: 0.8 },
+  { source: "supplychain", target: "logistics", weight: 1 },
+
+  { source: "ai_safety", target: "regulatory", weight: 1 },
+  { source: "ai_safety", target: "model_drift", weight: 0.95 },
+  { source: "ai_safety", target: "ai_risk", weight: 0.95 },
+  { source: "ai_safety", target: "coding", weight: 0.9 },
+  { source: "ai_safety", target: "research", weight: 0.9 },
+  { source: "regulatory", target: "finance", weight: 0.9 },
+  { source: "regulatory", target: "health", weight: 0.9 },
+  { source: "model_drift", target: "telemetry", weight: 0.95 },
+  { source: "model_drift", target: "manufacturing", weight: 0.6 },
+  { source: "ai_risk", target: "public", weight: 0.85 },
+  { source: "ai_risk", target: "security", weight: 0.85 }
 ];
 
 function clamp(v: number, a: number, b: number) {
@@ -128,6 +204,7 @@ export default function DomainNetworkMap() {
       }));
     }
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPositions([
       ...place(captured, radii[0], 0.1),
       ...place(current, radii[1], Math.PI / 8),
@@ -177,11 +254,11 @@ export default function DomainNetworkMap() {
     return positions.find((p) => p.id === id);
   }
 
-  function tooltipStyle(clientX: number, clientY: number) {
-    const box = containerRef.current?.getBoundingClientRect();
-    if (!box) return { left: clientX + 12, top: clientY + 12 };
-    return { left: clientX - box.left + 12, top: clientY - box.top + 12 };
-  }
+function tooltipStyle(clientX: number, clientY: number) {
+  const box = containerRef.current?.getBoundingClientRect();
+  if (!box) return { left: clientX + 12, top: clientY + 28 };
+  return { left: clientX - box.left + 32, top: clientY - box.top + 28 };
+}
 
   function linkPath(sx: number, sy: number, tx: number, ty: number) {
     const mx = (sx + tx) / 2;
@@ -289,13 +366,12 @@ export default function DomainNetworkMap() {
         {hover && (() => {
           const node = nodeById(hover.id);
           if (!node) return null;
-          const pos = tooltipStyle(hover.clientX, hover.clientY);
           return (
             <div
               className="pointer-events-none z-50"
               style={{
                 position: "absolute",
-                transform: `translate(${pos.left}px, ${pos.top}px)`,
+                transform: `translate(50px, -500px)`,
                 minWidth: 220,
                 maxWidth: 300,
               }}
