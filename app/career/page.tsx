@@ -1,5 +1,4 @@
 import CallToAction from "@/components/CallToAction";
-import Link from "next/link";
 
 export default function CareerPage() {
   return (
