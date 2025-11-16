@@ -1,4 +1,5 @@
 import CallToAction from "@/components/CallToAction";
+import { members } from "@/data";
 import { Metadata } from "next";
 import Image from "next/image";
 import { FaCode, FaLinkedinIn } from "react-icons/fa";
@@ -102,40 +103,7 @@ export default function About() {
           </a>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {[
-            {
-              name: "Paranjai Gusaria",
-              role: "Research Systems, Adaptive Pipelines, and Zero-Shot Automation",
-              img: "/paranjai.jpeg",
-              portfolio: "",
-              twitter: "",
-              linkedin: "https://linkedin.com/in/paranjai",
-            },
-            {
-              name: "Anant Kumar Sharma",
-              role: "Product Architect, Developer, and Solutions Specialist",
-              img: "/anant.png",
-              portfolio: "https://www.anantx.dev/",
-              twitter: "https://x.com/anantXdev",
-              linkedin: "https://www.linkedin.com/in/anant-kr-sharma-341793273/",
-            },
-            {
-              name: "Dhruv Singhal",
-              role: "Product Strategist, Outreach Lead, and Growth Catalyst",
-              img: "/dhruv.png",
-              portfolio: "",
-              twitter: "",
-              linkedin: "https://www.linkedin.com/in/dhruvsinghal6888/",
-            },
-            {
-              name: "Dilpreet Grover",
-              role: "Solution Designer, Data Analyst, and Operations Specialist",
-              img: "/dilpreet.png",
-              portfolio: "https://www.dilpreetgrover.me/",
-              twitter: "https://x.com/dfordp11",
-              linkedin: "https://www.linkedin.com/in/dilpreet-grover-17726b224/",
-            },
-          ].map((person, i) => (
+          {members.map((person, i) => (
             <div
               key={i}
               className="p-6 rounded-[10px] bg-amber-900/3 border border-amber-900/10 transition text-center"

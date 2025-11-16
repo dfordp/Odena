@@ -57,13 +57,17 @@ export default function TargetingDial() {
         <div className="relative w-full lg:w-[45vw] h-[40vh] lg:h-[65vh] flex items-center justify-center">
 
           {/* Pivot semicircle */}
-          <svg
-            width={isMobile ? "120" : screenWidth < 1280 ? "280" : "360"}
-            height={isMobile ? "240" : screenWidth < 1280 ? "300" : "360"}
+            <svg
+            width={isMobile ? "120" : screenWidth < 1280 ? "0" : "360"}
+            height={isMobile ? "240" : screenWidth < 1280 ? "0" : "360"}
             viewBox={isMobile ? "0 0 220 240" : screenWidth < 1280 ? "0 0 260 300" : "0 0 280 360"}
-            className="absolute left-1 top-7 md:top-14 lg:top-16 opacity-50"
-            style={{ transform: "translateX(-80%)" }}
-          >
+            className={`absolute opacity-50 ${isMobile ? "block" : screenWidth < 1280 ? "hidden" : "block"}`}
+            style={{ 
+              transform: isMobile ? "translateX(-80%)" : screenWidth < 1280 ? "translateX(-85%)" : "translateX(-80%)",
+              left: isMobile ? "0%" : screenWidth < 1280 ? "0%" : "4px",
+              top: isMobile ? "10%" : screenWidth < 1280 ? "15%" : "10%"
+            }}
+            >
             <path
               d={isMobile ? "M60 0 A 55 60 0 0 1 60 240" : screenWidth < 1280 ? "M70 0 A 65 75 0 0 1 70 300" : "M90 0 A 75 90 0 0 1 90 360"}
               stroke="var(--foreground)"
@@ -71,13 +75,13 @@ export default function TargetingDial() {
               fill="none"
               opacity="0.35"
             />
-          </svg>
+            </svg>
           <div className="absolute top-9/10 -translate-y-1/2 w-full h-full" style={{ transform: "translateX(-20%)" }}>
             {items.map((item, i) => {
               const offset = i - active;
               const angle = START_ANGLE + offset * (SPREAD / (items.length - 1));
-              const x = Math.cos((angle * Math.PI) / 144) * RADIUS;
-              const y = Math.sin((angle * Math.PI) / 128) * RADIUS;
+              const x = Math.cos((angle * Math.PI) / 180) * RADIUS;
+              const y = Math.sin((angle * Math.PI) / 160) * RADIUS;
               return (
                 <motion.div
                   key={i}

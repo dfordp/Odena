@@ -63,9 +63,9 @@ export default function Home() {
       {/* ===========================================================
           WHAT WE ARE TARGETING
       ============================================================ */}
-      <section className="py-8 px-6">
+      <section className="pt-8 px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold text-center">
-          What Are We Targeting?
+          What Are We Offering?
         </h2>
         <TargetingSection/>
       </section>
