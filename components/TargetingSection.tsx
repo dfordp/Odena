@@ -27,7 +27,7 @@ export default function TargetingDial() {
       const idx = Math.floor(v * (items.length + 0.3));
       setActive(Math.max(0, Math.min(items.length - 1, idx)));
     });
-  }, []);
+  }, [items.length, scrollYProgress]);
 
   // ----- ARC CALCULATIONS -----
   const [isMobile, setIsMobile] = useState(false);

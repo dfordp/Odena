@@ -4,6 +4,7 @@ import Link from "next/link";
 import DomainNetworkMap from "@/components/DomainNetworkMap";
 import TargetingSection from "@/components/TargetingSection";
 import CallToAction from "@/components/CallToAction";
+import SplineAutoLoop from "@/components/SplineAutoLoop";
 
 export default function Home() {
 
@@ -48,19 +49,7 @@ export default function Home() {
 
           {/* Right: Spline Element - Hidden on small screens */}
           <div className="hidden lg:flex flex-1 w-full h-[500px] xl:h-[650px] 2xl:h-[750px] items-center justify-center touch-none select-none relative">
-            <iframe 
-              src='https://my.spline.design/database-gz136BnSzn7JiItLByWnyxzo/' 
-              frameBorder='0' 
-              width='100%' 
-              height='100%'
-              title="3D Database Visualization"
-              className="touch-none"
-              style={{ 
-                overflow: 'hidden',
-                touchAction: 'none'
-              }}
-              suppressHydrationWarning
-            ></iframe>
+            <SplineAutoLoop />
             {/* Overlay to hide Spline logo */}
             <div 
               className="absolute bottom-3 right-3 w-37 h-12 pointer-events-none z-10 rounded-xl"
