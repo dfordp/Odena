@@ -1,4 +1,55 @@
 import CallToAction from "@/components/CallToAction";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Careers at Odena – Join a Research-Driven Engineering Collective",
+  description:
+    "Odena is a research-first engineering collective building adaptive pipelines, distributed systems, and zero-shot operators. We don't hire for titles—we look for builders who enjoy solving technically ambitious problems.",
+  keywords: [
+    "Odena careers",
+    "Odena hiring",
+    "research engineering jobs",
+    "distributed systems jobs",
+    "data infrastructure roles",
+    "machine learning pipelines",
+    "compete-based hiring",
+    "AI systems engineering",
+    "high-throughput systems",
+    "research engineer collective",
+    "zero-shot models work",
+    "technical competitions recruiting"
+  ],
+  openGraph: {
+    title: "Careers at Odena – Build Systems That Shouldn’t Work",
+    description:
+      "Join Odena and work on adaptive routing meshes, high-throughput data pipelines, zero-shot ranking models, and multimodal operator chains. No titles, no hierarchy—just deep technical work.",
+    url: "https://www.odena.io/careers",
+    siteName: "Odena",
+    images: [
+      {
+        url: "https://www.odena.io/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Odena Careers – Research Engineering Collective",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers at Odena – Work on Hard Technical Problems",
+    description:
+      "Odena recruits builders who love deep engineering challenges: adaptive pipelines, multimodal systems, distributed infra, zero-shot operators, and research-grade data tooling.",
+    images: ["https://www.odena.io/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://www.odena.io/careers",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function CareerPage() {
   return (
