@@ -181,6 +181,23 @@ export default function ContentRenderer({ blocks }: { blocks: Block[] }) {
               </div>
             );
 
+          // Link embeds -------------------------------------
+          case "embeds":
+            return (
+              <div key={idx} className="space-y-2 my-6">
+                {block.items.map((embed, i) => (
+                  <a
+                    key={i}
+                    href={embed.url}
+                    target="_blank"
+                    className="text-primary underline hover:opacity-80 block"
+                  >
+                    {embed.label}
+                  </a>
+                ))}
+              </div>
+            );
+
           default:
             return null;
         }
