@@ -363,15 +363,18 @@ function tooltipStyle(clientX: number, clientY: number) {
           </g>
         </svg>
         {/* Tooltip */}
+                {/* Tooltip */}
         {hover && (() => {
           const node = nodeById(hover.id);
           if (!node) return null;
+          const style = tooltipStyle(hover.clientX, hover.clientY);
           return (
             <div
               className="pointer-events-none z-50"
               style={{
                 position: "absolute",
-                transform: `translate(50px, -500px)`,
+                left: `${style.left}px`,
+                top: `${style.top}px`,
                 minWidth: 220,
                 maxWidth: 300,
               }}
