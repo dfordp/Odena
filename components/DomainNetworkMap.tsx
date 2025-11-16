@@ -16,8 +16,6 @@ type Node = {
   y?: number;
 };
 
-type LinkT = { source: string; target: string; weight?: number };
-
 const nodes: Node[] = [
   { id: "coding", label: "Coding", type: "captured", desc: "Repository insights, code dependency mapping, PR ranking", value: 10, sub: ["Code analysis","Impact mapping"], bridge: "Links engineering artefacts to security, compliance and research — Odena surfaces high-impact changes and risk exposures so teams act with confidence." },
   { id: "education", label: "Education", type: "captured", desc: "Assignment scoring, conceptual understanding patterns", value: 9, sub: ["Grading","Learning analytics"], bridge: "Connects learner signals to curriculum, finance and research — Odena turns patterns into scalable personalization and outcome signals." },
@@ -204,7 +202,6 @@ export default function DomainNetworkMap() {
       }));
     }
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPositions([
       ...place(captured, radii[0], 0.1),
       ...place(current, radii[1], Math.PI / 8),

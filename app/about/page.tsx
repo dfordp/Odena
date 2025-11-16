@@ -106,7 +106,7 @@ export default function About() {
           {members.map((person, i) => (
             <div
               key={i}
-              className="p-6 rounded-[10px] bg-amber-900/3 border border-amber-900/10 transition text-center"
+              className="p-6 rounded-[10px] bg-amber-900/3 border border-amber-900/10 text-center"
             >
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
               <Image
@@ -162,7 +162,7 @@ export default function About() {
           CTA
       ========================== */}
       <section className="py-6 px-4 text-center">
-        <h2 className="text-3xl font-semibold">Let&apos;s Build Something Hard</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">Let&apos;s Build Something Hard</h2>
         <p className="mt-2 max-w-xl md:max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-6">
           If you have complex datasets, scaling problems, or messy pipelines we want to work with you.
         </p>

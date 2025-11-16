@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/navbar";
 import NavbarDesktop from "@/components/navbar-desktop";
+import Footer from "@/components/Footer";
 
 const fontSans = Outfit({
   variable: "--font-sans",
@@ -113,6 +114,7 @@ export default function RootLayout({
         <NavbarDesktop />
         <Navbar />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

@@ -130,7 +130,7 @@ export default function CareerPage() {
           FINAL CTA
       ============================ */}
       <section className="py-6 text-center px-6">
-        <h2 className="text-3xl font-semibold">If You Want Easy Work, This Isn’t It</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">If You Want Easy Work, This Isn’t It</h2>
         <p className="text-muted-foreground max-w-xl md:max-w-2xl mx-auto mt-2 leading-relaxed mb-6">
           If you want challenges, trust, and a team that builds out of passion welcome to Odena.
         </p>

@@ -1,50 +1,50 @@
 type HeadingBlock = {
-  type: "heading";
-  level: 1 | 2 | 3;
-  content: string;
+    type: "heading";
+    level: 1 | 2 | 3;
+    content: string;
 };
 
 type ParagraphBlock = {
-  type: "paragraph";
-  content: string;
+    type: "paragraph";
+    content: string;
 };
 
 type ImageBlock = {
-  type: "image";
-  src: string;
-  alt: string;
+    type: "image";
+    src: string;
+    alt: string;
 };
 
 type ListBlock = {
-  type: "list";
-  style: "bulleted" | "numbered";
-  items: string[];
+    type: "list";
+    style: "bulleted" | "numbered";
+    items: string[];
 };
 
 type CodeBlock = {
-  type: "code";
-  language?: string;
-  content: string;
+    type: "code";
+    language?: string;
+    content: string;
 };
 
 type EmbedItem = {
-  type: "link";
-  url: string;
-  label: string;
+    type: "link";
+    url: string;
+    label: string;
 };
 
 type EmbedsBlock = {
-  type: "embeds";
-  items: EmbedItem[];
+    type: "embeds";
+    items: EmbedItem[];
 };
 
 export type ContentBlock =
-  | HeadingBlock
-  | ParagraphBlock
-  | ImageBlock
-  | ListBlock
-  | CodeBlock
-  | EmbedsBlock;
+    | HeadingBlock
+    | ParagraphBlock
+    | ImageBlock
+    | ListBlock
+    | CodeBlock
+    | EmbedsBlock;
 
 interface TeamMember {
     name: string;
@@ -56,13 +56,13 @@ interface TeamMember {
 }
 
 export interface Project {
-  id: string;
-  image: string;
-  alt: string;
-  title: string;
-  description: string;
-  slug: string;
-  contentBlocks: ContentBlock[];
+    id: string;
+    image: string;
+    alt: string;
+    title: string;
+    description: string;
+    slug: string;
+    contentBlocks: ContentBlock[];
 }
 
 export const members: TeamMember[] = [
@@ -101,14 +101,14 @@ export const members: TeamMember[] = [
 ];
 
 export const projects : Project[] = [
-  {
-    id: "hackmate-match-making",
-    image: "/hackmate.jpeg",
-    alt: "Hackmate",
-    title: "Hackmate",
-    description: "A swipe-based matchmaking platform designed to help founders and builders discover potential co-founders, collaborators, or indie hackers",
-    slug: "hackmate-match-making",
-    contentBlocks : [
+    {
+        id: "hackmate-match-making",
+        image: "/hackmate.jpeg",
+        alt: "Hackmate",
+        title: "Hackmate",
+        description: "A swipe-based matchmaking platform designed to help founders and builders discover potential co-founders, collaborators, or indie hackers",
+        slug: "hackmate-match-making",
+        contentBlocks : [
     {
         type: "heading",
         level: 1,
@@ -321,5 +321,5 @@ export const projects : Project[] = [
         ]
     }
     ]
-  },
+    },
 ];
