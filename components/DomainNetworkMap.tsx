@@ -257,7 +257,31 @@ export default function DomainNetworkMap() {
 function tooltipStyle(clientX: number, clientY: number) {
   const box = containerRef.current?.getBoundingClientRect();
   if (!box) return { left: clientX + 12, top: clientY + 28 };
-  return { left: clientX - box.left + 32, top: clientY - box.top + 28 };
+  
+  const tooltipWidth = 300; // max-width from your styles
+  const tooltipHeight = 200; // approximate height
+  const padding = 8;
+  
+  let left = clientX - box.left + 32;
+  let top = clientY - box.top + 28;
+  
+  // Clamp horizontally
+  if (left + tooltipWidth + padding > window.innerWidth) {
+    left = window.innerWidth - tooltipWidth - padding;
+  }
+  if (left < padding) {
+    left = padding;
+  }
+  
+  // Clamp vertically
+  if (top + tooltipHeight + padding > window.innerHeight) {
+    top = clientY - box.top - tooltipHeight - 8;
+  }
+  if (top < padding) {
+    top = padding;
+  }
+  
+  return { left, top };
 }
 
   function linkPath(sx: number, sy: number, tx: number, ty: number) {
@@ -363,7 +387,6 @@ function tooltipStyle(clientX: number, clientY: number) {
           </g>
         </svg>
         {/* Tooltip */}
-                {/* Tooltip */}
         {hover && (() => {
           const node = nodeById(hover.id);
           if (!node) return null;
