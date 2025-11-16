@@ -9,6 +9,9 @@ import {
     Layers,
     BarChart3,
     Sparkles,
+    Database,
+    Zap,
+    Shield,
 } from "lucide-react";
 
 export default function NavbarDesktop() {
@@ -169,6 +172,33 @@ export default function NavbarDesktop() {
                     >
                         <Sparkles className="w-4 h-4 text-primary" />
                         <span>Consulting</span>
+                    </Link>
+
+                    <Link
+                        href="/services/data-ingestion"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
+                        onClick={() => setIsServicesOpen(false)}
+                    >
+                        <Database className="w-4 h-4 text-primary" />
+                        <span>Data Ingestion</span>
+                    </Link>
+
+                    <Link
+                        href="/services/data-optimization"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
+                        onClick={() => setIsServicesOpen(false)}
+                    >
+                        <Zap className="w-4 h-4 text-primary" />
+                        <span>Data Optimization</span>
+                    </Link>
+
+                    <Link
+                        href="/services/ai-safety-regulation"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
+                        onClick={() => setIsServicesOpen(false)}
+                    >
+                        <Shield className="w-4 h-4 text-primary" />
+                        <span>AI Safety & Regulation</span>
                     </Link>
                     </div>
                 )}

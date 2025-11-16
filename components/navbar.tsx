@@ -10,7 +10,10 @@ import {
   BarChart3,
   Sparkles,
   Menu,
-  X
+  X,
+  Database,
+  Zap,
+  Shield
 } from "lucide-react";
 
 export default function Navbar() {
@@ -143,6 +146,33 @@ export default function Navbar() {
                   >
                     <Sparkles className="w-4 h-4 text-primary" />
                     <span>Consulting</span>
+                  </Link>
+
+                  <Link
+                    href="/services/data-ingestion"
+                    className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Database className="w-4 h-4 text-primary" />
+                    <span>Data Ingestion</span>
+                  </Link>
+
+                  <Link
+                    href="/services/data-optimization"
+                    className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Zap className="w-4 h-4 text-primary" />
+                    <span>Data Optimization</span>
+                  </Link>
+
+                  <Link
+                    href="/services/ai-safety-regulation"
+                    className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Shield className="w-4 h-4 text-primary" />
+                    <span>AI Safety & Regulation</span>
                   </Link>
                 </div>
               )}

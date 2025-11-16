@@ -1,103 +1,168 @@
-import { SlidersHorizontal, Layers, BarChart3, Sparkles } from "lucide-react";
+import { SlidersHorizontal, Layers, BarChart3, Sparkles, Database, Zap, Shield } from "lucide-react";
 import Link from "next/link";
+import CallToAction from "@/components/CallToAction";
 
 export default function ServicesPage() {
+  const services = [
+    {
+      icon: SlidersHorizontal,
+      title: "Data Ranking",
+      desc: "Zero-shot ranking systems that understand datasets without training. Built for speed, relevance, and precision across domains.",
+      href: "/services/data-ranking",
+      highlights: ["Zero-shot models", "Cross-domain ranking", "Real-time scoring"]
+    },
+    {
+      icon: Layers,
+      title: "Data Segregation",
+      desc: "Self-organizing clustering engines that automatically segment data by behavior, semantics, and structure.",
+      href: "/services/data-segregation",
+      highlights: ["Adaptive clustering", "Multi-modal segmentation", "Automated grouping"]
+    },
+    {
+      icon: BarChart3,
+      title: "Data Insights",
+      desc: "Intelligence extraction systems that surface patterns, anomalies, and actionable insights from complex datasets.",
+      href: "/services/insights",
+      highlights: ["Pattern detection", "Anomaly identification", "Predictive analytics"]
+    },
+    {
+      icon: Sparkles,
+      title: "Consulting",
+      desc: "Strategic guidance on data architecture, pipeline design, and system optimization from engineers who build production systems.",
+      href: "/services/consulting",
+      highlights: ["Architecture review", "Pipeline optimization", "Research partnerships"]
+    },
+    {
+      icon: Database,
+      title: "Data Ingestion",
+      desc: "Robust, scalable pipelines that move data from any source to your infrastructure with real-time validation and automated recovery.",
+      href: "/services/data-ingestion",
+      highlights: ["Multi-source integration", "Real-time processing", "Data quality checks"]
+    },
+    {
+      icon: Zap,
+      title: "Data Optimization",
+      desc: "Transform slow, expensive data systems into fast, cost-effective infrastructure through query tuning and resource optimization.",
+      href: "/services/data-optimization",
+      highlights: ["Query performance", "Storage optimization", "Cost reduction"]
+    },
+    {
+      icon: Shield,
+      title: "AI Safety & Regulation",
+      desc: "Navigate AI compliance and build trustworthy systems that meet regulatory standards for fairness, transparency, and safety.",
+      href: "/services/ai-safety-regulation",
+      highlights: ["Compliance frameworks", "Safety audits", "Ethical AI"]
+    }
+  ];
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
 
       {/* ===========================
           HERO
       ============================ */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 text-center max-w-4xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 text-center max-w-4xl mx-auto">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
           Systems That Organize, Rank, and Understand Data
         </h1>
 
-        <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-4">
+        <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl mx-auto">
           Odena builds research-grade pipelines for ranking, segmenting,
           cleaning, and interpreting multimodal datasets.  
           Everything we make comes from first-principles experiments, competition-level problem solving, 
-          and a need to push what’s possible.
+          and a need to push what&apos;s possible.
         </p>
       </section>
 
       {/* ===========================
           SERVICES GRID
       ============================ */}
-      <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 max-w-6xl mx-auto grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="py-8 sm:py-10 px-4 sm:px-6 max-w-6xl mx-auto grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, idx) => {
+          const Icon = service.icon;
+          return (
+            <Link 
+              key={idx} 
+              href={service.href}
+              className="group p-8 rounded-[10px] bg-amber-900/4 border border-amber-900/18 hover:border-amber-900/30 transition-all duration-300"
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <Icon className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                </div>
+              </div>
+              
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                {service.desc}
+              </p>
 
-        {/* Service 1 */}
-        <div className="p-6 rounded-xl bg-card border border-border shadow hover:shadow-lg transition group">
-          <SlidersHorizontal className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition" />
-          <h3 className="text-xl font-semibold">Data Ranking Pipelines</h3>
-          <p className="text-sm mt-2 text-muted-foreground leading-relaxed">
-            Zero-shot ranking systems that score any dataset code, media, text 
-            based on relevance, quality, anomaly likelihood, or custom criteria.
-          </p>
-          <Link href="/services/data-ranking" className="text-primary font-medium text-sm mt-4 inline-block hover:underline cursor-pointer">
-            Learn more →
-          </Link>
-        </div>
+              <div className="flex flex-wrap gap-2">
+                {service.highlights.map((highlight, i) => (
+                  <span 
+                    key={i}
+                    className="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary font-medium"
+                  >
+                    {highlight}
+                  </span>
+                ))}
+              </div>
 
-        {/* Service 2 */}
-        <div className="p-6 rounded-xl bg-card border border-border shadow hover:shadow-lg transition group">
-          <Layers className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition" />
-          <h3 className="text-xl font-semibold">Data Segregation Engines</h3>
-          <p className="text-sm mt-2 text-muted-foreground leading-relaxed">
-            Segmentation, clustering, and adaptive filtering for large-scale datasets.  
-            Built for high-throughput environments and multimodal inputs.
-          </p>
-          <Link href="/services/data-segregation" className="text-primary font-medium text-sm mt-4 inline-block hover:underline cursor-pointer">
-            Learn more →
-          </Link>
-        </div>
-
-        {/* Service 3 */}
-        <div className="p-6 rounded-xl bg-card border border-border shadow hover:shadow-lg transition group">
-          <BarChart3 className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition" />
-          <h3 className="text-xl font-semibold">Insight & Scoring Systems</h3>
-          <p className="text-sm mt-2 text-muted-foreground leading-relaxed">
-            Models that generate actionable insights across datasets by combining embeddings,
-            routing heuristics, and high-dimensional comparisons.
-          </p>
-          <Link href="/services/insights" className="text-primary font-medium text-sm mt-4 inline-block hover:underline cursor-pointer">
-            Learn more →
-          </Link>
-        </div>
-
-        {/* Service 4 */}
-        <div className="p-6 rounded-xl bg-card border border-border shadow hover:shadow-lg transition group">
-          <Sparkles className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition" />
-          <h3 className="text-xl font-semibold">Research & Engineering Consulting</h3>
-          <p className="text-sm mt-2 text-muted-foreground leading-relaxed">
-            We help teams design custom pipelines, operator networks,
-            and high-throughput architectures.  
-            If your data stack feels too slow or too messy we can fix it.
-          </p>
-          <Link href="/services/consulting" className="text-primary font-medium text-sm mt-4 inline-block hover:underline cursor-pointer">
-            Learn more →
-          </Link>
-        </div>
-
+              <div className="mt-4 inline-flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                Learn more →
+              </div>
+            </Link>
+          );
+        })}
       </section>
 
       {/* ===========================
-          CTA (FOMO SECTION)
+          HOW WE WORK
       ============================ */}
-      <section className="py-16 sm:py-20 md:py-24 text-center px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl font-semibold">Need systems that scale with ambition?</h2>
-        <p className="text-muted-foreground max-w-xl mx-auto mt-4 leading-relaxed text-sm sm:text-base px-4">
-          We collaborate with teams that want to build beyond templates.
-          If you&apos;re trying something unconventional or ambitious good.  
-          That&apos;s where we work best.
-        </p>
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
+          Built on Research, Scaled for Production
+        </h2>
 
-        <a
-          href="mailto:dilpreetgrover2@gmail.com"
-          className="mt-6 sm:mt-8 inline-block px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition cursor-pointer text-sm sm:text-base"
-        >
-          Start a Conversation
-        </a>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
+            <div className="text-3xl font-bold text-primary mb-2">01</div>
+            <h3 className="text-lg font-semibold mb-2">First-Principles Design</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              We don&apos;t use off-the-shelf solutions. Every system starts with fundamental questions about the problem space.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
+            <div className="text-3xl font-bold text-primary mb-2">02</div>
+            <h3 className="text-lg font-semibold mb-2">Competition-Grade Engineering</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Our systems are built by engineers who compete, iterate fast, and optimize for real-world constraints.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
+            <div className="text-3xl font-bold text-primary mb-2">03</div>
+            <h3 className="text-lg font-semibold mb-2">Production-Ready Delivery</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              From prototype to production, we ensure systems scale, integrate cleanly, and maintain performance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===========================
+          CTA SECTION
+      ============================ */}
+      <section className="py-6 text-center px-4 sm:px-6">
+        <h2 className="text-2xl md:text-3xl font-semibold">Ready to Solve Hard Data Problems?</h2>
+        <p className="mt-2 max-w-xl md:max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-6">
+          If you have complex datasets, scaling challenges, or ambitious technical goals, let&apos;s talk.
+        </p>
+        <CallToAction />
       </section>
     </div>
   );
