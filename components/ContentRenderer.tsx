@@ -81,7 +81,7 @@ export default function ContentRenderer({ blocks }: { blocks: Block[] }) {
                     {block.title}
                   </div>
                 )}
-                <pre className="bg-black/40 p-4 rounded-lg overflow-x-auto text-sm border border-border">
+                <pre className="bg-black/5 p-4 rounded-xl overflow-x-auto text-sm border border-border/40">
                   <code>{block.content}</code>
                 </pre>
               </div>

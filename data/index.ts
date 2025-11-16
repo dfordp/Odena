@@ -1,5 +1,5 @@
 import { ExternalLink, Share2 } from "lucide-react";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaProductHunt } from "react-icons/fa6";
 
 type HeadingBlock = {
     type: "heading";
@@ -110,8 +110,8 @@ export const projects : Project[] = [
   {
     id: "hackmate-match-making",
     image: "/hackmate.jpeg",
-    alt: "Hackmate",
-    title: "Hackmate",
+    alt: "HackMate",
+    title: "HackMate",
     description: "A swipe-based matchmaking platform designed to help founders and builders discover potential co-founders, collaborators, or indie hackers",
     slug: "hackmate-match-making",
     contentBlocks: [
@@ -121,25 +121,25 @@ export const projects : Project[] = [
                 { 
                     type: "link", 
                     url: "https://hackmate.app", 
-                    label: "Live: hackmate.app",
+                    label: "Live",
                     icon: ExternalLink
                 },
                 { 
                     type: "link", 
-                    url: "https://peerlist.io", 
-                    label: "Hackmate on Peerlist",
+                    url: "https://peerlist.io/dfordp/project/hackmate", 
+                    label: "Peerlist",
                     icon: Share2
                 },
                 { 
                     type: "link", 
-                    url: "https://producthunt.com", 
-                    label: "Hackmate on Product Hunt",
-                    icon: ExternalLink
+                    url: "https://www.producthunt.com/products/hackmate", 
+                    label: "ProductHunt",
+                    icon: FaProductHunt 
                 },
                 { 
                     type: "link", 
                     url: "https://github.com/dfordp/hackmate-rework", 
-                    label: "GitHub Repository",
+                    label: "GitHub",
                     icon: FaGithub
                 }
             ]
@@ -232,9 +232,9 @@ export const projects : Project[] = [
         type: "code",
         language: "text",
         content: `
-    Likes Given (SET)           likes:<user_id>
-    Match Queue (LIST)          matches:<user_id>
-    User Profile Cache (HASH)   user:<user_id>
+            Likes Given (SET)           likes:<user_id>
+            Match Queue (LIST)          matches:<user_id>
+            User Profile Cache (HASH)   user:<user_id>
         `
     },
 
@@ -248,9 +248,9 @@ export const projects : Project[] = [
         type: "list",
         style: "bulleted",
         items: [
-        "SET stores all outgoing swipes for each user, preventing duplicates and ensuring clean match logic.",
-        "LIST stores confirmed matches in chronological order for real-time feed rendering.",
-        "HASH stores cached user profile data to avoid repeated database queries."
+            "SET stores all outgoing swipes for each user, preventing duplicates and ensuring clean match logic.",
+            "LIST stores confirmed matches in chronological order for real-time feed rendering.",
+            "HASH stores cached user profile data to avoid repeated database queries."
         ]
     },
 
@@ -264,12 +264,12 @@ export const projects : Project[] = [
         type: "list",
         style: "bulleted",
         items: [
-        "**Frontend:** Next.js, Tailwind CSS",
-        "**Backend:** Next.js API Routes, Prisma, PostgreSQL",
-        "**Matching Engine:** Redis (SETs, LISTs, HASHes)",
-        "**Authentication:** Clerk",
-        "**Hosting:** Vercel",
-        "**Dev Environment:** Docker Compose (app + Postgres + Redis)"
+            "Frontend: Next.js, Tailwind CSS",
+            "Backend: Next.js API Routes, Prisma, PostgreSQL",
+            "Matching Engine: Redis (SETs, LISTs, HASHes)",
+            "Authentication: Clerk",
+            "Hosting: Vercel",
+            "Dev Environment: Docker Compose (app + Postgres + Redis)"
         ]
     },
 
