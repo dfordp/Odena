@@ -1,7 +1,57 @@
 import CallToAction from "@/components/CallToAction";
+import { Metadata } from "next";
 import Image from "next/image";
 import { FaCode, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+
+export const metadata: Metadata = {
+  title: "About Odena – Research Collective Building Adaptive Data Systems",
+  description:
+    "Odena is a research-driven engineering collective focused on building adaptive pipelines, zero-shot operators, and intelligent data systems. Learn about the people behind Odena and how we prototype, iterate, and scale through first principles.",
+  keywords: [
+    "Odena team",
+    "Odena research collective",
+    "Odena founders",
+    "data engineering research",
+    "zero-shot operators",
+    "adaptive pipelines",
+    "high-throughput systems",
+    "data infrastructure engineers",
+    "research engineering",
+    "AI engineering collective",
+    "distributed systems engineering",
+  ],
+  openGraph: {
+    title: "About Odena – The People Behind the Systems",
+    description:
+      "Meet the contributors, engineers, and researchers behind Odena. We build adaptive data pipelines, routing meshes, and zero-shot ranking models driven by curiosity and first-principles experimentation.",
+    url: "https://www.odena.io/about",
+    siteName: "Odena",
+    images: [
+      {
+        url: "https://www.odena.io/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Odena Research Collective",
+      },
+    ],
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Odena – Built by Engineers Who Love Hard Problems",
+    description:
+      "Odena is a competitive research collective creating adaptive pipelines, zero-shot operators, and intelligent infrastructure. Learn about our contributors.",
+    images: ["https://www.odena.io/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://www.odena.io/about",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function About() {
   return (
