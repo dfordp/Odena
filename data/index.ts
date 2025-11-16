@@ -1,3 +1,6 @@
+import { ExternalLink, Share2 } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+
 type HeadingBlock = {
   type: "heading";
   level: 1 | 2 | 3;
@@ -28,9 +31,12 @@ type CodeBlock = {
 };
 
 type EmbedItem = {
-  type: "link";
-  url: string;
-  label: string;
+    type: "link" | "component" | "icon";
+    url?: string;
+    label?: string;
+    component?: React.ComponentType<Record<string, unknown>>;
+    icon?: React.ComponentType<Record<string, unknown>>;
+    props?: Record<string, unknown>;
 };
 
 type EmbedsBlock = {
@@ -108,19 +114,36 @@ export const projects : Project[] = [
     title: "Hackmate",
     description: "A swipe-based matchmaking platform designed to help founders and builders discover potential co-founders, collaborators, or indie hackers",
     slug: "hackmate-match-making",
-    contentBlocks : [
+    contentBlocks: [
     {
-        type: "heading",
-        level: 1,
-        content: "Hackmate"
-    },
-
-    {
-        type: "paragraph",
-        content:
-        "Hackmate is an experimental, swipe-based matchmaking system designed to help founders, builders, and independent hackers discover aligned collaborators quickly. Instead of long profiles and generic networking platforms, Hackmate focuses on intent, skills, and mutual interest as the primary signals for forming new teams."
-    },
-
+            type: "embeds",
+            items: [
+                { 
+                    type: "link", 
+                    url: "https://hackmate.app", 
+                    label: "Live: hackmate.app",
+                    icon: ExternalLink
+                },
+                { 
+                    type: "link", 
+                    url: "https://peerlist.io", 
+                    label: "Hackmate on Peerlist",
+                    icon: Share2
+                },
+                { 
+                    type: "link", 
+                    url: "https://producthunt.com", 
+                    label: "Hackmate on Product Hunt",
+                    icon: ExternalLink
+                },
+                { 
+                    type: "link", 
+                    url: "https://github.com/dfordp/hackmate-rework", 
+                    label: "GitHub Repository",
+                    icon: FaGithub
+                }
+            ]
+        },
     {
         type: "image",
         src: "/hackmate.jpeg",
@@ -136,17 +159,17 @@ export const projects : Project[] = [
     {
         type: "paragraph",
         content:
-        "Hackmate began as a research project exploring whether collaboration discovery could be made as fast and intuitive as swiping. The platform reduces networking friction by presenting one potential collaborator at a time, capturing just enough structure (skills, intent, experience) to surface meaningful matches without demanding long-form bios."
+        "Hackmate began as a research project exploring whether collaborator discovery could be compressed into a fast, minimal interaction loop. Instead of long profiles or open-ended browsing, the platform presents a single relevant builder at a time and asks only one decision: would you build with this person?"
     },
 
     {
         type: "list",
         style: "bulleted",
         items: [
-        "Users create lightweight, skill-focused profiles.",
-        "The app shows one builder at a time for a right/left swipe.",
-        "When both users swipe right, they instantly appear in each other's match feed.",
-        "All match logic runs through an in-memory Redis layer for real-time performance."
+        "Lightweight profiles capture only skills, intent, and experience.",
+        "Users evaluate one builder at a time through a left/right swipe.",
+        "A mutual right-swipe instantly creates a shared match.",
+        "All matching logic runs on an in-memory Redis layer for real-time responsiveness."
         ]
     },
 
@@ -159,18 +182,18 @@ export const projects : Project[] = [
     {
         type: "paragraph",
         content:
-        "Hackmate uses a two-path model: a fast interaction path powered by Redis, and a slow persistence path backed by PostgreSQL. All real-time matching, swipe storage, and profile caching occur in the Redis fast path, ensuring minimal latency and immediate feedback."
+        "The system operates on a dual-path architecture: a fast interaction layer running entirely in Redis, and a persistence layer backed by PostgreSQL. All high-frequency operations swipes, match checks, feed updates occur in the Redis fast path to minimize latency during active sessions."
     },
 
     {
         type: "list",
         style: "numbered",
         items: [
-        "User fills a short profile describing skills, experience, and collaboration goals.",
-        "Hackmate serves relevant profiles for swiping.",
-        "Each swipe writes to a Redis SET to avoid duplicates.",
-        "Mutual swipes trigger a match, added to a Redis LIST for each user.",
-        "Users view matches in a real-time feed powered by WebSockets/SSE."
+        "Users create concise profiles outlining skills, experience, and collaboration goals.",
+        "Hackmate surfaces relevant candidates for swiping based on intent and skills.",
+        "Each swipe is written to a Redis SET, ensuring duplicates cannot occur.",
+        "If both users swipe right, the system writes a match into each user's Redis LIST.",
+        "Matches appear instantly in a real-time feed delivered through WebSockets or SSE."
         ]
     },
 
@@ -184,12 +207,12 @@ export const projects : Project[] = [
         type: "list",
         style: "bulleted",
         items: [
-        "Swipe-based discovery optimized for quick decision-making.",
-        "Real-time matches with low-latency Redis operations.",
-        "Profiles built around skills, experience, and intent.",
-        "Mutual-only visibility to reduce noise and awkwardness.",
-        "Integrated Redis caching layer for real-time responsiveness.",
-        "Clean, minimal UI focused on efficient evaluation."
+        "Decision-centric matching: a single swipe determines interest.",
+        "Low-latency real-time matches powered by Redis operations.",
+        "Profiles emphasize skill and intent rather than social presence.",
+        "Mutual-only visibility eliminates cold outreach and reduces noise.",
+        "In-memory caching provides sub-millisecond response during swiping.",
+        "Minimal UI optimized for quick evaluation instead of social engagement."
         ]
     },
 
@@ -202,17 +225,17 @@ export const projects : Project[] = [
     {
         type: "paragraph",
         content:
-        "The system separates state into two layers: a persistent relational layer (PostgreSQL) and a volatile, high-speed matching layer (Redis). This separation allows Hackmate to support real-time collaboration discovery with minimal resource overhead."
+        "Hackmate separates fast collaborative interactions from long-term data storage. PostgreSQL holds durable state such as user profiles and historical matches, while Redis handles all volatile, high-frequency operations. This architecture allows the platform to scale without compromising responsiveness."
     },
 
     {
         type: "code",
         language: "text",
         content: `
-    Likes Given (SET)        likes:<user_id>
-    Match Queue (LIST)       matches:<user_id>
-    User Profile Cache (HASH) user:<user_id>
-    `
+    Likes Given (SET)           likes:<user_id>
+    Match Queue (LIST)          matches:<user_id>
+    User Profile Cache (HASH)   user:<user_id>
+        `
     },
 
     {
@@ -225,9 +248,9 @@ export const projects : Project[] = [
         type: "list",
         style: "bulleted",
         items: [
-        "SET stores all swipes from a given user, preventing duplicates.",
-        "LIST stores confirmed matches in chronological order.",
-        "HASH stores cached profile data to reduce DB fetches during swipe sessions."
+        "SET stores all outgoing swipes for each user, preventing duplicates and ensuring clean match logic.",
+        "LIST stores confirmed matches in chronological order for real-time feed rendering.",
+        "HASH stores cached user profile data to avoid repeated database queries."
         ]
     },
 
@@ -242,7 +265,7 @@ export const projects : Project[] = [
         style: "bulleted",
         items: [
         "**Frontend:** Next.js, Tailwind CSS",
-        "**Backend:** Next.js API routes, Prisma, PostgreSQL",
+        "**Backend:** Next.js API Routes, Prisma, PostgreSQL",
         "**Matching Engine:** Redis (SETs, LISTs, HASHes)",
         "**Authentication:** Clerk",
         "**Hosting:** Vercel",
@@ -267,7 +290,7 @@ export const projects : Project[] = [
     docker run -p 6379:6379 redis
 
     npm run dev
-    `
+        `
     },
 
     {
@@ -297,29 +320,14 @@ export const projects : Project[] = [
         type: "list",
         style: "bulleted",
         items: [
-        "Role and interest-based filtering.",
-        "Time zone and region-aware matching.",
-        "Lightweight pitch cards and project summaries.",
-        "Improved scoring and ranking logic.",
-        "Enhanced match feed with conversation prompts."
+        "Filtering weighted by skills, role, and collaboration intent.",
+        "Region- and timezone-aware matching modes.",
+        "Lightweight project cards and pitch summaries.",
+        "Improved scoring and compatibility ranking.",
+        "A more expressive match feed with guided conversation prompts."
         ]
     },
-
-    {
-        type: "heading",
-        level: 2,
-        content: "Repository & Project Links"
-    },
-
-    {
-        type: "embeds",
-        items: [
-        { type: "link", url: "https://hackmate.app", label: "Live: hackmate.app" },
-        { type: "link", url: "https://peerlist.io", label: "Hackmate on Peerlist" },
-        { type: "link", url: "https://producthunt.com", label: "Hackmate on Product Hunt" },
-        { type: "link", url: "https://github.com/dfordp/hackmate-rework", label: "GitHub Repository" }
-        ]
-    }
     ]
+
   },
 ];

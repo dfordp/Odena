@@ -160,3 +160,32 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 }
+
+.custom-prose {
+  @apply space-y-6 text-[17px] leading-[1.75] text-foreground;
+}
+
+.custom-prose h1 {
+  @apply text-4xl font-semibold mt-16 mb-6 tracking-tight;
+}
+
+.custom-prose h2 {
+  @apply text-2xl font-semibold mt-14 mb-4;
+}
+
+.custom-prose h3 {
+  @apply text-xl font-semibold mt-10 mb-3;
+}
+
+.custom-prose p {
+  @apply text-muted-foreground;
+}
+
+.custom-prose ul,
+.custom-prose ol {
+  @apply text-muted-foreground space-y-1;
+}
+
+.custom-prose img {
+  @apply rounded-lg;
+}
