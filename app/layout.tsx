@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/navbar";
 import NavbarDesktop from "@/components/navbar-desktop";
 import Footer from "@/components/Footer";
+import CustomScrollbar from "@/components/CustomScrollbar";
 
 const fontSans = Outfit({
   variable: "--font-sans",
@@ -113,6 +114,7 @@ export default function RootLayout({
       >
         <NavbarDesktop />
         <Navbar />
+        <CustomScrollbar/>
         {children}
         <Footer />
         <Analytics />

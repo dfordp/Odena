@@ -189,3 +189,17 @@
 .custom-prose img {
   @apply rounded-lg;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
