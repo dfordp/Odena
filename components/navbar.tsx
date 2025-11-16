@@ -89,7 +89,7 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div
           ref={mobileMenuRef}
-          className="fixed top-16 sm:top-20 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border shadow-lg pointer-events-auto max-h-[calc(100vh-5rem)] overflow-y-auto"
+          className="fixed top-16 sm:top-20 left-0 right-0 bg-[#faf6eb]/95 backdrop-blur-md border-b border-border shadow-lg pointer-events-auto max-h-[calc(100vh-5rem)] overflow-y-auto"
         >
           <div className="px-4 py-6 space-y-4">
             

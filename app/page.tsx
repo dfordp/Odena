@@ -30,7 +30,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 sm:mt-12 w-full sm:w-auto animate-fade-in delay-300">
               <Link
                 href="/projects"
-                className="h-11 sm:h-12 px-6 sm:px-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-medium hover:opacity-90 transition cursor-pointer text-sm sm:text-base"
+                className="h-11 sm:h-12 px-6 sm:px-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-medium hover:bg-pink-700 transition cursor-pointer text-sm sm:text-base"
               >
                 Explore Our Systems
               </Link>
@@ -40,7 +40,7 @@ export default function Home() {
               e.preventDefault();
               document.querySelector('#connect')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="h-11 sm:h-12 px-6 sm:px-8 rounded-full border border-border flex items-center justify-center hover:bg-muted transition cursor-pointer text-sm sm:text-base"
+                className="h-11 sm:h-12 px-6 sm:px-8 rounded-full bg- border border-border/70 flex items-center justify-center hover:bg-muted/25 hover:border-border/40 transition cursor-pointer text-sm sm:text-base"
               >
                 Collaborate With Us
               </a>

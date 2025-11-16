@@ -133,11 +133,11 @@ export default function NavbarDesktop() {
                 </button>
 
                 {isServicesOpen && (
-                    <div className="absolute top-full mt-3 left-0 w-64 border border-border/40 rounded-xl shadow-2xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200" style={{ background: 'rgba(255, 255, 255, 0.98)', backdropFilter: 'blur(40px) saturate(180%)', WebkitBackdropFilter: 'blur(40px) saturate(180%)' }}>
+                    <div className="absolute top-full mt-3 left-0 w-64 border border-border/40 rounded-xl shadow-sm py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200" style={{ background: 'rgba(250, 246, 235, 0.98)', backdropFilter: 'blur(40px) saturate(180%)', WebkitBackdropFilter: 'blur(40px) saturate(180%)' }}>
                     
                     <Link 
                         href="/services/data-ranking" 
-                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-50/80 transition-colors duration-200 rounded-lg mx-2"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
                         onClick={() => setIsServicesOpen(false)}
                     >
                         <SlidersHorizontal className="w-4 h-4 text-primary" />
@@ -146,7 +146,7 @@ export default function NavbarDesktop() {
 
                     <Link
                         href="/services/data-segregation"
-                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-50/80 transition-colors duration-200 rounded-lg mx-2"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
                         onClick={() => setIsServicesOpen(false)}
                     >
                         <Layers className="w-4 h-4 text-primary" />
@@ -155,7 +155,7 @@ export default function NavbarDesktop() {
 
                     <Link
                         href="/services/insights"
-                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-50/80 transition-colors duration-200 rounded-lg mx-2"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
                         onClick={() => setIsServicesOpen(false)}
                     >
                         <BarChart3 className="w-4 h-4 text-primary" />
@@ -164,7 +164,7 @@ export default function NavbarDesktop() {
 
                     <Link
                         href="/services/consulting"
-                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-50/80 transition-colors duration-200 rounded-lg mx-2"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
                         onClick={() => setIsServicesOpen(false)}
                     >
                         <Sparkles className="w-4 h-4 text-primary" />

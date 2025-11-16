@@ -6,7 +6,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-[#f5eed8] border-t border-border mt-20">
+        <footer className="bg-[#f5eed8] border-t border-border/45 mt-16">
         <div className="max-w-7xl mx-auto px-4 py-12 sm:py-16">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand Section */}
@@ -120,7 +120,7 @@ export default function Footer() {
                     href="https://x.com/odenadotio"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="h-10 w-10 rounded-full bg-[#a8b5a0] hover:bg-primary/20 flex items-center justify-center transition-colors group"
+                    className="h-10 w-10 rounded-full bg-[#a8b5a0]/45 hover:bg-primary/20 flex items-center justify-center transition-colors group"
                     aria-label="X (formerly Twitter)"
                 >
                     <svg 
@@ -135,14 +135,14 @@ export default function Footer() {
                     href="https://www.linkedin.com/company/odena/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="h-10 w-10 rounded-full bg-[#a8b5a0] hover:bg-primary/20 flex items-center justify-center transition-colors group"
+                    className="h-10 w-10 rounded-full bg-[#a8b5a0]/45 hover:bg-primary/20 flex items-center justify-center transition-colors group"
                     aria-label="LinkedIn"
                 >
                     <Linkedin className="h-4 w-4 text-foreground group-hover:text-primary transition-colors" />
                 </a>
                 <a
                     href="mailto:dilpreetgrover2@gmail.com"
-                    className="h-10 w-10 rounded-full bg-[#a8b5a0] hover:bg-primary/20 flex items-center justify-center transition-colors group"
+                    className="h-10 w-10 rounded-full bg-[#a8b5a0]/45 hover:bg-primary/20 flex items-center justify-center transition-colors group"
                     aria-label="Email"
                 >
                     <Mail className="h-4 w-4 text-foreground group-hover:text-primary transition-colors" />
@@ -152,7 +152,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="mt-12 pt-8 border-t border-border">
+            <div className="mt-12 pt-8 border-t border-border/50">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <p className="text-sm text-muted-foreground">
                 © {currentYear} Odena. All rights reserved.

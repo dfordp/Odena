@@ -20,14 +20,14 @@ export default function Projects() {
 
       <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 max-w-6xl mx-auto grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <div key={project.id} className="group p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
+          <div key={project.id} className="flex flex-col justify-between group p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
             <Link href={`/projects/${project.slug}`} className="block">
               <div className="relative w-full h-40 rounded-lg overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.alt}
                   fill
-                  className="object-cover group-hover:scale-105 transition"
+                  className="object-cover group-hover:scale-102 transition"
                 />
               </div>
               <h3 className="text-xl font-semibold mt-5">{project.title}</h3>
