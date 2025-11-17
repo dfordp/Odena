@@ -194,7 +194,7 @@ export default function DataIngestionPage() {
         <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-[10px] p-8 sm:p-10 border border-primary/20">
           <h2 className="text-2xl font-bold mb-4">Why Choose Odena for Data Ingestion?</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            We don&apos;t just move data—we ensure it arrives clean, validated, and ready for analysis. Our ingestion pipelines are 
+            We don&apos;t just move data we ensure it arrives clean, validated, and ready for analysis. Our ingestion pipelines are 
             built with enterprise-grade reliability, featuring automatic retry logic, comprehensive error handling, and detailed lineage tracking.
           </p>
           <ul className="space-y-3">

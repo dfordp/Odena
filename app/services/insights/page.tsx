@@ -295,8 +295,8 @@ export default function DataInsightsPage() {
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-2">Statistical Foundation</h3>
             <p>
-              Our systems use rigorous statistical methods—time-series analysis, regression models, 
-              distribution fitting—to establish baselines and identify deviations with confidence intervals.
+              Our systems use rigorous statistical methods time-series analysis, regression models, 
+              distribution fitting to establish baselines and identify deviations with confidence intervals.
             </p>
           </div>
 
@@ -311,7 +311,7 @@ export default function DataInsightsPage() {
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-2">Causal Inference</h3>
             <p>
-              We don&apos;t just find correlations—we trace causal relationships using graph analysis 
+              We don&apos;t just find correlations we trace causal relationships using graph analysis 
               and counterfactual reasoning to explain why things happen.
             </p>
           </div>

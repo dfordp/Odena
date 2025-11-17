@@ -295,7 +295,7 @@ export default function AISafetyRegulationPage() {
           <h2 className="text-2xl font-bold mb-4">Our Commitment to Responsible AI</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
             We believe AI should be safe, fair, and beneficial for everyone. Our safety and compliance work isn&apos;t just about 
-            checking boxes—it&apos;s about building AI systems that earn and maintain the trust of users, regulators, and society.
+            checking boxes it&apos;s about building AI systems that earn and maintain the trust of users, regulators, and society.
           </p>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">

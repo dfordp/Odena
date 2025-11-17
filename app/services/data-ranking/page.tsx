@@ -139,7 +139,7 @@ export default function DataRankingPage() {
         </h1>
         
         <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
-          Zero-shot ranking engines that score any dataset—code, media, text, structured data—based on relevance, 
+          Zero-shot ranking engines that score any dataset code, media, text, structured data based on relevance, 
           quality, anomaly likelihood, or custom criteria. No training required. Just define what matters, 
           and the system adapts.
         </p>
@@ -281,7 +281,7 @@ export default function DataRankingPage() {
           </p>
           
           <p>
-            The system learns from structure, context, and minimal feedback—making it ideal for rapidly changing 
+            The system learns from structure, context, and minimal feedback making it ideal for rapidly changing 
             datasets, novel domains, or applications where labeled data doesn&apos;t exist yet.
           </p>
         </div>

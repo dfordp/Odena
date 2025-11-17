@@ -107,7 +107,7 @@ export default function ConsultingPage() {
     {
       title: "Custom Development",
       duration: "1-6 months",
-      desc: "We build the systems you need—from prototypes to production-ready pipelines, ranking engines, or custom operators.",
+      desc: "We build the systems you need from prototypes to production-ready pipelines, ranking engines, or custom operators.",
       ideal: "Teams that need specialized capabilities but lack in-house expertise or bandwidth."
     },
     {
@@ -121,7 +121,7 @@ export default function ConsultingPage() {
   const whyOdena = [
     {
       title: "We Build What We Recommend",
-      desc: "Our consultants are engineers who write production code daily. No theorists—just builders who understand real constraints."
+      desc: "Our consultants are engineers who write production code daily. No theorists just builders who understand real constraints."
     },
     {
       title: "First-Principles Approach",
@@ -157,7 +157,7 @@ export default function ConsultingPage() {
         
         <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
           Strategic guidance on data architecture, pipeline design, and system optimization. 
-          We don&apos;t just advise—we roll up our sleeves and build production systems alongside your team.
+          We don&apos;t just advise we roll up our sleeves and build production systems alongside your team.
         </p>
       </section>
 
@@ -323,7 +323,7 @@ export default function ConsultingPage() {
           
           <p>
             <strong className="text-foreground">Enterprise teams</strong> tackling novel data challenges that don&apos;t fit 
-            standard patterns—multimodal analysis, zero-shot systems, or distributed intelligence.
+            standard patterns multimodal analysis, zero-shot systems, or distributed intelligence.
           </p>
           
           <p>

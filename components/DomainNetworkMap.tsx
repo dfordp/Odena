@@ -303,16 +303,16 @@ function tooltipStyle(clientX: number, clientY: number) {
     >
       <div className="flex flex-wrap items-center justify-center mb-3 sm:mb-4 px-2 sm:px-4 gap-3 sm:gap-6">
         <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-black" style={{ background: "#ffb818" }} />
-          <span>Next</span>
+          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-black" style={{ background: "#ff419d" }} />
+          <span>Captured</span>
         </div>
         <div className="flex items-center gap-2 text-xs sm:text-sm">
           <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-black" style={{ background: "#3de6f2" }} />
           <span>Current</span>
         </div>
         <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-black" style={{ background: "#ff419d" }} />
-          <span>Captured</span>
+          <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-black" style={{ background: "#ffb818" }} />
+          <span>Next</span>
         </div>
       </div>
       <div className="relative" style={{ minHeight: size.height }}>

@@ -238,7 +238,7 @@ export default function DataOptimizationPage() {
         <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-[10px] p-8 sm:p-10 border border-primary/20">
           <h2 className="text-2xl font-bold mb-4">Why Data Optimization Matters</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Unoptimized data systems don&apos;t just cost more—they slow down decision-making, frustrate users, and create technical debt. 
+            Unoptimized data systems don&apos;t just cost more they slow down decision-making, frustrate users, and create technical debt. 
             Our optimization work pays for itself within months through reduced cloud bills and improved productivity.
           </p>
           <ul className="space-y-3">
