@@ -5,124 +5,124 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AI Safety & Regulation Services | Odena",
-  description: "Navigate the complex landscape of AI safety, compliance, and regulation. Ensure your AI systems meet ethical standards and regulatory requirements.",
-  keywords: ["AI safety", "AI regulation", "AI compliance", "ethical AI", "responsible AI", "AI governance", "GDPR compliance", "AI auditing"],
+  description: "Ensure AI systems behave reliably with continuous behavioral monitoring, model alignment tracking, and proactive risk detection. Operate AI responsibly at scale.",
+  keywords: ["AI safety", "model alignment", "behavioral monitoring", "AI oversight", "model drift detection", "responsible AI", "AI compliance", "decision pathway analysis"],
   openGraph: {
     title: "AI Safety & Regulation Services | Odena",
-    description: "Navigate the complex landscape of AI safety, compliance, and regulation. Ensure your AI systems meet ethical standards and regulatory requirements.",
+    description: "Ensure AI systems behave reliably with continuous behavioral monitoring, model alignment tracking, and proactive risk detection. Operate AI responsibly at scale.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "AI Safety & Regulation Services | Odena",
-    description: "Navigate the complex landscape of AI safety, compliance, and regulation. Ensure your AI systems meet ethical standards and regulatory requirements.",
+    description: "Ensure AI systems behave reliably with continuous behavioral monitoring, model alignment tracking, and proactive risk detection. Operate AI responsibly at scale.",
   },
 };
 
 const capabilities = [
   {
     icon: Shield,
-    title: "AI Safety Audits",
-    desc: "Comprehensive assessments of AI systems for bias, fairness, robustness, and potential failure modes.",
+    title: "Behavioral Monitoring",
+    desc: "Analyze behavioral patterns, monitor subtle shifts in model intent, and detect misuse signals before they become issues.",
   },
   {
     icon: Scale,
-    title: "Regulatory Compliance",
-    desc: "Navigate GDPR, EU AI Act, and emerging regulations with expert guidance and implementation support.",
+    title: "Alignment Intelligence",
+    desc: "Understand whether your AI is aligned with your policies, domain constraints, and users' trust through continuous evaluation.",
   },
   {
     icon: FileCheck,
-    title: "Documentation & Governance",
-    desc: "Create model cards, risk assessments, and governance frameworks that meet regulatory standards.",
+    title: "Regulatory Readiness",
+    desc: "Prepare for regulatory changes and document model behavior in ways auditors can understand and verify.",
   },
 ];
 
-const complianceFrameworks = [
+const oversightCapabilities = [
   {
-    framework: "EU AI Act",
-    requirements: ["Risk classification", "Conformity assessment", "Technical documentation", "Human oversight"],
+    capability: "Decision Pathway Analysis",
+    features: ["Trace decision logic", "Identify failure pathways", "Map model reasoning", "Detect intent drift"],
     color: "bg-blue-500/10 border-blue-500/30",
   },
   {
-    framework: "GDPR",
-    requirements: ["Data privacy", "Right to explanation", "Data minimization", "Consent management"],
+    capability: "Continuous Monitoring",
+    features: ["Real-time behavior tracking", "Drift detection", "Performance consistency", "Misuse signal identification"],
     color: "bg-purple-500/10 border-purple-500/30",
   },
   {
-    framework: "ISO/IEC 42001",
-    requirements: ["AI management system", "Risk management", "Transparency", "Accountability"],
+    capability: "Structured Evaluation",
+    features: ["Policy alignment testing", "Domain constraint validation", "Trust metric tracking", "Context-aware assessment"],
     color: "bg-amber-500/10 border-amber-500/30",
   },
   {
-    framework: "NIST AI RMF",
-    requirements: ["Governance", "Map", "Measure", "Manage"],
+    capability: "Operational Intelligence",
+    features: ["Risk visibility", "Compliance tracking", "Audit documentation", "Evolution monitoring"],
     color: "bg-green-500/10 border-green-500/30",
   },
 ];
 
-const safetyPillars = [
+const safetyLayers = [
   {
-    pillar: "Fairness & Bias",
-    desc: "Detect and mitigate bias across protected attributes, ensuring equitable outcomes.",
-    checks: ["Demographic parity testing", "Equal opportunity analysis", "Disparate impact assessment"],
+    layer: "Behavioral Analysis",
+    desc: "Understand how your models make decisions and identify patterns that could lead to failures.",
+    capabilities: ["Intent tracking", "Decision pattern analysis", "Failure prediction"],
   },
   {
-    pillar: "Robustness & Security",
-    desc: "Ensure AI systems are resilient to adversarial attacks and edge cases.",
-    checks: ["Adversarial testing", "Input validation", "Failure mode analysis"],
+    layer: "Drift Detection",
+    desc: "Monitor subtle shifts in model behavior over time and catch misalignment before deployment.",
+    capabilities: ["Temporal consistency checks", "Output distribution monitoring", "Performance degradation alerts"],
   },
   {
-    pillar: "Transparency & Explainability",
-    desc: "Make AI decisions interpretable and auditable for stakeholders and regulators.",
-    checks: ["Model interpretability", "Decision logging", "Audit trail generation"],
+    layer: "Alignment Verification",
+    desc: "Ensure AI remains consistent with your policies, domain constraints, and ethical standards.",
+    capabilities: ["Policy compliance testing", "Domain constraint validation", "Trust metric evaluation"],
   },
   {
-    pillar: "Privacy & Data Protection",
-    desc: "Safeguard sensitive data and comply with privacy regulations throughout the AI lifecycle.",
-    checks: ["PII detection", "Differential privacy", "Data anonymization"],
+    layer: "Visibility & Documentation",
+    desc: "Maintain comprehensive visibility into model evolution with auditor-friendly documentation.",
+    capabilities: ["Behavior logging", "Change tracking", "Regulatory reporting"],
   },
 ];
 
-const complianceProcess = [
+const safetyIntegration = [
   {
-    step: "Risk Assessment",
-    desc: "Classify your AI system according to regulatory frameworks and identify compliance requirements.",
+    step: "Baseline Behavior Profiling",
+    desc: "Establish behavioral baselines and identify existing decision pathways, risks, and alignment gaps.",
   },
   {
-    step: "Gap Analysis",
-    desc: "Audit existing systems and processes to identify areas where compliance is lacking.",
+    step: "Safety Layer Integration",
+    desc: "Deploy our monitoring and evaluation infrastructure seamlessly into your existing systems.",
   },
   {
-    step: "Implementation",
-    desc: "Deploy technical controls, documentation, and governance processes to achieve compliance.",
+    step: "Continuous Intelligence",
+    desc: "Real-time tracking of model behavior, intent shifts, and emerging risk patterns across deployments.",
   },
   {
-    step: "Monitoring & Reporting",
-    desc: "Continuous monitoring of AI systems with regular compliance reporting and updates.",
+    step: "Adaptive Response",
+    desc: "Proactive alerts, documentation updates, and guidance as your AI evolves and regulations change.",
   },
 ];
 
 const useCases = [
-  "Preparing for EU AI Act compliance for high-risk AI systems",
-  "Conducting fairness audits for hiring or lending algorithms",
-  "Creating model cards and technical documentation for regulatory submissions",
-  "Implementing explainability frameworks for financial services AI",
-  "Building AI governance structures for enterprise-scale deployments",
-  "Conducting privacy impact assessments for AI-powered analytics",
+  "Monitoring AI agents for behavioral consistency and policy alignment",
+  "Detecting model drift in production multimodal systems before failures occur",
+  "Tracking decision pathways in enterprise AI to identify hidden risk patterns",
+  "Maintaining visibility into how user-facing assistants evolve over time",
+  "Preparing audit-ready documentation for regulatory reviews and assessments",
+  "Ensuring deployed AI remains aligned with domain constraints and user trust",
 ];
 
 const whyItMatters = [
   {
-    title: "Regulatory Landscape is Evolving",
-    desc: "New AI regulations are emerging globally. Non-compliance risks fines, lawsuits, and reputational damage.",
+    title: "Visibility Into Model Behavior",
+    desc: "Most companies lack insight into how their models make decisions or how they drift over time. We provide the intelligence layer that makes AI observable and predictable.",
   },
   {
-    title: "Trust is a Competitive Advantage",
-    desc: "Demonstrable AI safety and compliance build customer trust and differentiate your products.",
+    title: "Proactive Risk Detection",
+    desc: "Identify decision pathways that could lead to failures long before they become issues. Our safety work catches problems in the design, not in production.",
   },
   {
-    title: "Ethical AI is Better AI",
-    desc: "Safer, fairer AI systems perform better and avoid costly failures and biases.",
+    title: "Confidence to Innovate",
+    desc: "When you understand your AI's behavior and have systems to track its evolution, your teams can innovate without fear of unexpected failures or compliance violations.",
   },
 ];
 
@@ -143,8 +143,8 @@ export default function AISafetyRegulationPage() {
           AI Safety & Regulation
         </h1>
         <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
-          Build trustworthy AI systems that meet evolving regulatory standards. 
-          Our experts help you navigate compliance requirements while ensuring your AI is fair, transparent, and robust.
+          Ensure your AI systems behave reliably in real-world environments while meeting rising regulatory and ethical expectations. 
+          Most companies lack visibility into how models make decisions or where hidden risks emerge—we provide the oversight and intelligence to operate AI responsibly at scale.
         </p>
       </section>
 
@@ -161,18 +161,18 @@ export default function AISafetyRegulationPage() {
         </div>
       </section>
 
-      {/* COMPLIANCE FRAMEWORKS */}
+      {/* OVERSIGHT CAPABILITIES */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">Compliance Frameworks We Support</h2>
+        <h2 className="text-2xl font-bold mb-6">Comprehensive Oversight Capabilities</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {complianceFrameworks.map((item, idx) => (
+          {oversightCapabilities.map((item, idx) => (
             <div key={idx} className={`${item.color} border rounded-[10px] p-6`}>
-              <h3 className="font-bold text-lg mb-3">{item.framework}</h3>
+              <h3 className="font-bold text-lg mb-3">{item.capability}</h3>
               <ul className="space-y-2">
-                {item.requirements.map((req, reqIdx) => (
-                  <li key={reqIdx} className="flex items-start gap-2 text-sm">
+                {item.features.map((feature, featureIdx) => (
+                  <li key={featureIdx} className="flex items-start gap-2 text-sm">
                     <FileCheck className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>{req}</span>
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -181,23 +181,23 @@ export default function AISafetyRegulationPage() {
         </div>
       </section>
 
-      {/* AI SAFETY PILLARS */}
+      {/* SAFETY LAYERS */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">Four Pillars of AI Safety</h2>
+        <h2 className="text-2xl font-bold mb-6">Integrated Safety Layers</h2>
         <div className="space-y-6">
-          {safetyPillars.map((pillar, idx) => (
+          {safetyLayers.map((layer, idx) => (
             <div key={idx} className="bg-card/30 border border-border rounded-[10px] p-6">
               <div className="flex items-start gap-4">
                 <div className="shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
                   {idx + 1}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold text-lg mb-2">{pillar.pillar}</h3>
-                  <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{pillar.desc}</p>
+                  <h3 className="font-bold text-lg mb-2">{layer.layer}</h3>
+                  <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{layer.desc}</p>
                   <div className="flex flex-wrap gap-2">
-                    {pillar.checks.map((check, checkIdx) => (
-                      <div key={checkIdx} className="text-xs bg-primary/5 border border-primary/20 rounded-full px-3 py-1">
-                        {check}
+                    {layer.capabilities.map((capability, capIdx) => (
+                      <div key={capIdx} className="text-xs bg-primary/5 border border-primary/20 rounded-full px-3 py-1">
+                        {capability}
                       </div>
                     ))}
                   </div>
@@ -208,12 +208,12 @@ export default function AISafetyRegulationPage() {
         </div>
       </section>
 
-      {/* COMPLIANCE PROCESS */}
+      {/* SAFETY INTEGRATION */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">Our Compliance Process</h2>
+        <h2 className="text-2xl font-bold mb-6">Seamless Safety Integration</h2>
         <div className="bg-card/30 border border-border rounded-[10px] p-8 sm:p-10">
           <div className="space-y-6">
-            {complianceProcess.map((item, idx) => (
+            {safetyIntegration.map((item, idx) => (
               <div key={idx} className="flex gap-4">
                 <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
                   {idx + 1}
@@ -228,31 +228,31 @@ export default function AISafetyRegulationPage() {
         </div>
       </section>
 
-      {/* VISUAL: COMPLIANCE LIFECYCLE */}
+      {/* VISUAL: SAFETY APPROACH */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">AI Safety Lifecycle</h2>
+        <h2 className="text-2xl font-bold mb-6">Beyond Basic Guardrails</h2>
         <div className="bg-linear-to-br from-amber-500/5 to-amber-500/10 border border-amber-500/20 rounded-[10px] p-8 sm:p-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
                 <BookOpen className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-semibold mb-2">Design Phase</h3>
-              <p className="text-xs text-muted-foreground">Risk assessment, data governance, and ethical review</p>
+              <h3 className="font-semibold mb-2">Structured Evaluation</h3>
+              <p className="text-xs text-muted-foreground">Systematic assessment of model behavior and alignment</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
                 <AlertTriangle className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-semibold mb-2">Deployment Phase</h3>
-              <p className="text-xs text-muted-foreground">Safety testing, bias audits, and compliance checks</p>
+              <h3 className="font-semibold mb-2">Continuous Monitoring</h3>
+              <p className="text-xs text-muted-foreground">Real-time tracking of behavioral shifts and intent changes</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
                 <Users className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-semibold mb-2">Operations Phase</h3>
-              <p className="text-xs text-muted-foreground">Continuous monitoring, incident response, and retraining</p>
+              <h3 className="font-semibold mb-2">Contextual Understanding</h3>
+              <p className="text-xs text-muted-foreground">Policy-aware intelligence that adapts to your domain</p>
             </div>
           </div>
         </div>
@@ -273,7 +273,7 @@ export default function AISafetyRegulationPage() {
 
       {/* WHY IT MATTERS */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">Why AI Safety Matters</h2>
+        <h2 className="text-2xl font-bold mb-6">The Challenge of Modern AI</h2>
         <div className="grid grid-cols-1 gap-6">
           {whyItMatters.map((reason, idx) => (
             <div key={idx} className="p-6 rounded-[10px] bg-card/40 border border-border/50">
@@ -292,23 +292,23 @@ export default function AISafetyRegulationPage() {
       {/* COMMITMENT SECTION */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
         <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-[10px] p-8 sm:p-10 border border-primary/20">
-          <h2 className="text-2xl font-bold mb-4">Our Commitment to Responsible AI</h2>
+          <h2 className="text-2xl font-bold mb-4">Invisible Yet Indispensable</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            We believe AI should be safe, fair, and beneficial for everyone. Our safety and compliance work isn&apos;t just about 
-            checking boxes it&apos;s about building AI systems that earn and maintain the trust of users, regulators, and society.
+            Our safety work is designed to be a layer of intelligence that strengthens reliability without slowing down innovation. 
+            Whether you&apos;re deploying agents, multimodal models, or enterprise systems, Odena ensures your AI remains consistent, compliant, and grounded.
           </p>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-sm">Deep expertise in both technical AI safety and regulatory compliance</span>
+              <span className="text-sm">Seamlessly integrates with existing systems—no major architectural changes required</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-sm">Practical, implementation-focused guidance that goes beyond theory</span>
+              <span className="text-sm">Maintains visibility as your AI evolves, providing audit trails auditors can understand</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-sm">Ongoing support as regulations evolve and your AI systems mature</span>
+              <span className="text-sm">Reduces operational risk while giving teams confidence to push boundaries safely</span>
             </li>
           </ul>
         </div>
@@ -317,8 +317,8 @@ export default function AISafetyRegulationPage() {
       {/* CTA SECTION */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold mb-3">Build Trustworthy AI Systems</h2>
-          <p className="text-muted-foreground">Let&apos;s ensure your AI meets the highest standards of safety, fairness, and regulatory compliance.</p>
+          <h2 className="text-2xl font-bold mb-3">Make Your AI Predictable, Reliable, and Aligned</h2>
+          <p className="text-muted-foreground">Let&apos;s build the safety and oversight layer your AI systems need to operate responsibly at scale.</p>
         </div>
         <CallToAction />
       </section>

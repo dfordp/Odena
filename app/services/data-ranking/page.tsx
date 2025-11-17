@@ -1,28 +1,28 @@
 import CallToAction from "@/components/CallToAction";
-import { ArrowRight, Zap, Target, Layers as LayersIcon, CheckCircle } from "lucide-react";
+import { ArrowRight, Brain, Network, TrendingUp, CheckCircle, Sparkles } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Data Ranking Services – Zero-Shot Ranking Systems | Odena",
+  title: "Data Ranking Services – Uncover Hidden Hierarchy in Your Datasets | Odena",
   description:
-    "Advanced zero-shot ranking systems that score and prioritize data without training. Built for speed, relevance, and precision across code, media, text, and structured datasets.",
+    "Automatically discover which data points drive model performance, strengthen generalization, and reduce hallucinations. Stop treating all data equally—rank by true strategic value.",
   keywords: [
     "data ranking",
-    "zero-shot ranking",
-    "relevance scoring",
-    "data prioritization",
-    "cross-domain ranking",
-    "ranking algorithms",
-    "semantic ranking",
-    "data quality scoring",
-    "real-time ranking",
-    "adaptive ranking systems"
+    "model performance optimization",
+    "training data efficiency",
+    "cross-domain data analysis",
+    "data influence detection",
+    "signal quality ranking",
+    "dataset optimization",
+    "AI training efficiency",
+    "data strategic value",
+    "intelligent data selection"
   ],
   openGraph: {
-    title: "Data Ranking Services – Zero-Shot Systems That Understand Any Dataset",
+    title: "Data Ranking – Discover the Hidden Hierarchy in Your Datasets",
     description:
-      "Odena builds zero-shot ranking systems that score datasets instantly without training. From code quality to media relevance, our ranking engines adapt to any domain.",
+      "Odena reveals which data points genuinely improve model performance, generalization, and reliability. Transform data from vague asset to precisely mapped strategic landscape.",
     url: "https://www.odena.io/services/data-ranking",
     siteName: "Odena",
     images: [
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Data Ranking – Zero-Shot Systems for Any Dataset",
+    title: "Data Ranking – Build Smarter AI by Learning What Matters",
     description:
-      "Ranking systems that understand unseen data instantly. Built for relevance, quality, and anomaly detection across domains.",
+      "Automatically identify which signals improve models, which reduce hallucinations, and which introduce noise. Train smarter, not larger.",
     images: ["https://www.odena.io/og-image.png"],
   },
   alternates: {
@@ -52,71 +52,76 @@ export const metadata: Metadata = {
 };
 
 export default function DataRankingPage() {
-  const useCases = [
+  const impactMetrics = [
     {
-      title: "Code Quality Ranking",
-      desc: "Score repositories, pull requests, and code snippets based on complexity, maintainability, and best practices."
+      title: "Training Pipeline Efficiency",
+      desc: "Dramatically accelerate model convergence by focusing compute on high-influence data points, reducing training time and costs."
     },
     {
-      title: "Content Relevance",
-      desc: "Rank documents, articles, and media by semantic relevance to queries without fine-tuning."
+      title: "Model Quality & Generalization",
+      desc: "Identify signals that strengthen generalization and reduce hallucinations, leading to more reliable AI systems."
     },
     {
-      title: "Anomaly Detection",
-      desc: "Identify outliers and suspicious patterns in transaction logs, telemetry, or user behavior."
+      title: "Strategic Labeling Focus",
+      desc: "Direct labeling efforts toward the most valuable data slices, maximizing ROI on human annotation."
     },
     {
-      title: "Search Result Ranking",
-      desc: "Power intelligent search with context-aware ranking that adapts to user intent."
+      title: "Noise & Bias Detection",
+      desc: "Automatically surface data points that silently introduce noise or bias, enabling proactive dataset cleanup."
     },
     {
-      title: "Data Quality Assessment",
-      desc: "Score datasets for completeness, consistency, and reliability before downstream processing."
+      title: "Compute Cost Reduction",
+      desc: "Amplify meaningful information and suppress low-value signals, cutting wasted compute while improving output quality."
     },
     {
-      title: "Recommendation Engines",
-      desc: "Build adaptive recommendation systems that learn from minimal examples."
+      title: "Data Intelligence Advantage",
+      desc: "Transform datasets from vague assets into precisely mapped landscapes of strategic opportunity."
     }
   ];
 
   const capabilities = [
     {
-      icon: Zap,
-      title: "Zero-Shot Learning",
-      desc: "Our models understand new datasets without retraining. Define criteria, and the system adapts instantly."
+      icon: Brain,
+      title: "Influence Hierarchy Detection",
+      desc: "Automatically uncover which data points genuinely improve model performance versus those that add noise or redundancy."
     },
     {
-      icon: Target,
-      title: "Multi-Criteria Scoring",
-      desc: "Combine relevance, quality, recency, and custom heuristics into unified ranking scores."
+      icon: Network,
+      title: "Cross-Domain Interaction Analysis",
+      desc: "Connect behavioral patterns with telemetry, satellite imagery with environmental shifts, code changes with security events—revealing relevance structures invisible to human analysis."
     },
     {
-      icon: LayersIcon,
-      title: "Cross-Domain Adaptability",
-      desc: "One ranking engine works across code, text, images, structured data, and multimodal inputs."
+      icon: TrendingUp,
+      title: "Strategic Value Mapping",
+      desc: "Determine which dataset slices hold the highest strategic value for training, which need augmentation, and which can be deprioritized."
+    },
+    {
+      icon: Sparkles,
+      title: "Performance-Driven Prioritization",
+      desc: "Rank data based on real impact metrics: convergence speed, generalization strength, hallucination reduction, and output reliability."
     }
   ];
 
-  const technicalApproach = [
+  const howItWorks = [
     {
       step: "01",
-      title: "Embedding Generation",
-      desc: "We extract semantic representations using state-of-the-art encoders optimized for your domain."
+      title: "Deep Dataset Analysis",
+      desc: "We analyze your complete dataset to understand its structure, patterns, and hidden relationships across domains."
     },
     {
       step: "02",
-      title: "Context-Aware Scoring",
-      desc: "Ranking functions combine embeddings with metadata, temporal signals, and behavioral patterns."
+      title: "Influence Mapping",
+      desc: "Our system evaluates every data point's contribution to model performance, generalization, and reliability—creating a precise hierarchy of value."
     },
     {
       step: "03",
-      title: "Adaptive Calibration",
-      desc: "Systems self-tune based on feedback loops, improving precision without manual intervention."
+      title: "Cross-Domain Correlation",
+      desc: "Detect interactions between different data types and domains that human teams cannot identify at scale, revealing the true relevance structure."
     },
     {
       step: "04",
-      title: "Real-Time Execution",
-      desc: "Built for high-throughput environments with sub-millisecond latency for scoring operations."
+      title: "Actionable Intelligence",
+      desc: "Deliver clear insights on where to focus labeling, which slices need augmentation, and which data points to amplify or suppress."
     }
   ];
 
@@ -135,13 +140,14 @@ export default function DataRankingPage() {
         </div>
         
         <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-          Data Ranking Systems That Understand Without Training
+          Stop Treating All Data Equally. Discover What Actually Matters.
         </h1>
         
         <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
-          Zero-shot ranking engines that score any dataset code, media, text, structured data based on relevance, 
-          quality, anomaly likelihood, or custom criteria. No training required. Just define what matters, 
-          and the system adapts.
+          Most companies waste compute on data that doesn&apos;t improve their models. Odena&apos;s Data Ranking reveals the 
+          hidden hierarchy of influence within your datasets automatically identifying which signals genuinely drive 
+          performance, strengthen generalization, reduce hallucinations, and which silently introduce noise or bias. 
+          Train smarter, not larger.
         </p>
       </section>
 
@@ -149,7 +155,7 @@ export default function DataRankingPage() {
       <section className="py-8 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Core Capabilities</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {capabilities.map((cap, idx) => {
             const Icon = cap.icon;
             return (
@@ -165,16 +171,16 @@ export default function DataRankingPage() {
         </div>
       </section>
 
-      {/* TECHNICAL APPROACH */}
+      {/* HOW IT WORKS */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-2">How It Works</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-2">How We Uncover Data Influence</h2>
         <p className="text-muted-foreground mb-8 max-w-3xl">
-          Our ranking systems combine semantic understanding with adaptive scoring mechanisms, 
-          delivering accurate results from the first query.
+          Our system deeply analyzes datasets to reveal relevance structures that human teams cannot detect at scale, 
+          transforming data from a vague asset into a precisely mapped strategic landscape.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {technicalApproach.map((item, idx) => (
+          {howItWorks.map((item, idx) => (
             <div key={idx} className="p-6 rounded-[10px] bg-card/50 border border-border/50">
               <div className="text-3xl font-bold text-primary mb-3">{item.step}</div>
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
@@ -184,17 +190,17 @@ export default function DataRankingPage() {
         </div>
       </section>
 
-      {/* ARCHITECTURE DIAGRAM */}
+      {/* CROSS-DOMAIN INTELLIGENCE */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Ranking Pipeline Architecture</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Cross-Domain Intelligence Pipeline</h2>
         
         <div className="bg-card/30 border border-border rounded-[10px] p-8 sm:p-12">
           <div className="flex flex-col gap-6">
             {/* Input Layer */}
             <div className="flex items-center gap-4">
               <div className="flex-1 p-4 rounded-lg bg-amber-900/10 border border-amber-900/20 text-center">
-                <div className="font-semibold mb-1">Input Data</div>
-                <div className="text-xs text-muted-foreground">Code • Text • Media • Structured</div>
+                <div className="font-semibold mb-1">Multi-Domain Datasets</div>
+                <div className="text-xs text-muted-foreground">Behavioral • Telemetry • Satellite • Code • Environmental</div>
               </div>
             </div>
 
@@ -202,19 +208,19 @@ export default function DataRankingPage() {
               <ArrowRight className="w-6 h-6 text-primary rotate-90" />
             </div>
 
-            {/* Processing Layer */}
+            {/* Analysis Layer */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 text-center">
-                <div className="font-semibold mb-1 text-sm">Embedding Engine</div>
-                <div className="text-xs text-muted-foreground">Semantic vectors</div>
+                <div className="font-semibold mb-1 text-sm">Deep Analysis</div>
+                <div className="text-xs text-muted-foreground">Structure & patterns</div>
               </div>
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 text-center">
-                <div className="font-semibold mb-1 text-sm">Feature Extraction</div>
-                <div className="text-xs text-muted-foreground">Metadata & signals</div>
+                <div className="font-semibold mb-1 text-sm">Influence Mapping</div>
+                <div className="text-xs text-muted-foreground">Performance impact</div>
               </div>
               <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 text-center">
-                <div className="font-semibold mb-1 text-sm">Context Analysis</div>
-                <div className="text-xs text-muted-foreground">Behavioral patterns</div>
+                <div className="font-semibold mb-1 text-sm">Cross-Domain Links</div>
+                <div className="text-xs text-muted-foreground">Hidden correlations</div>
               </div>
             </div>
 
@@ -222,11 +228,11 @@ export default function DataRankingPage() {
               <ArrowRight className="w-6 h-6 text-primary rotate-90" />
             </div>
 
-            {/* Scoring Layer */}
+            {/* Intelligence Layer */}
             <div className="p-6 rounded-lg bg-primary/10 border border-primary/30 text-center">
-              <div className="font-semibold mb-2">Adaptive Scoring Engine</div>
+              <div className="font-semibold mb-2">Hierarchy of Influence</div>
               <div className="text-sm text-muted-foreground">
-                Multi-criteria ranking • Real-time calibration • Context fusion
+                Performance drivers • Generalization signals • Noise sources • Bias indicators
               </div>
             </div>
 
@@ -236,87 +242,93 @@ export default function DataRankingPage() {
 
             {/* Output Layer */}
             <div className="p-4 rounded-lg bg-amber-900/10 border border-amber-900/20 text-center">
-              <div className="font-semibold mb-1">Ranked Results</div>
-              <div className="text-xs text-muted-foreground">Scored • Sorted • Ready for downstream use</div>
+              <div className="font-semibold mb-1">Actionable Intelligence</div>
+              <div className="text-xs text-muted-foreground">Strategic priorities • Training focus • Dataset optimization</div>
             </div>
           </div>
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-6 max-w-2xl mx-auto">
-          Each component operates independently, allowing horizontal scaling and domain-specific customization 
-          without rewriting the entire pipeline.
+          Our system evaluates cross-domain interactions at scale, connecting behavioral patterns with telemetry, 
+          satellite imagery with environmental shifts, and code changes with security events—revealing relevance 
+          structures invisible to human analysis.
         </p>
       </section>
 
-      {/* USE CASES */}
+      {/* IMMEDIATE BENEFITS */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Where It&apos;s Applied</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Immediate & Measurable Benefits</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {useCases.map((useCase, idx) => (
+          {impactMetrics.map((metric, idx) => (
             <div key={idx} className="p-6 rounded-[10px] bg-card/40 border border-border/50">
               <div className="flex items-start gap-3 mb-2">
                 <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <h3 className="text-lg font-semibold">{useCase.title}</h3>
+                <h3 className="text-lg font-semibold">{metric.title}</h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed ml-8">{useCase.desc}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed ml-8">{metric.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* WHY ZERO-SHOT */}
+      {/* WHY IT MATTERS */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Why Zero-Shot Matters</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4">The Problem: Not All Data is Created Equal</h2>
         
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
-            Traditional ranking systems require extensive labeled datasets and domain-specific training. 
-            That&apos;s slow, expensive, and breaks when data patterns shift.
+            Most companies operate in an environment where datasets are massive, messy, and constantly evolving. 
+            Yet the industry still treats all data points as if they hold the same importance—leading to wasted 
+            compute, slower experiments, and AI systems that learn inefficiently.
           </p>
           
           <p>
-            Our zero-shot approach uses pre-trained semantic understanding combined with adaptive scoring heuristics. 
-            This means you can deploy ranking systems for new domains in hours, not months.
+            Traditional approaches rely on guesswork or manual sampling to determine data value. This leaves teams 
+            uncertain about where to focus labeling efforts, which signals genuinely improve models, and which 
+            introduce noise or bias that degrades performance.
           </p>
           
           <p>
-            The system learns from structure, context, and minimal feedback making it ideal for rapidly changing 
-            datasets, novel domains, or applications where labeled data doesn&apos;t exist yet.
+            Odena&apos;s Data Ranking disrupts this paradigm. Instead of treating data as a uniform blob, we automatically 
+            determine which signals genuinely improve model performance, which strengthen generalization, which reduce 
+            hallucinations, and which silently corrupt your training pipeline. This transforms data from a vague asset 
+            into a precisely mapped landscape of strategic opportunity.
           </p>
         </div>
       </section>
 
-      {/* PERFORMANCE METRICS */}
+      {/* MEASURABLE OUTCOMES */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Built for Scale</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Real-World Impact</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">&lt;10ms</div>
-            <div className="text-sm font-medium mb-1">Scoring Latency</div>
-            <div className="text-xs text-muted-foreground">Per-item ranking in real-time systems</div>
+            <div className="text-4xl font-bold text-primary mb-2">40-60%</div>
+            <div className="text-sm font-medium mb-1">Training Cost Reduction</div>
+            <div className="text-xs text-muted-foreground">By focusing compute on high-influence data</div>
           </div>
           
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">1M+</div>
-            <div className="text-sm font-medium mb-1">Items/Second</div>
-            <div className="text-xs text-muted-foreground">Throughput on distributed clusters</div>
+            <div className="text-4xl font-bold text-primary mb-2">3-5x</div>
+            <div className="text-sm font-medium mb-1">Faster Convergence</div>
+            <div className="text-xs text-muted-foreground">Models learn efficiently from prioritized signals</div>
           </div>
           
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">Zero</div>
-            <div className="text-sm font-medium mb-1">Training Data Required</div>
-            <div className="text-xs text-muted-foreground">Deploy to new domains instantly</div>
+            <div className="text-4xl font-bold text-primary mb-2">Superior</div>
+            <div className="text-sm font-medium mb-1">Output Quality</div>
+            <div className="text-xs text-muted-foreground">Enhanced reliability and reduced hallucinations</div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-6 text-center px-4 sm:px-6">
-        <h2 className="text-2xl md:text-3xl font-semibold">Ready to Rank Smarter?</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">Build AI That Learns Smarter, Not Larger</h2>
         <p className="mt-2 max-w-xl md:max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-6">
-          Whether you&apos;re building search, recommendations, or quality filters, our ranking systems adapt to your needs.
+          Stop wasting compute on low-value data. Discover which signals truly drive model performance and gain 
+          a formidable competitive advantage through intelligent data prioritization.
         </p>
         <CallToAction />
       </section>

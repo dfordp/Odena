@@ -4,25 +4,25 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Data Insights Services – Intelligence Extraction & Analytics | Odena",
+  title: "Data Insights Services – Context-Rich Intelligence & Cross-Domain Reasoning | Odena",
   description:
-    "Intelligence extraction systems that surface patterns, anomalies, and actionable insights from complex datasets. Built for predictive analytics and real-time decision making.",
+    "Transform raw information into meaningful, context-rich intelligence. Odena reveals why things happen, not just what happened—uncovering cross-domain connections and strategic insights.",
   keywords: [
     "data insights",
-    "intelligence extraction",
-    "pattern detection",
-    "anomaly detection",
-    "predictive analytics",
-    "data visualization",
-    "business intelligence",
-    "real-time analytics",
-    "actionable insights",
-    "data intelligence"
+    "connected interpretation",
+    "cross-domain reasoning",
+    "strategic intelligence",
+    "context-rich analytics",
+    "data narratives",
+    "multidimensional insights",
+    "actionable intelligence",
+    "data understanding",
+    "intelligent analysis"
   ],
   openGraph: {
-    title: "Data Insights – Extract Intelligence from Complex Datasets",
+    title: "Data Insights – From Numbers to Narratives, From Data to Understanding",
     description:
-      "Odena builds intelligence extraction systems that automatically surface patterns, anomalies, and predictions from your data.",
+      "Odena transforms data into meaningful intelligence that reveals why things happen—uncovering cross-domain connections traditional systems miss.",
     url: "https://www.odena.io/services/insights",
     siteName: "Odena",
     images: [
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Data Insights – Turn Data into Actionable Intelligence",
+    title: "Data Insights – Make Your Data Speak Clearly",
     description:
-      "Systems that automatically discover patterns, detect anomalies, and generate predictions from complex datasets.",
+      "Context-rich intelligence that reveals purpose, not just patterns. Strategic insights with cross-domain reasoning built in.",
     images: ["https://www.odena.io/og-image.png"],
   },
   alternates: {
@@ -54,69 +54,46 @@ export const metadata: Metadata = {
 export default function DataInsightsPage() {
   const useCases = [
     {
-      title: "Predictive Analytics",
-      desc: "Forecast trends, behaviors, and outcomes using historical patterns and real-time signals."
+      title: "Product Team Intelligence",
+      desc: "Understand customer intent more deeply through cross-domain behavioral and usage pattern analysis."
     },
     {
-      title: "Anomaly Detection",
-      desc: "Identify unusual patterns, security threats, and operational issues before they escalate."
+      title: "Research Hypothesis Discovery",
+      desc: "Uncover new hypothesis pathways by connecting data domains that traditionally operate in isolation."
     },
     {
-      title: "Customer Intelligence",
-      desc: "Understand user behavior, preferences, and churn risk through behavioral analysis."
+      title: "AI Data Blind Spots",
+      desc: "Identify gaps, biases, and quality issues in training data before they impact model performance."
     },
     {
-      title: "Performance Monitoring",
-      desc: "Track system health, identify bottlenecks, and optimize resource allocation in real-time."
+      title: "Operations Efficiency Detection",
+      desc: "Detect inefficiencies early by analyzing how environmental shifts correlate with operational decisions."
     },
     {
-      title: "Market Analysis",
-      desc: "Extract competitive intelligence, trend signals, and opportunity indicators from market data."
+      title: "Leadership Clarity",
+      desc: "Gain clarity on where outcomes are truly being driven with multidimensional, context-rich insights."
     },
     {
-      title: "Root Cause Analysis",
-      desc: "Trace problems to their sources by analyzing correlations across distributed systems."
+      title: "Strategic Foresight",
+      desc: "Operate with foresight rather than hindsight by identifying emerging trends before they become obvious."
     }
   ];
 
   const capabilities = [
     {
       icon: TrendingUp,
-      title: "Pattern Recognition",
-      desc: "Discover hidden correlations, trends, and recurring behaviors across temporal and spatial dimensions."
+      title: "Cross-Domain Reasoning",
+      desc: "Uncover how user behavior impacts system performance, how code changes affect security, how market signals evolve across time."
     },
     {
       icon: AlertCircle,
-      title: "Anomaly Identification",
-      desc: "Real-time detection of outliers, deviations, and suspicious patterns using adaptive thresholds."
+      title: "Deep Interaction Analysis",
+      desc: "Analyze flows, transitions, anomalies, and correlations that traditional systems routinely overlook."
     },
     {
       icon: Activity,
-      title: "Predictive Modeling",
-      desc: "Generate forecasts and probability estimates based on historical data and current context."
-    }
-  ];
-
-  const insightTypes = [
-    {
-      category: "Descriptive Insights",
-      desc: "What happened?",
-      examples: ["Trend summaries", "Distribution analysis", "Statistical profiles"]
-    },
-    {
-      category: "Diagnostic Insights",
-      desc: "Why did it happen?",
-      examples: ["Correlation analysis", "Root cause tracing", "Factor attribution"]
-    },
-    {
-      category: "Predictive Insights",
-      desc: "What will happen?",
-      examples: ["Forecasting", "Risk scoring", "Probability estimation"]
-    },
-    {
-      category: "Prescriptive Insights",
-      desc: "What should we do?",
-      examples: ["Recommendation generation", "Optimization suggestions", "Action planning"]
+      title: "Strategic Intelligence",
+      desc: "Extract signals that illuminate opportunities, risks, and emerging trends long before they become obvious."
     }
   ];
 
@@ -135,12 +112,13 @@ export default function DataInsightsPage() {
         </div>
         
         <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-          Transform Data into Actionable Intelligence
+          From Numbers to Narratives: Intelligence That Explains Why
         </h1>
         
         <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
-          Intelligence extraction systems that automatically surface patterns, anomalies, and predictions from complex datasets. 
-          Built for real-time decision making, our insights engines combine statistical rigor with semantic understanding.
+          Most organizations collect enormous data but struggle to translate it into genuine understanding. Dashboards provide 
+          numbers, not narratives; charts show patterns, but not purpose. Odena&apos;s Data Insights service turns raw information into 
+          meaningful, context-rich intelligence that reveals why things happen—not just what happened.
         </p>
       </section>
 
@@ -164,38 +142,34 @@ export default function DataInsightsPage() {
         </div>
       </section>
 
-      {/* INSIGHT TYPES */}
-      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Four Layers of Intelligence</h2>
+      {/* THE FUNDAMENTAL CHALLENGE */}
+      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4">The Challenge: Isolated Metrics Without Meaning</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {insightTypes.map((type, idx) => (
-            <div key={idx} className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-              <div className="flex items-baseline gap-3 mb-2">
-                <div className="text-2xl font-bold text-primary">{String(idx + 1).padStart(2, '0')}</div>
-                <div>
-                  <h3 className="text-lg font-semibold">{type.category}</h3>
-                  <div className="text-sm text-muted-foreground italic">{type.desc}</div>
-                </div>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {type.examples.map((example, i) => (
-                  <span 
-                    key={i}
-                    className="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary font-medium"
-                  >
-                    {example}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <p>
+            The industry&apos;s biggest challenge is not lack of data—it&apos;s the lack of connected interpretation. Teams are 
+            often left guessing which patterns matter or how to act on them. Traditional analytics provide isolated metrics, 
+            but miss the deeper interactions between data domains that drive real outcomes.
+          </p>
+          
+          <p>
+            When companies integrate Odena&apos;s Data Insights into their projects, they finally gain the ability to see beyond 
+            isolated metrics. Insights become alive, multidimensional, and strategically actionable. Every insight showcases 
+            not just information, but the cross-domain reasoning behind it.
+          </p>
+          
+          <p>
+            This empowers organizations to make decisions with confidence, operate with foresight rather than hindsight, 
+            and build systems that evolve intelligently over time. With Odena, insights become a strategic weapon—your data 
+            stops whispering and starts speaking clearly.
+          </p>
         </div>
       </section>
 
       {/* INSIGHTS PIPELINE */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Intelligence Extraction Pipeline</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Connected Intelligence Pipeline</h2>
         
         <div className="bg-card/30 border border-border rounded-[10px] p-8 sm:p-12">
           <div className="flex flex-col gap-6">
@@ -265,8 +239,8 @@ export default function DataInsightsPage() {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-6 max-w-2xl mx-auto">
-          Each layer operates independently, allowing you to plug in custom analysis modules 
-          or integrate with existing analytics infrastructure.
+          Our pipeline doesn&apos;t just analyze data—it connects domains, uncovers relationships, and synthesizes 
+          intelligence that reveals the deeper story behind your metrics.
         </p>
       </section>
 
@@ -287,40 +261,40 @@ export default function DataInsightsPage() {
         </div>
       </section>
 
-      {/* TECHNICAL DEPTH */}
+      {/* CROSS-DOMAIN CONNECTIONS */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-4">How We Extract Intelligence</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4">What We Uncover</h2>
         
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Statistical Foundation</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Behavioral-System Interactions</h3>
             <p>
-              Our systems use rigorous statistical methods time-series analysis, regression models, 
-              distribution fitting to establish baselines and identify deviations with confidence intervals.
+              How user behavior patterns impact system performance, resource utilization, and operational stability—revealing 
+              optimization opportunities that single-domain analysis misses.
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Semantic Understanding</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Code-Security Correlations</h3>
             <p>
-              Beyond numbers, we analyze meaning. Semantic embeddings help the system understand context, 
-              intent, and relationships that pure statistics miss.
+              How code changes, deployment patterns, and development practices affect security posture and vulnerability 
+              exposure across your entire technology stack.
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Causal Inference</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Environmental-Operational Dependencies</h3>
             <p>
-              We don&apos;t just find correlations we trace causal relationships using graph analysis 
-              and counterfactual reasoning to explain why things happen.
+              How environmental shifts, market conditions, and external signals correlate with operational decisions and 
+              business outcomes over time.
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-2">Real-Time Adaptation</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Temporal Evolution Patterns</h3>
             <p>
-              Models continuously learn from new data, adjusting thresholds and updating predictions 
-              as patterns evolve. No manual retraining required.
+              How market signals, customer preferences, and competitive dynamics evolve across time—identifying inflection 
+              points before they become widely recognized.
             </p>
           </div>
         </div>
@@ -328,73 +302,74 @@ export default function DataInsightsPage() {
 
       {/* INSIGHT DELIVERY */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8">How Insights Are Delivered</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Multidimensional Intelligence Delivery</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-            <h3 className="text-lg font-semibold mb-3">Real-Time Dashboards</h3>
+            <h3 className="text-lg font-semibold mb-3">Context-Rich Narratives</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Live visualization of patterns, anomalies, and predictions with drill-down capabilities.
+              Insights that explain not just what happened, but why it happened and what it means for your strategy.
             </p>
-            <div className="text-xs text-primary font-medium">Interactive charts • Metric tracking • Alert panels</div>
+            <div className="text-xs text-primary font-medium">Causal explanations • Impact analysis • Strategic implications</div>
           </div>
 
           <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-            <h3 className="text-lg font-semibold mb-3">API Integration</h3>
+            <h3 className="text-lg font-semibold mb-3">Cross-Domain Visualizations</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Programmatic access to insights, predictions, and anomaly scores for downstream systems.
+              Interactive displays that show how different data domains influence each other over time.
             </p>
-            <div className="text-xs text-primary font-medium">REST APIs • GraphQL • Webhooks</div>
+            <div className="text-xs text-primary font-medium">Relationship maps • Flow analysis • Interaction timelines</div>
           </div>
 
           <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-            <h3 className="text-lg font-semibold mb-3">Automated Reports</h3>
+            <h3 className="text-lg font-semibold mb-3">Actionable Recommendations</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Scheduled summaries with key findings, trend analysis, and actionable recommendations.
+              Strategic guidance based on cross-domain reasoning and forward-looking pattern analysis.
             </p>
-            <div className="text-xs text-primary font-medium">Daily digests • Weekly trends • Custom schedules</div>
+            <div className="text-xs text-primary font-medium">Decision support • Optimization paths • Risk mitigation</div>
           </div>
 
           <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-            <h3 className="text-lg font-semibold mb-3">Alert Systems</h3>
+            <h3 className="text-lg font-semibold mb-3">Emerging Trend Alerts</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Proactive notifications when critical patterns or anomalies are detected.
+              Early warnings about patterns forming across domains before they become obvious to competitors.
             </p>
-            <div className="text-xs text-primary font-medium">Slack • Email • PagerDuty • Custom channels</div>
+            <div className="text-xs text-primary font-medium">Opportunity signals • Risk indicators • Market shifts</div>
           </div>
         </div>
       </section>
 
-      {/* PERFORMANCE */}
+      {/* STRATEGIC IMPACT */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Built for Real-Time Intelligence</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Insights as a Strategic Weapon</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">&lt;100ms</div>
-            <div className="text-sm font-medium mb-1">Insight Latency</div>
-            <div className="text-xs text-muted-foreground">From data arrival to actionable insight</div>
+            <div className="text-4xl font-bold text-primary mb-2">Connected</div>
+            <div className="text-sm font-medium mb-1">Cross-Domain Intelligence</div>
+            <div className="text-xs text-muted-foreground">See beyond isolated metrics to true drivers</div>
           </div>
           
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">95%+</div>
-            <div className="text-sm font-medium mb-1">Anomaly Accuracy</div>
-            <div className="text-xs text-muted-foreground">Precision in detecting real issues</div>
+            <div className="text-4xl font-bold text-primary mb-2">Confident</div>
+            <div className="text-sm font-medium mb-1">Decision Making</div>
+            <div className="text-xs text-muted-foreground">Strategic clarity backed by reasoning</div>
           </div>
           
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-            <div className="text-sm font-medium mb-1">Continuous Monitoring</div>
-            <div className="text-xs text-muted-foreground">Always-on intelligence extraction</div>
+            <div className="text-4xl font-bold text-primary mb-2">Foresight</div>
+            <div className="text-sm font-medium mb-1">Not Hindsight</div>
+            <div className="text-xs text-muted-foreground">Spot trends before competitors do</div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-6 text-center px-4 sm:px-6">
-        <h2 className="text-2xl md:text-3xl font-semibold">Ready to Extract Intelligence from Your Data?</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">Ready to Make Your Data Speak Clearly?</h2>
         <p className="mt-2 max-w-xl md:max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-6">
-          Whether you need predictive analytics, anomaly detection, or automated insights, our systems deliver intelligence that drives decisions.
+          Transform raw information into context-rich intelligence that reveals purpose, connections, and strategic opportunities. 
+          Stop guessing. Start understanding.
         </p>
         <CallToAction />
       </section>

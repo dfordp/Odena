@@ -4,18 +4,18 @@ import CallToAction from "@/components/CallToAction";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Data Ingestion Services | Odena",
-  description: "Build robust, scalable data ingestion pipelines that handle millions of records with real-time processing, validation, and transformation capabilities.",
-  keywords: ["data ingestion", "ETL pipelines", "real-time data processing", "data validation", "streaming data", "batch processing", "data transformation"],
+  title: "AI Data Ingestion – Precision Pipelines for Intelligent Systems | Odena",
+  description: "Build clean, context-aware data ingestion pipelines designed for AI. Eliminate fragmentation, ensure consistency, and prepare data with scientific precision for advanced model performance.",
+  keywords: ["AI data ingestion", "machine learning pipelines", "multimodal data", "AI preprocessing", "data quality for AI", "model training data", "AI data preparation", "context-aware ingestion"],
   openGraph: {
-    title: "Data Ingestion Services | Odena",
-    description: "Build robust, scalable data ingestion pipelines that handle millions of records with real-time processing, validation, and transformation capabilities.",
+    title: "AI Data Ingestion – Precision Pipelines for Intelligent Systems | Odena",
+    description: "Clean, coherent, context-aware ingestion pipelines that prepare data for AI with laboratory precision. Transform fragmented data into a unified foundation for advanced models.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Data Ingestion Services | Odena",
-    description: "Build robust, scalable data ingestion pipelines that handle millions of records with real-time processing, validation, and transformation capabilities.",
+    title: "AI Data Ingestion – Precision for Intelligence",
+    description: "Eliminate data fragmentation. Build AI ingestion pipelines with scientific precision, consistency, and context awareness.",
   },
 };
 
@@ -108,11 +108,13 @@ export default function DataIngestionPage() {
         </Link>
 
         <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-          Data Ingestion
+          Data Ingestion for Intelligent Systems
         </h1>
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
+          AI systems are only as strong as the data they ingest, yet most organizations still rely on fragmented pipelines, inconsistent preprocessing steps, and ad-hoc integrations that silently erode model performance. Data arrives from countless sources—internal tools, sensors, logs, APIs, documents, satellite feeds, user events—and each carries its own structure, noise profile, and implicit biases.
+        </p>
         <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
-          Build reliable, scalable data ingestion pipelines that seamlessly move data from any source to your data infrastructure. 
-          Handle millions of records with confidence, real-time validation, and automated error recovery.
+          Without a unified ingestion framework, teams spend more time stitching data together than training or innovating. Odena&apos;s Data Ingestion service eliminates this bottleneck by creating clean, coherent, and context-aware ingestion pipelines that prepare data for AI the way laboratories prepare samples for scientific experiments: with precision, intention, and consistency.
         </p>
       </section>
 
@@ -192,23 +194,28 @@ export default function DataIngestionPage() {
       {/* WHY ODENA FOR DATA INGESTION */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
         <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-[10px] p-8 sm:p-10 border border-primary/20">
-          <h2 className="text-2xl font-bold mb-4">Why Choose Odena for Data Ingestion?</h2>
+          <h2 className="text-2xl font-bold mb-4">The Impact on Your AI Infrastructure</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            When teams integrate Odena&apos;s ingestion pipeline into their AI infrastructure, they experience an immediate lift in reliability, accuracy, and stability across the entire development lifecycle. Models converge faster, require fewer retraining cycles, and respond more predictively to new data.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Experimentation becomes smoother, since every run is backed by consistent and traceable data preparation. Teams no longer have to rebuild preprocessing logic for every project — they gain a reusable backbone that powers every model with the same high-quality standards.
+          </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            We don&apos;t just move data we ensure it arrives clean, validated, and ready for analysis. Our ingestion pipelines are 
-            built with enterprise-grade reliability, featuring automatic retry logic, comprehensive error handling, and detailed lineage tracking.
+            For companies scaling multimodal systems, deploying AI agents, or building foundational models, Odena transforms ingestion from a fragile manual process into a scientific, repeatable, and future-proof foundation. It&apos;s the silent engine that makes advanced AI truly possible.
           </p>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-sm">Battle-tested architectures handling billions of records in production</span>
+              <span className="text-sm">Unified framework that eliminates data stitching and preprocessing redundancy</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-sm">Built-in observability with metrics, traces, and customizable alerts</span>
+              <span className="text-sm">Scientific precision in data preparation with consistent quality standards</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-sm">Cost-optimized designs that minimize data transfer and compute expenses</span>
+              <span className="text-sm">Reusable backbone that accelerates model development and experimentation</span>
             </li>
           </ul>
         </div>

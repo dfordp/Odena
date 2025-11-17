@@ -4,25 +4,25 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Consulting Services – Data Architecture & Pipeline Engineering | Odena",
+  title: "AI Consulting Services – Strategic Intelligence Architecture | Odena",
   description:
-    "Strategic consulting for data architecture, pipeline design, and system optimization. Work with engineers who build production systems daily.",
+    "Strategic AI consulting that bridges vision and execution. Expert guidance on data pipelines, model deployment, multimodal integration, safety frameworks, and AI architecture.",
   keywords: [
-    "data consulting",
-    "pipeline architecture",
-    "system optimization",
-    "data engineering consulting",
-    "infrastructure consulting",
-    "research partnerships",
-    "technical consulting",
-    "distributed systems consulting",
-    "data architecture review",
-    "engineering consulting"
+    "AI consulting",
+    "AI strategy",
+    "AI architecture",
+    "machine learning consulting",
+    "data pipeline consulting",
+    "AI deployment",
+    "multimodal AI",
+    "AI safety frameworks",
+    "AI governance",
+    "intelligent systems consulting"
   ],
   openGraph: {
-    title: "Consulting Services – Engineers Who Actually Build",
+    title: "AI Consulting – Strategic Intelligence Architecture",
     description:
-      "Strategic guidance on data architecture, pipeline design, and system optimization from the team at Odena. We build what we recommend.",
+      "Bridge scientific thinking with operational execution. Strategic AI consulting from data pipelines to deployment frameworks and safety standards.",
     url: "https://www.odena.io/services/consulting",
     siteName: "Odena",
     images: [
@@ -30,16 +30,16 @@ export const metadata: Metadata = {
         url: "https://www.odena.io/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Odena Consulting Services",
+        alt: "Odena AI Consulting Services",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Consulting – Build Better Data Systems",
+    title: "AI Consulting – Intelligence Architecture That Works",
     description:
-      "Work with engineers who design and build production data systems. From architecture reviews to research partnerships.",
+      "Strategic AI consulting that bridges vision and execution. From data pipelines to multimodal integration and safety frameworks.",
     images: ["https://www.odena.io/og-image.png"],
   },
   alternates: {
@@ -152,12 +152,15 @@ export default function ConsultingPage() {
         </div>
         
         <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-          Consulting from Engineers Who Actually Build
+          Strategic AI Consulting That Bridges Vision and Execution
         </h1>
         
         <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
-          Strategic guidance on data architecture, pipeline design, and system optimization. 
-          We don&apos;t just advise we roll up our sleeves and build production systems alongside your team.
+          Building intelligent systems is no longer about choosing the right model—it&apos;s about designing the right ecosystem around data, infrastructure, safety, and long-term scalability. Most organizations face strategic uncertainty: they know AI is essential, but they struggle with architecture choices, dataset readiness, workflow integration, governance standards, and aligning teams around a unified direction.
+        </p>
+        
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
+          Odena&apos;s Consulting service exists to solve this exact problem. We work alongside companies as strategic partners, guiding them through the complexities of modern AI adoption with the precision of researchers and the practicality of engineers. Our approach begins by understanding your existing systems, your operational reality, and your long-term ambitions. From there, we craft tailored strategies—data pipelines, deployment frameworks, roadmap planning, multimodal integration paths, and safety frameworks—that elevate your capabilities while staying deeply aligned with your business goals.
         </p>
       </section>
 
@@ -291,7 +294,21 @@ export default function ConsultingPage() {
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Why Work With Odena</h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="space-y-6 text-muted-foreground leading-relaxed max-w-4xl">
+          <p>
+            What sets Odena apart is our ability to bridge scientific thinking with operational execution. We don&apos;t offer generic advice or slide decks; we build solutions that work in the real world. Whether you are refining a dataset, scaling a model, deploying an AI agent, designing a new data architecture, or exploring domain-specific intelligence, we provide guidance grounded in rigorous understanding of data systems, multimodal reasoning, and performance engineering.
+          </p>
+          
+          <p>
+            Companies that partner with Odena experience clearer decision-making, reduced technical uncertainty, and significantly faster progress toward impactful AI outcomes. Every recommendation we make is designed to minimize risk, maximize insight, and future-proof your organization&apos;s AI capabilities.
+          </p>
+          
+          <p>
+            With Odena by your side, you gain a dedicated intelligence partner who understands both the science and the strategy behind modern data-driven transformation.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
           {whyOdena.map((reason, idx) => (
             <div key={idx} className="p-6 rounded-[10px] bg-card/40 border border-border/50">
               <div className="flex items-start gap-3 mb-2">

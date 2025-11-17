@@ -4,25 +4,25 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Data Segregation Services – Adaptive Clustering & Segmentation | Odena",
+  title: "Data Segregation Services – Intelligent Multi-Modal Organization | Odena",
   description:
-    "Self-organizing clustering engines that automatically segment data by behavior, semantics, and structure. Built for multimodal datasets and high-throughput environments.",
+    "Transform chaotic data into structured, AI-ready layers. Odena intelligently segregates multimodal inputs into meaningful segments that reflect your information ecosystem's true architecture.",
   keywords: [
     "data segregation",
-    "adaptive clustering",
-    "data segmentation",
-    "multimodal clustering",
-    "automatic grouping",
-    "behavioral clustering",
-    "semantic segmentation",
-    "self-organizing systems",
-    "data partitioning",
-    "intelligent filtering"
+    "intelligent data organization",
+    "multimodal data processing",
+    "data structuring",
+    "AI-ready data",
+    "data pipeline optimization",
+    "semantic data layers",
+    "data architecture",
+    "structural intelligence",
+    "data ecosystem management"
   ],
   openGraph: {
-    title: "Data Segregation – Self-Organizing Clustering for Any Dataset",
+    title: "Data Segregation – Transform Data Chaos Into Structured Intelligence",
     description:
-      "Odena builds adaptive clustering engines that automatically segment data by behavior, semantics, and structure without manual configuration.",
+      "Odena separates raw, multimodal inputs into structured, meaningful layers that are logical, accurate, and ready for advanced AI workflows.",
     url: "https://www.odena.io/services/data-segregation",
     siteName: "Odena",
     images: [
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Data Segregation – Adaptive Clustering That Self-Organizes",
+    title: "Data Segregation – Intelligent Organization for AI Excellence",
     description:
-      "Clustering engines that understand data structure and behavior, automatically organizing datasets without predefined rules.",
+      "Transform chaotic multimodal data into structured, AI-ready layers that accelerate innovation and enhance model quality.",
     images: ["https://www.odena.io/og-image.png"],
   },
   alternates: {
@@ -54,69 +54,69 @@ export const metadata: Metadata = {
 export default function DataSegregationPage() {
   const useCases = [
     {
-      title: "Customer Segmentation",
-      desc: "Group users by behavior patterns, preferences, and engagement without predefined categories."
+      title: "Cleaner Training Datasets",
+      desc: "Eliminate inconsistencies and duplicates by segregating data into quality-verified, domain-specific layers."
     },
     {
-      title: "Content Organization",
-      desc: "Automatically cluster documents, images, and videos by topic, style, and semantic similarity."
+      title: "Clearer Domain Boundaries",
+      desc: "Establish logical separations between data types, sources, and contexts for better model calibration."
     },
     {
-      title: "Anomaly Isolation",
-      desc: "Separate outliers and suspicious patterns from normal data flows in real-time."
+      title: "Enhanced Feature Engineering",
+      desc: "Work with structurally organized data that reveals cross-domain connections and hidden patterns."
     },
     {
-      title: "Data Cleaning",
-      desc: "Identify and segregate noisy, duplicate, or low-quality records before processing."
+      title: "Faster Experimentation",
+      desc: "Reduce time spent wrestling with disorganized data—start with a clean, well-architected foundation."
     },
     {
-      title: "Multi-Source Integration",
-      desc: "Merge and segment data from disparate sources based on structural and semantic alignment."
+      title: "Improved Model Quality",
+      desc: "Feed AI systems with predictable, interpretable data that improves accuracy and reduces failure rates."
     },
     {
-      title: "Pipeline Routing",
-      desc: "Direct data to appropriate processing paths based on content type and characteristics."
+      title: "Anomaly Detection",
+      desc: "Identify outliers and data quality issues more easily when information is properly segregated."
     }
   ];
 
   const capabilities = [
     {
-      icon: GitBranch,
-      title: "Adaptive Clustering",
-      desc: "Systems that discover optimal groupings without predefined cluster counts or manual tuning."
+      icon: LayersIcon,
+      title: "Intelligent Layering",
+      desc: "Organize data into coherent, logically-tiered segments that reveal internal relationships and domain boundaries."
     },
     {
       icon: Network,
-      title: "Multi-Modal Support",
-      desc: "Process text, images, structured data, and time-series within the same segmentation framework."
+      title: "Multimodal Processing",
+      desc: "Handle text, code, satellite imagery, telemetry, logs, events, financial signals, and behavioral patterns in unified workflows."
     },
     {
-      icon: LayersIcon,
-      title: "Hierarchical Organization",
-      desc: "Build nested cluster hierarchies that reveal both broad categories and fine-grained distinctions."
+      icon: GitBranch,
+      title: "Structural Intelligence",
+      desc: "Decipher complex relationships across data types to create AI-ready foundations that accelerate innovation."
     }
   ];
 
   const technicalApproach = [
     {
       step: "01",
-      title: "Feature Extraction",
-      desc: "Extract meaningful representations from raw data using domain-aware encoders and embeddings."
+      title: "Relationship Discovery",
+      desc: "Decipher internal relationships across multimodal data sources to understand true information architecture."
     },
     {
       step: "02",
-      title: "Similarity Computation",
-      desc: "Calculate distances in high-dimensional space using optimized metrics for different data types."
+      title: "Semantic Segregation",
+      desc: "Separate data into meaningful layers based on content, context, quality, and domain boundaries."
     },
     {
       step: "03",
-      title: "Dynamic Clustering",
-      desc: "Apply adaptive algorithms that determine cluster boundaries based on data distribution."
+      title: "Structural Validation",
+      desc: "Ensure segregated layers are logically coherent, analytically sound, and universally compatible."
     },
     {
       step: "04",
-      title: "Continuous Refinement",
-      desc: "Systems evolve as new data arrives, maintaining relevant groupings without full recomputation."
+      title: "Pipeline Integration",
+      desc: "Deliver organized data as a predictable, interpretable foundation for advanced AI workflows."
     }
   ];
 
@@ -135,12 +135,13 @@ export default function DataSegregationPage() {
         </div>
         
         <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-          Data Segregation Systems That Self-Organize
+          Transform Data Chaos Into Structured Intelligence
         </h1>
         
         <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
-          Adaptive clustering engines that automatically segment datasets by behavior, semantics, and structure. 
-          No manual configuration. No predefined categories. Just intelligent grouping that adapts as data evolves.
+          As organizations scale, data becomes a tangled mixture of formats, sources, and contexts. Odena&apos;s Data Segregation 
+          service intelligently separates raw, multimodal inputs into structured, meaningful layers that reflect the true architecture 
+          of your information ecosystem—whether text, code, imagery, telemetry, logs, or behavioral patterns.
         </p>
       </section>
 
@@ -168,8 +169,8 @@ export default function DataSegregationPage() {
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-2">How It Works</h2>
         <p className="text-muted-foreground mb-8 max-w-3xl">
-          Our segregation systems combine semantic understanding with adaptive algorithms 
-          to discover natural groupings in your data.
+          Our intelligent segregation engine transforms raw, chaotic data into structured layers that 
+          are universally compatible with modern AI workflows and ready for advanced analysis.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -183,9 +184,9 @@ export default function DataSegregationPage() {
         </div>
       </section>
 
-      {/* CLUSTERING VISUALIZATION */}
+      {/* SEGREGATION VISUALIZATION */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Adaptive Clustering Process</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Intelligent Segregation Process</h2>
         
         <div className="bg-card/30 border border-border rounded-[10px] p-8 sm:p-12">
           <div className="flex flex-col gap-8">
@@ -267,8 +268,8 @@ export default function DataSegregationPage() {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-6 max-w-2xl mx-auto">
-          The system automatically determines the optimal number of clusters based on data characteristics, 
-          eliminating the need for manual parameter tuning.
+          Our segregation engine organizes multimodal data into coherent layers that reveal internal relationships, 
+          creating an AI-ready foundation that&apos;s logically tiered and analytically sound.
         </p>
       </section>
 
@@ -289,97 +290,101 @@ export default function DataSegregationPage() {
         </div>
       </section>
 
-      {/* WHY ADAPTIVE CLUSTERING */}
+      {/* THE FUNDAMENTAL PROBLEM */}
       <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Why Adaptive Clustering Works</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4">The Fundamental Problem We Solve</h2>
         
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
-            Traditional clustering requires you to specify the number of groups upfront and tune multiple hyperparameters. 
-            That&apos;s impractical when you don&apos;t know the data structure in advance.
+            Most companies try to force messy data into rigid schemas or manual cleaning routines, only to discover their 
+            data remains inconsistent, duplicated, fragmented, or misaligned. This creates a critical industry problem: 
+            AI systems often fail not because the model is weak, but because the data feeding it is disorganized.
           </p>
           
           <p>
-            Our adaptive approach learns the natural groupings from the data itself. The system considers density, 
-            distance metrics, and semantic relationships to discover clusters that actually make sense.
+            When companies integrate Odena&apos;s segregation engine into their projects, their entire data pipeline becomes more 
+            predictable, interpretable, and stable. Training datasets become cleaner, domain boundaries become clearer, 
+            anomalies become easier to identify, and cross-domain connections become visible where none existed before.
           </p>
           
           <p>
-            As your data evolves, the clustering adapts. New patterns emerge, old clusters split or merge, 
-            and the system maintains coherent groupings without manual intervention.
+            This structured clarity enables better feature engineering, improved model calibration, faster experimentation, 
+            and greater trust in downstream outputs. Instead of spending time wrestling with inconsistent data, teams gain 
+            a foundation that feels less like chaos and more like a well-designed research instrument.
           </p>
         </div>
       </section>
 
-      {/* ALGORITHM TYPES */}
+      {/* SEGREGATION STRATEGIES */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Clustering Approaches We Use</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Segregation Strategies We Deploy</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-            <h3 className="text-lg font-semibold mb-3">Density-Based Clustering</h3>
+            <h3 className="text-lg font-semibold mb-3">Quality-Based Separation</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Identifies clusters based on regions of high data density, automatically handling noise and outliers.
+              Automatically segregate high-quality, verified data from noisy, incomplete, or low-confidence sources.
             </p>
-            <div className="text-xs text-primary font-medium">DBSCAN • HDBSCAN • OPTICS</div>
+            <div className="text-xs text-primary font-medium">Confidence scoring • Completeness analysis • Source reputation</div>
           </div>
 
           <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-            <h3 className="text-lg font-semibold mb-3">Hierarchical Clustering</h3>
+            <h3 className="text-lg font-semibold mb-3">Domain-Aware Layering</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Builds tree-like structures revealing both broad categories and fine-grained distinctions.
+              Create logical boundaries between business domains, data types, and contextual categories.
             </p>
-            <div className="text-xs text-primary font-medium">Agglomerative • Divisive • Linkage methods</div>
+            <div className="text-xs text-primary font-medium">Semantic understanding • Ontology mapping • Context analysis</div>
           </div>
 
           <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-            <h3 className="text-lg font-semibold mb-3">Semantic Clustering</h3>
+            <h3 className="text-lg font-semibold mb-3">Temporal Segregation</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Groups data based on meaning and context rather than just statistical similarity.
+              Organize data by time-based relevance, recency, and historical significance for time-sensitive workflows.
             </p>
-            <div className="text-xs text-primary font-medium">Embedding-based • Topic models • Graph clustering</div>
+            <div className="text-xs text-primary font-medium">Event ordering • Temporal clustering • Drift detection</div>
           </div>
 
           <div className="p-6 rounded-[10px] bg-card/50 border border-border/50">
-            <h3 className="text-lg font-semibold mb-3">Streaming Clustering</h3>
+            <h3 className="text-lg font-semibold mb-3">Multi-Modal Alignment</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-              Real-time segmentation for data streams, maintaining clusters as new data arrives.
+              Intelligently segregate and align data across text, images, structured records, and behavioral signals.
             </p>
-            <div className="text-xs text-primary font-medium">Online algorithms • Incremental updates • Drift detection</div>
+            <div className="text-xs text-primary font-medium">Cross-modal fusion • Format normalization • Relationship extraction</div>
           </div>
         </div>
       </section>
 
-      {/* PERFORMANCE */}
+      {/* BUSINESS IMPACT */}
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">Performance Characteristics</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-center">The Competitive Advantage</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">100K+</div>
-            <div className="text-sm font-medium mb-1">Items/Second</div>
-            <div className="text-xs text-muted-foreground">Clustering throughput for large datasets</div>
+            <div className="text-4xl font-bold text-primary mb-2">Predictable</div>
+            <div className="text-sm font-medium mb-1">Data Pipelines</div>
+            <div className="text-xs text-muted-foreground">Transform chaos into stable, interpretable workflows</div>
           </div>
           
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">Auto</div>
-            <div className="text-sm font-medium mb-1">Cluster Detection</div>
-            <div className="text-xs text-muted-foreground">No manual parameter tuning required</div>
+            <div className="text-4xl font-bold text-primary mb-2">Faster</div>
+            <div className="text-sm font-medium mb-1">Innovation Cycles</div>
+            <div className="text-xs text-muted-foreground">Start experiments with clean, organized data</div>
           </div>
           
           <div className="text-center p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
-            <div className="text-4xl font-bold text-primary mb-2">Real-time</div>
-            <div className="text-sm font-medium mb-1">Adaptive Updates</div>
-            <div className="text-xs text-muted-foreground">Clusters evolve with incoming data</div>
+            <div className="text-4xl font-bold text-primary mb-2">Greater</div>
+            <div className="text-sm font-medium mb-1">Model Trust</div>
+            <div className="text-xs text-muted-foreground">Foundation that enhances quality and accuracy</div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-6 text-center px-4 sm:px-6">
-        <h2 className="text-2xl md:text-3xl font-semibold">Ready to Organize Your Data?</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">Ready to Transform Data Chaos Into Structure?</h2>
         <p className="mt-2 max-w-xl md:max-w-2xl mx-auto text-muted-foreground leading-relaxed mb-6">
-          Whether you&apos;re segmenting customers, organizing content, or routing data flows, our clustering systems adapt to your needs.
+          Gain a data ecosystem that accelerates innovation, enhances model quality, and gives your organization 
+          the competitive advantage of true structural intelligence.
         </p>
         <CallToAction />
       </section>
