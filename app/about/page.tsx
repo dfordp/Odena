@@ -1,5 +1,5 @@
 import CallToAction from "@/components/CallToAction";
-import { members } from "@/data";
+import { members } from "@/data/members";
 import { Metadata } from "next";
 import Image from "next/image";
 import { FaCode, FaLinkedinIn } from "react-icons/fa";

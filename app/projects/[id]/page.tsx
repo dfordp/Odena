@@ -1,5 +1,5 @@
 import ContentRenderer from "@/components/ContentRenderer";
-import { projects } from "@/data";
+import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";

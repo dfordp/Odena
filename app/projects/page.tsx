@@ -1,5 +1,5 @@
 import CallToAction from "@/components/CallToAction";
-import { projects } from "@/data";
+import { projects } from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
 
