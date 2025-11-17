@@ -1,6 +1,64 @@
 import { SlidersHorizontal, Layers, BarChart3, Sparkles, Database, Zap, Shield } from "lucide-react";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services – Data Ranking, Segregation, Insights & Infrastructure | Odena",
+  description:
+    "Odena builds research-grade systems for data ranking, segregation, insights, ingestion, optimization, and AI safety. Explore how our adaptive pipelines and multimodal operators power high-throughput, production-ready intelligence.",
+  keywords: [
+    "Odena services",
+    "data ranking",
+    "zero-shot ranking",
+    "data segregation",
+    "multimodal segmentation",
+    "data insights",
+    "anomaly detection",
+    "pipeline consulting",
+    "AI consulting",
+    "data ingestion pipelines",
+    "real-time data processing",
+    "data optimization",
+    "query optimization",
+    "AI safety",
+    "AI regulation",
+    "systems engineering",
+    "adaptive data pipelines",
+    "high throughput data systems"
+  ],
+  openGraph: {
+    title: "Odena Services – Systems That Organize, Rank & Understand Data",
+    description:
+      "Learn how Odena builds adaptive ranking engines, self-organizing clustering systems, anomaly detection pipelines, robust data ingestion layers, and AI-safety compliant infrastructure.",
+    url: "https://www.odena.io/services",
+    siteName: "Odena",
+    images: [
+      {
+        url: "https://www.odena.io/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Odena – Data Ranking, Segregation and AI Systems Services",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Odena Services – Research-Grade Data & AI Systems",
+    description:
+      "Explore Odena’s engineering services for ranking, segmentation, multimodal insights, pipeline design, optimization, ingestion, and AI safety.",
+    images: ["https://www.odena.io/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://www.odena.io/services",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 
 export default function ServicesPage() {
   const services = [

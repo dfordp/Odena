@@ -4,6 +4,7 @@ import { zenithData } from "./projects/zenith";
 import { onlynerdsData } from "./projects/onlynerds";
 import { openlensData } from "./projects/openlens";
 import { retoldData } from "./projects/retold";
+import { vihangamData } from "./projects/vihangam";
 
 type HeadingBlock = {
     type: "heading";
@@ -72,11 +73,20 @@ export interface Project {
 
 export const projects : Project[] = [
     {
+        id: "vihangam-geospatial-model",
+        image: "/vihangam.jpeg",
+        alt: "Vihangam",
+        title: "Vihangam -  Indo-Pacific Foundational Geospatial Model",
+        description: "Multi-resolution foundational geospatial model built for the entire Indo-Pacific region, integrating satellite imagery across resolutions",
+        slug: "vihangam-geospatial-model",
+        contentBlocks : vihangamData
+    },
+    {
         id: "hackmate-match-making",
         image: "/hackmate.jpeg",
         alt: "HackMate",
         title: "HackMate - The CoFounder MatchMaking",
-        description: "A swipe-based matchmaking platform designed to help founders and builders discover potential co-founders, collaborators, or indie hackers",
+        description: "Swipe-based matchmaking platform designed to help builders discover potential co-founders, collaborators, or indie hackers",
         slug: "hackmate-match-making",
         contentBlocks: hackmateData
     },
@@ -124,5 +134,5 @@ export const projects : Project[] = [
         description: "This application helps individuals by providing plant care assistance using Google's Gemini Pro models for vision and text analysis.",
         slug: "aarchid-monitoring-system",
         contentBlocks : aarchidData
-    }
+    },
 ];
