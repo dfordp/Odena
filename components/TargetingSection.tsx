@@ -2,6 +2,7 @@
 
 import { motion, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { AdaptiveVisual, DecisionLayer, DynamicPipeline, MultiFormat, SelfMaintaining, StackCompatibility } from "./Visuals";
 
 export default function TargetingDial() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -14,19 +15,19 @@ export default function TargetingDial() {
   const items = [
     {
       title: "Adaptive Data Models",
-      desc: "Models that reshape themselves around the data they’re given, without requiring manual tuning or retraining."
+      desc: "Models that reshape themselves around the data they're given, without requiring manual tuning or retraining."
     },
     {
       title: "Dynamic Processing Chains",
-      desc: "Pipelines that reconfigure on the fly to match workload, structure, or behavior—always using the most efficient path."
+      desc: "Pipelines that reconfigure on the fly to match workload, structure, or behavior always using the most efficient path."
     },
     {
       title: "Real-Time Decision Layers",
       desc: "Fast systems that evaluate incoming data instantly and choose the most useful operations with zero delay."
     },
     {
-      title: "Unified Multi-Format Engines",
-      desc: "One engine for every format—code, video, logs, text—so teams don’t juggle separate tools for each domain."
+      title: "Unified Format Engines",
+      desc: "One engine for every format code, video, logs, text so teams don't juggle separate tools for each domain."
     },
     {
       title: "Self-Maintaining Structures",
@@ -36,6 +37,15 @@ export default function TargetingDial() {
       title: "Deep Stack Compatibility",
       desc: "Built to drop cleanly into existing environments, scaling from prototypes to massive distributed workloads."
     }
+  ];
+
+  const visuals = [
+    AdaptiveVisual,
+    DynamicPipeline,
+    DecisionLayer,
+    MultiFormat,
+    SelfMaintaining,
+    StackCompatibility
   ];
 
 
@@ -101,6 +111,7 @@ export default function TargetingDial() {
               const angle = START_ANGLE + offset * (SPREAD / (items.length - 1));
               const x = Math.cos((angle * Math.PI) / 180) * RADIUS;
               const y = Math.sin((angle * Math.PI) / 160) * RADIUS;
+              
               return (
                 <motion.div
                   key={i}
@@ -132,26 +143,33 @@ export default function TargetingDial() {
 
         {/* RIGHT SIDE – DETAILS ALIGNED WITH ACTIVE TITLE */}
         <div className="w-full lg:w-[55vw] relative mt-8 lg:mt-0 px-4 lg:px-0">
-          {items.map((item, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-full"
-              animate={{
-                opacity: active === i ? 1 : 0,
-                x: active === i ? 0 : 20,
-                filter: active === i ? "blur(0px)" : "blur(6px)",
-              }}
-              transition={{
-                duration: 0.45,
-                ease: "easeOut",
-              }}
-            >
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4">{item.title}</h3>
-              <p className="text-base sm:text-lg text-muted-foreground max-w-xl">
-                {item.desc}
-              </p>
-            </motion.div>
-          ))}
+          {items.map((item, i) => {
+            const Visual = visuals[i];
+
+            return (
+               <motion.div
+                key={i}
+                className="absolute w-full flex flex-col gap-8 items-start"
+                animate={{
+                  opacity: active === i ? 1 : 0,
+                  x: active === i ? 0 : 40,
+                }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+              >
+                {/* Visual - with proper height constraint */}
+                {/* <div className="w-full max-w-2xl">
+                  <svg viewBox="0 0 640 260" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" className="block mx-auto">
+                    <Visual />
+                  </svg>
+                </div> */}
+
+                {/* Text */}
+                <div className="w-full">
+                  <p className="text-muted-foreground max-w-xl text-base lg:text-lg leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
