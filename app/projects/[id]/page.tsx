@@ -5,8 +5,56 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { FaGithub, FaProductHunt } from "react-icons/fa6";
 import { SiPeerlist } from "react-icons/si";
+import { Metadata } from "next";
 
-export default async function ProjectPage({ params }: { params: { id: string } }) {
+type Props = {
+  params: { id: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  const keywords = project.seo?.keywords || [];
+
+  return {
+    title: `${project.title} | Odena`,
+    description: project.description,
+    keywords: [
+        ...keywords,
+        "Odena projects",
+        "research engineering",
+        "AI systems",
+    ],
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      type: "article",
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: project.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: [project.image],
+    },
+  };
+}
+
+export default async function ProjectPage({ params }: Props) {
   const { id } = await params;
   const project = projects.find((p) => p.id === id);
 
