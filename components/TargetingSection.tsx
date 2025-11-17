@@ -12,13 +12,32 @@ export default function TargetingDial() {
   });
 
   const items = [
-    { title: "Zero-Shot Ranking Models", desc: "Operators that understand unseen datasets instantly." },
-    { title: "Network-Style Pipelines", desc: "Systems that restructure based on data behavior." },
-    { title: "High-Throughput Systems", desc: "Millions of events per second across distributed nodes." },
-    { title: "Cross-Domain Engines", desc: "One operator chain for code, media, telemetry and more." },
-    { title: "Self-Organizing Layers", desc: "Clustering engines that reorganize as data grows." },
-    { title: "Enterprise Integrations", desc: "Designed to drop into real stacks: Databricks, Airflow, K8s." }
+    {
+      title: "Adaptive Data Models",
+      desc: "Models that reshape themselves around the data they’re given, without requiring manual tuning or retraining."
+    },
+    {
+      title: "Dynamic Processing Chains",
+      desc: "Pipelines that reconfigure on the fly to match workload, structure, or behavior—always using the most efficient path."
+    },
+    {
+      title: "Real-Time Decision Layers",
+      desc: "Fast systems that evaluate incoming data instantly and choose the most useful operations with zero delay."
+    },
+    {
+      title: "Unified Multi-Format Engines",
+      desc: "One engine for every format—code, video, logs, text—so teams don’t juggle separate tools for each domain."
+    },
+    {
+      title: "Self-Maintaining Structures",
+      desc: "Systems that clean, correct, and reorganize themselves as information grows, reducing manual effort to near zero."
+    },
+    {
+      title: "Deep Stack Compatibility",
+      desc: "Built to drop cleanly into existing environments, scaling from prototypes to massive distributed workloads."
+    }
   ];
+
 
   const [active, setActive] = useState(0);
 
