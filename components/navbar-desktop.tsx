@@ -8,10 +8,10 @@ import {
     SlidersHorizontal,
     Layers,
     BarChart3,
-    Sparkles,
     Database,
     Zap,
     Shield,
+    BriefcaseBusiness,
 } from "lucide-react";
 
 export default function NavbarDesktop() {
@@ -170,7 +170,7 @@ export default function NavbarDesktop() {
                         className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
                         onClick={() => setIsServicesOpen(false)}
                     >
-                        <Sparkles className="w-4 h-4 text-primary" />
+                        <BriefcaseBusiness className="w-4 h-4 text-primary" />
                         <span>Consulting</span>
                     </Link>
 

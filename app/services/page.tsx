@@ -1,4 +1,4 @@
-import { SlidersHorizontal, Layers, BarChart3, Sparkles, Database, Zap, Shield } from "lucide-react";
+import { SlidersHorizontal, Layers, BarChart3, Database, Zap, Shield, BriefcaseBusiness } from "lucide-react";
 import Link from "next/link";
 import CallToAction from "@/components/CallToAction";
 import { Metadata } from "next";
@@ -84,7 +84,7 @@ export default function ServicesPage() {
       highlights: ["Pattern detection", "Anomaly identification", "Predictive analytics"]
     },
     {
-      icon: Sparkles,
+      icon: BriefcaseBusiness,
       title: "Consulting",
       desc: "Strategic guidance on data architecture, pipeline design, and system optimization from engineers who build production systems.",
       href: "/services/consulting",

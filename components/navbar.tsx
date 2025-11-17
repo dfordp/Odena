@@ -8,12 +8,12 @@ import {
   SlidersHorizontal,
   Layers,
   BarChart3,
-  Sparkles,
   Menu,
   X,
   Database,
   Zap,
-  Shield
+  Shield,
+  BriefcaseBusiness
 } from "lucide-react";
 
 export default function Navbar() {
@@ -144,7 +144,7 @@ export default function Navbar() {
                     className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Sparkles className="w-4 h-4 text-primary" />
+                    <BriefcaseBusiness className="w-4 h-4 text-primary" />
                     <span>Consulting</span>
                   </Link>
 
