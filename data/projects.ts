@@ -78,7 +78,7 @@ export const projects : Project[] = [
         id: "vihangam-geospatial-model",
         image: "/vihangam.jpeg",
         alt: "Vihangam",
-        title: "Vihangam -  Indo-Pacific Foundational Geospatial Model",
+        title: "Vihangam - Earth Observation Model",
         description: "Multi-resolution foundational geospatial model built for the entire Indo-Pacific region, integrating satellite imagery across resolutions",
         slug: "vihangam-geospatial-model",
         contentBlocks : vihangamData,
