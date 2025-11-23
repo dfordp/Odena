@@ -294,17 +294,9 @@ export default function ConsultingPage() {
       <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Why Work With Odena</h2>
         
-        <div className="space-y-6 text-muted-foreground leading-relaxed max-w-4xl">
+        <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p>
-            What sets Odena apart is our ability to bridge scientific thinking with operational execution. We don&apos;t offer generic advice or slide decks; we build solutions that work in the real world. Whether you are refining a dataset, scaling a model, deploying an AI agent, designing a new data architecture, or exploring domain-specific intelligence, we provide guidance grounded in rigorous understanding of data systems, multimodal reasoning, and performance engineering.
-          </p>
-          
-          <p>
-            Companies that partner with Odena experience clearer decision-making, reduced technical uncertainty, and significantly faster progress toward impactful AI outcomes. Every recommendation we make is designed to minimize risk, maximize insight, and future-proof your organization&apos;s AI capabilities.
-          </p>
-          
-          <p>
-            With Odena by your side, you gain a dedicated intelligence partner who understands both the science and the strategy behind modern data-driven transformation.
+            What sets Odena apart is our ability to bridge scientific thinking with operational execution. We don&apos;t offer generic advice or slide decks; we build solutions that work in the real world. Whether you are refining a dataset, scaling a model, deploying an AI agent, designing a new data architecture, or exploring domain-specific intelligence, we provide guidance grounded in rigorous understanding of data systems, multimodal reasoning, and performance engineering. Companies that partner with Odena experience clearer decision-making, reduced technical uncertainty, and significantly faster progress toward impactful AI outcomes. Every recommendation we make is designed to minimize risk, maximize insight, and future-proof your organization&apos;s AI capabilities. With Odena by your side, you gain a dedicated intelligence partner who understands both the science and the strategy behind modern data-driven transformation.
           </p>
         </div>
         
