@@ -59,7 +59,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function ServicesPage() {
   const services = [
     {
@@ -123,11 +122,8 @@ export default function ServicesPage() {
           Systems That Organize, Rank, and Understand Data
         </h1>
 
-        <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-          Odena builds research-grade pipelines for ranking, segmenting,
-          cleaning, and interpreting multimodal datasets.  
-          Everything we make comes from first-principles experiments, competition-level problem solving, 
-          and a need to push what&apos;s possible.
+        <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
+          Odena builds research-grade pipelines for ranking, segmenting, cleaning, and interpreting multimodal datasets. Everything we make comes from first-principles experiments, competition-level problem solving, and a need to push what&apos;s possible.
         </p>
       </section>
 

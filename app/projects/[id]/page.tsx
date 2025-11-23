@@ -68,6 +68,16 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-background text-foreground px-6 pt-24 pb-4">
       <div className="max-w-[1100px] mx-auto">
+        
+        {/* Back to Projects Link */}
+        <div className="mb-4 md:mb-6 w-full">
+          <Link 
+            href="/projects" 
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition md:mb-2"
+          >
+            ←<span className="underline underline-offset-[3px]">Back to Projects</span>
+          </Link>
+        </div>
 
         {/* Header */}
         <div className="mb-16">
