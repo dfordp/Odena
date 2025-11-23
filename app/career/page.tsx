@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Careers at Odena – Join a Research-Driven Engineering Collective",
   description:
-    "Odena is a research-first engineering collective building adaptive pipelines, distributed systems, and zero-shot operators. We don't hire for titles—we look for builders who enjoy solving technically ambitious problems.",
+    "Odena is a research-first engineering collective building adaptive pipelines, distributed systems, and zero-shot operators. We don't hire for titles. We look for builders who enjoy solving technically ambitious problems.",
   keywords: [
     "Odena careers",
     "Odena hiring",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Careers at Odena – Build Systems That Shouldn’t Work",
     description:
-      "Join Odena and work on adaptive routing meshes, high-throughput data pipelines, zero-shot ranking models, and multimodal operator chains. No titles, no hierarchy—just deep technical work.",
+      "Join Odena and work on adaptive routing meshes, high-throughput data pipelines, zero-shot ranking models, and multimodal operator chains. No titles, no hierarchy, just deep technical work.",
     url: "https://www.odena.io/careers",
     siteName: "Odena",
     images: [

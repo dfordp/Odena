@@ -13,6 +13,7 @@ export default function SplineAutoLoop() {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const loopIntervalRef = useRef<NodeJS.Timeout | null>(null);
     const isUserHoveringRef = useRef(false);
+    const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const [isSplineReady, setIsSplineReady] = useState(false);
 
     function onLoad(splineApp: Application) {
@@ -164,12 +165,33 @@ export default function SplineAutoLoop() {
         isUserHoveringRef.current = false;
     };
 
+    // Handle touch/click on mobile - pause briefly then resume
+    const handleTouchStart = () => {
+        console.log("Touch/click detected");
+        
+        // Clear any existing timeout
+        if (touchTimeoutRef.current) {
+            clearTimeout(touchTimeoutRef.current);
+        }
+        
+        // Pause the auto-loop temporarily
+        isUserHoveringRef.current = true;
+        
+        // Resume after 800ms for quicker response on mobile
+        touchTimeoutRef.current = setTimeout(() => {
+            console.log("Resuming auto-loop after touch");
+            isUserHoveringRef.current = false;
+        }, 800);
+    };
+
     return (
         <div 
         ref={containerRef}
         className="w-full h-full relative"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onClick={handleTouchStart}
         >
         <Spline 
             scene="https://prod.spline.design/HyZX8TKNsWx4a9OM/scene.splinecode"

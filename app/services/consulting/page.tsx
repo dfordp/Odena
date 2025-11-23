@@ -141,13 +141,13 @@ export default function ConsultingPage() {
     <div className="min-h-screen bg-background text-foreground font-sans">
       
       {/* HERO */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <div className="mb-4">
+      <section className="flex flex-col items-center pt-22 pb-12 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="mb-4 md:mb-6 w-full md:pl-12 mx-auto">
           <Link 
             href="/services" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition md:mb-2"
           >
-            ← Back to Services
+            ←<span className="underline underline-offset-[3px]">Back to Services</span>
           </Link>
         </div>
         
@@ -155,12 +155,12 @@ export default function ConsultingPage() {
           Strategic AI Consulting That Bridges Vision and Execution
         </h1>
         
-        <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
-          Building intelligent systems is no longer about choosing the right model—it&apos;s about designing the right ecosystem around data, infrastructure, safety, and long-term scalability. Most organizations face strategic uncertainty: they know AI is essential, but they struggle with architecture choices, dataset readiness, workflow integration, governance standards, and aligning teams around a unified direction.
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
+          Building intelligent systems is no longer about choosing the right model. It&apos;s about designing the right ecosystem around data, infrastructure, safety, and long-term scalability. Most organizations face strategic uncertainty: they know AI is essential, but they struggle with architecture choices, dataset readiness, workflow integration, governance standards, and aligning teams around a unified direction.
         </p>
         
-        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
-          Odena&apos;s Consulting service exists to solve this exact problem. We work alongside companies as strategic partners, guiding them through the complexities of modern AI adoption with the precision of researchers and the practicality of engineers. Our approach begins by understanding your existing systems, your operational reality, and your long-term ambitions. From there, we craft tailored strategies—data pipelines, deployment frameworks, roadmap planning, multimodal integration paths, and safety frameworks—that elevate your capabilities while staying deeply aligned with your business goals.
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
+          Odena&apos;s Consulting service exists to solve this exact problem. We work alongside companies as strategic partners, guiding them through the complexities of modern AI adoption with the precision of researchers and the practicality of engineers. Our approach begins by understanding your existing systems, your operational reality, and your long-term ambitions. From there, we craft tailored strategies: data pipelines, deployment frameworks, roadmap planning, multimodal integration paths, and safety frameworks that elevate your capabilities while staying deeply aligned with your business goals.
         </p>
       </section>
 
@@ -324,7 +324,7 @@ export default function ConsultingPage() {
       </section>
 
       {/* WHO WE WORK WITH */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Who We Work With</h2>
         
         <div className="space-y-6 text-muted-foreground leading-relaxed">

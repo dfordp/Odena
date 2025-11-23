@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Odena Projects – Research Systems, Experiments & Infrastructure",
     description:
-      "A curated collection of Odena’s research systems and engineering experiments—geospatial models, adaptive engines, distributed compute meshes, multimodal workflows, and AI-driven data pipelines.",
+      "A curated collection of Odena's research systems and engineering experiments: geospatial models, adaptive engines, distributed compute meshes, multimodal workflows, and AI-driven data pipelines.",
     url: "https://www.odena.io/projects",
     siteName: "Odena",
     images: [

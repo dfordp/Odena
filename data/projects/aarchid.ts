@@ -51,7 +51,7 @@ export const aarchidData : ContentBlock[] = [
             {
                 type: "paragraph",
                 content:
-                "The system is designed for long-term use, allowing plants to be monitored through their full lifecycle—capturing early signs of stress, recording growth velocities, and adapting care routines based on local climate and behavioral feedback."
+                "The system is designed for long-term use, allowing plants to be monitored through their full lifecycle, capturing early signs of stress, recording growth velocities, and adapting care routines based on local climate and behavioral feedback."
             },
 
             // ============================

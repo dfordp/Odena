@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Data Ranking Services – Uncover Hidden Hierarchy in Your Datasets | Odena",
   description:
-    "Automatically discover which data points drive model performance, strengthen generalization, and reduce hallucinations. Stop treating all data equally—rank by true strategic value.",
+    "Automatically discover which data points drive model performance, strengthen generalization, and reduce hallucinations. Stop treating all data equally, rank by true strategic value.",
   keywords: [
     "data ranking",
     "model performance optimization",
@@ -88,7 +88,7 @@ export default function DataRankingPage() {
     {
       icon: Network,
       title: "Cross-Domain Interaction Analysis",
-      desc: "Connect behavioral patterns with telemetry, satellite imagery with environmental shifts, code changes with security events—revealing relevance structures invisible to human analysis."
+      desc: "Connect behavioral patterns with telemetry, satellite imagery with environmental shifts, code changes with security events, revealing relevance structures invisible to human analysis."
     },
     {
       icon: TrendingUp,
@@ -111,7 +111,7 @@ export default function DataRankingPage() {
     {
       step: "02",
       title: "Influence Mapping",
-      desc: "Our system evaluates every data point's contribution to model performance, generalization, and reliability—creating a precise hierarchy of value."
+      desc: "Our system evaluates every data point's contribution to model performance, generalization, and reliability, creating a precise hierarchy of value."
     },
     {
       step: "03",
@@ -129,13 +129,13 @@ export default function DataRankingPage() {
     <div className="min-h-screen bg-background text-foreground font-sans">
       
       {/* HERO */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <div className="mb-4">
+      <section className="flex flex-col items-center pt-22 pb-12 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="mb-4 md:mb-6 w-full md:pl-12 mx-auto">
           <Link 
             href="/services" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition md:mb-2"
           >
-            ← Back to Services
+            ←<span className="underline underline-offset-[3px]">Back to Services</span>
           </Link>
         </div>
         
@@ -143,7 +143,7 @@ export default function DataRankingPage() {
           Stop Treating All Data Equally. Discover What Actually Matters.
         </h1>
         
-        <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
           Most companies waste compute on data that doesn&apos;t improve their models. Odena&apos;s Data Ranking reveals the 
           hidden hierarchy of influence within your datasets automatically identifying which signals genuinely drive 
           performance, strengthen generalization, reduce hallucinations, and which silently introduce noise or bias. 
@@ -248,9 +248,9 @@ export default function DataRankingPage() {
           </div>
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mt-6 max-w-2xl mx-auto">
+        <p className="text-center text-sm text-muted-foreground mt-6 max-w-4xl mx-auto">
           Our system evaluates cross-domain interactions at scale, connecting behavioral patterns with telemetry, 
-          satellite imagery with environmental shifts, and code changes with security events—revealing relevance 
+          satellite imagery with environmental shifts, and code changes with security events, revealing relevance 
           structures invisible to human analysis.
         </p>
       </section>
@@ -273,13 +273,13 @@ export default function DataRankingPage() {
       </section>
 
       {/* WHY IT MATTERS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4">The Problem: Not All Data is Created Equal</h2>
         
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
             Most companies operate in an environment where datasets are massive, messy, and constantly evolving. 
-            Yet the industry still treats all data points as if they hold the same importance—leading to wasted 
+            Yet the industry still treats all data points as if they hold the same importance, leading to wasted 
             compute, slower experiments, and AI systems that learn inefficiently.
           </p>
           

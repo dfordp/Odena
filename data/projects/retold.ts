@@ -245,7 +245,7 @@ export const retoldData : ContentBlock[] = [
         {
             type: "paragraph",
             content:
-            "Retold was built as a creative exploration into whether AI can capture the emotional rhythm of a story—not just summarize plot points. The system analyzes entire films, identifies narrative beats, rewrites them in human-like prose, and then pairs the text with relevant scenes to form a cohesive short trailer. The result is an early experiment in automated cinematic storytelling."
+            "Retold was built as a creative exploration into whether AI can capture the emotional rhythm of a story, not just summarize plot points. The system analyzes entire films, identifies narrative beats, rewrites them in human-like prose, and then pairs the text with relevant scenes to form a cohesive short trailer. The result is an early experiment in automated cinematic storytelling."
         },
 
         // ============================

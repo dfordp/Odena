@@ -13,8 +13,19 @@ export default function Home() {
       {/* ===========================================================
           HERO SECTION
       ============================================================ */}
-      <section className="pt-20 sm:pt-24 md:pt-20 lg:pt-14 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
+      <section className="min-h-screen lg:min-h-0 pt-20 sm:pt-24 md:pt-20 lg:pt-14 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 relative overflow-hidden flex items-center">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12 w-full">
+          {/* Spline Element - Shown on top for mobile/tablet, on right side for desktop */}
+          <div className="w-full lg:hidden flex-1 flex items-center justify-center touch-none select-none relative">
+            <SplineAutoLoop />
+            {/* Overlay to hide Spline logo */}
+            <div 
+              className="absolute bottom-3 right-3 w-37 h-12 pointer-events-none z-10 rounded-xl"
+              style={{ backgroundColor: '#fdf6e3' }}
+              suppressHydrationWarning
+            ></div>
+          </div>
+
           {/* Left: Text and Buttons */}
           <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left md:pl-12">
             {/* Hero Text */}
@@ -47,7 +58,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: Spline Element - Hidden on small screens */}
+          {/* Right: Spline Element - Desktop only */}
           <div className="hidden lg:flex flex-1 w-full h-[500px] xl:h-[650px] 2xl:h-[750px] items-center justify-center touch-none select-none relative">
             <SplineAutoLoop />
             {/* Overlay to hide Spline logo */}

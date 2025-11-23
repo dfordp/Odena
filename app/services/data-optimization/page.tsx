@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Brain, Target, Gauge, CheckCircle, TrendingUp, Layers, Shield } from "lucide-react";
+import { Brain, Target, Gauge, CheckCircle, TrendingUp, Layers, Shield } from "lucide-react";
 import CallToAction from "@/components/CallToAction";
 import type { Metadata } from "next";
 
@@ -28,7 +28,7 @@ const capabilities = [
   {
     icon: Layers,
     title: "Multimodal Optimization",
-    desc: "Refine signal quality across imagery, text, code, time series, telemetry, and more—elevating datasets into structured, balanced learning resources.",
+    desc: "Refine signal quality across imagery, text, code, time series, telemetry, and more, elevating datasets into structured, balanced learning resources.",
   },
   {
     icon: Shield,
@@ -102,26 +102,27 @@ export default function DataOptimizationPage() {
   return (
     <main className="min-h-screen">
       {/* HERO SECTION */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <Link
-          href="/services"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition mb-6"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Services
-        </Link>
+      <section className="flex flex-col items-center pt-22 pb-12 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="mb-4 md:mb-6 w-full md:pl-12 mx-auto">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition md:mb-2"
+          >
+            ←<span className="underline underline-offset-[3px]">Back to Services</span>
+          </Link>
+        </div>
 
-        <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
           Data Optimization
         </h1>
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
           Transform raw datasets into finely tuned learning material that deep learning models and AI agents can understand deeply and generalize from effectively. 
           The most meaningful gains in model performance come not from upgrading architectures or compute, but from optimizing the data itself.
         </p>
       </section>
 
       {/* CAPABILITIES */}
-      <section className="py-8 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-8 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {capabilities.map((cap, idx) => (
             <div key={idx} className="p-6 rounded-[10px] bg-card/40 border border-border/50">
@@ -134,7 +135,7 @@ export default function DataOptimizationPage() {
       </section>
 
       {/* OPTIMIZATION AREAS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Optimization Focus Areas</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {optimizationAreas.map((area, idx) => (
@@ -159,7 +160,7 @@ export default function DataOptimizationPage() {
       </section>
 
       {/* OPTIMIZATION PROCESS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Our Optimization Process</h2>
         <div className="bg-card/30 border border-border rounded-[10px] p-8 sm:p-10">
           <div className="space-y-6">
@@ -179,7 +180,7 @@ export default function DataOptimizationPage() {
       </section>
 
       {/* VISUALIZATION: BEFORE/AFTER */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Training Impact: Before vs After</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="bg-red-500/5 border border-red-500/20 rounded-[10px] p-6">
@@ -229,7 +230,7 @@ export default function DataOptimizationPage() {
       </section>
 
       {/* USE CASES */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Common Use Cases</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {useCases.map((useCase, idx) => (
@@ -242,12 +243,12 @@ export default function DataOptimizationPage() {
       </section>
 
       {/* WHY OPTIMIZATION MATTERS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-[10px] p-8 sm:p-10 border border-primary/20">
           <h2 className="text-2xl font-bold mb-4">The Data-First Approach to AI</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
             Deep learning models are extremely sensitive to data quality, structure, and balance. Instead of force-feeding models with brute volumes of data, 
-            we elevate your dataset into a structured, balanced, and highly informative resource—the difference between training harder and training smarter.
+            we elevate your dataset into a structured, balanced, and highly informative resource: the difference between training harder and training smarter.
           </p>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
@@ -267,7 +268,7 @@ export default function DataOptimizationPage() {
       </section>
 
       {/* PERFORMANCE METRICS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center">Typical Results</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {performanceMetrics.map((item, idx) => (
@@ -281,7 +282,7 @@ export default function DataOptimizationPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-6 text-center px-4 sm:px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-3">Transform Your Training Data into a Strategic Asset</h2>
           <p className="text-muted-foreground">Let&apos;s analyze your datasets and unlock model performance that many organizations never realize is possible.</p>

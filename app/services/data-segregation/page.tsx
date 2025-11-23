@@ -67,7 +67,7 @@ export default function DataSegregationPage() {
     },
     {
       title: "Faster Experimentation",
-      desc: "Reduce time spent wrestling with disorganized data—start with a clean, well-architected foundation."
+      desc: "Reduce time spent wrestling with disorganized data, start with a clean, well-architected foundation."
     },
     {
       title: "Improved Model Quality",
@@ -124,13 +124,13 @@ export default function DataSegregationPage() {
     <div className="min-h-screen bg-background text-foreground font-sans">
       
       {/* HERO */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <div className="mb-4">
+      <section className="flex flex-col items-center pt-22 pb-12 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="mb-4 md:mb-6 w-full md:pl-12 mx-auto">
           <Link 
             href="/services" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition md:mb-2"
           >
-            ← Back to Services
+            ←<span className="underline underline-offset-[3px]">Back to Services</span>
           </Link>
         </div>
         
@@ -138,10 +138,10 @@ export default function DataSegregationPage() {
           Transform Data Chaos Into Structured Intelligence
         </h1>
         
-        <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
           As organizations scale, data becomes a tangled mixture of formats, sources, and contexts. Odena&apos;s Data Segregation 
           service intelligently separates raw, multimodal inputs into structured, meaningful layers that reflect the true architecture 
-          of your information ecosystem—whether text, code, imagery, telemetry, logs, or behavioral patterns.
+          of your information ecosystem, whether text, code, imagery, telemetry, logs, or behavioral patterns.
         </p>
       </section>
 
@@ -291,7 +291,7 @@ export default function DataSegregationPage() {
       </section>
 
       {/* THE FUNDAMENTAL PROBLEM */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4">The Fundamental Problem We Solve</h2>
         
         <div className="space-y-4 text-muted-foreground leading-relaxed">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Shield, Scale, FileCheck, CheckCircle, AlertTriangle, BookOpen, Users } from "lucide-react";
+import { Shield, Scale, FileCheck, CheckCircle, AlertTriangle, BookOpen, Users } from "lucide-react";
 import CallToAction from "@/components/CallToAction";
 import type { Metadata } from "next";
 
@@ -130,26 +130,27 @@ export default function AISafetyRegulationPage() {
   return (
     <main className="min-h-screen">
       {/* HERO SECTION */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <Link
-          href="/services"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition mb-6"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Services
-        </Link>
+      <section className="flex flex-col items-center pt-22 pb-12 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="mb-4 md:mb-6 w-full md:pl-12 mx-auto">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition md:mb-2"
+          >
+            ←<span className="underline underline-offset-[3px]">Back to Services</span>
+          </Link>
+        </div>
 
-        <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
           AI Safety & Regulation
         </h1>
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
           Ensure your AI systems behave reliably in real-world environments while meeting rising regulatory and ethical expectations. 
-          Most companies lack visibility into how models make decisions or where hidden risks emerge—we provide the oversight and intelligence to operate AI responsibly at scale.
+          Most companies lack visibility into how models make decisions or where hidden risks emerge. We provide the oversight and intelligence to operate AI responsibly at scale.
         </p>
       </section>
 
       {/* CAPABILITIES */}
-      <section className="py-8 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-8 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {capabilities.map((cap, idx) => (
             <div key={idx} className="p-6 rounded-[10px] bg-card/40 border border-border/50">
@@ -162,7 +163,7 @@ export default function AISafetyRegulationPage() {
       </section>
 
       {/* OVERSIGHT CAPABILITIES */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Comprehensive Oversight Capabilities</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {oversightCapabilities.map((item, idx) => (
@@ -182,7 +183,7 @@ export default function AISafetyRegulationPage() {
       </section>
 
       {/* SAFETY LAYERS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Integrated Safety Layers</h2>
         <div className="space-y-6">
           {safetyLayers.map((layer, idx) => (
@@ -209,7 +210,7 @@ export default function AISafetyRegulationPage() {
       </section>
 
       {/* SAFETY INTEGRATION */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Seamless Safety Integration</h2>
         <div className="bg-card/30 border border-border rounded-[10px] p-8 sm:p-10">
           <div className="space-y-6">
@@ -229,7 +230,7 @@ export default function AISafetyRegulationPage() {
       </section>
 
       {/* VISUAL: SAFETY APPROACH */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Beyond Basic Guardrails</h2>
         <div className="bg-linear-to-br from-amber-500/5 to-amber-500/10 border border-amber-500/20 rounded-[10px] p-8 sm:p-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -259,7 +260,7 @@ export default function AISafetyRegulationPage() {
       </section>
 
       {/* USE CASES */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Common Use Cases</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {useCases.map((useCase, idx) => (
@@ -272,7 +273,7 @@ export default function AISafetyRegulationPage() {
       </section>
 
       {/* WHY IT MATTERS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">The Challenge of Modern AI</h2>
         <div className="grid grid-cols-1 gap-6">
           {whyItMatters.map((reason, idx) => (
@@ -290,7 +291,7 @@ export default function AISafetyRegulationPage() {
       </section>
 
       {/* COMMITMENT SECTION */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-[10px] p-8 sm:p-10 border border-primary/20">
           <h2 className="text-2xl font-bold mb-4">Invisible Yet Indispensable</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
@@ -300,7 +301,7 @@ export default function AISafetyRegulationPage() {
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-sm">Seamlessly integrates with existing systems—no major architectural changes required</span>
+              <span className="text-sm">Seamlessly integrates with existing systems, no major architectural changes required</span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -315,7 +316,7 @@ export default function AISafetyRegulationPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-6 text-center px-4 sm:px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-3">Make Your AI Predictable, Reliable, and Aligned</h2>
           <p className="text-muted-foreground">Let&apos;s build the safety and oversight layer your AI systems need to operate responsibly at scale.</p>

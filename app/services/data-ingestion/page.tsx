@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Database, Zap, Shield, CheckCircle, GitBranch, Activity } from "lucide-react";
+import { Database, Zap, Shield, CheckCircle, GitBranch, Activity } from "lucide-react";
 import CallToAction from "@/components/CallToAction";
 import type { Metadata } from "next";
 
@@ -98,28 +98,29 @@ export default function DataIngestionPage() {
   return (
     <main className="min-h-screen">
       {/* HERO SECTION */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <Link
-          href="/services"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition mb-6"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Services
-        </Link>
+      <section className="flex flex-col items-center pt-22 pb-12 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="mb-4 md:mb-6 w-full md:pl-12 mx-auto">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition md:mb-2"
+          >
+            ←<span className="underline underline-offset-[3px]">Back to Services</span>
+          </Link>
+        </div>
 
-        <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
           Data Ingestion for Intelligent Systems
         </h1>
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mb-4">
-          AI systems are only as strong as the data they ingest, yet most organizations still rely on fragmented pipelines, inconsistent preprocessing steps, and ad-hoc integrations that silently erode model performance. Data arrives from countless sources—internal tools, sensors, logs, APIs, documents, satellite feeds, user events—and each carries its own structure, noise profile, and implicit biases.
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
+          AI systems are only as strong as the data they ingest, yet most organizations still rely on fragmented pipelines, inconsistent preprocessing steps, and ad-hoc integrations that silently erode model performance. Data arrives from countless sources: internal tools, sensors, logs, APIs, documents, satellite feeds, user events, and each carries its own structure, noise profile, and implicit biases.
         </p>
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
           Without a unified ingestion framework, teams spend more time stitching data together than training or innovating. Odena&apos;s Data Ingestion service eliminates this bottleneck by creating clean, coherent, and context-aware ingestion pipelines that prepare data for AI the way laboratories prepare samples for scientific experiments: with precision, intention, and consistency.
         </p>
       </section>
 
       {/* CAPABILITIES */}
-      <section className="py-8 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-8 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {capabilities.map((cap, idx) => (
             <div key={idx} className="p-6 rounded-[10px] bg-card/40 border border-border/50">
@@ -132,7 +133,7 @@ export default function DataIngestionPage() {
       </section>
 
       {/* INGESTION PIPELINE DIAGRAM */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">ETL Pipeline Architecture</h2>
         <div className="bg-card/30 border border-border rounded-[10px] p-8 sm:p-10">
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
@@ -163,7 +164,7 @@ export default function DataIngestionPage() {
       </section>
 
       {/* USE CASES */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Common Use Cases</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {useCases.map((useCase, idx) => (
@@ -176,7 +177,7 @@ export default function DataIngestionPage() {
       </section>
 
       {/* KEY FEATURES */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Advanced Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {features.map((feature, idx) => (
@@ -192,14 +193,14 @@ export default function DataIngestionPage() {
       </section>
 
       {/* WHY ODENA FOR DATA INGESTION */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-[10px] p-8 sm:p-10 border border-primary/20">
           <h2 className="text-2xl font-bold mb-4">The Impact on Your AI Infrastructure</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             When teams integrate Odena&apos;s ingestion pipeline into their AI infrastructure, they experience an immediate lift in reliability, accuracy, and stability across the entire development lifecycle. Models converge faster, require fewer retraining cycles, and respond more predictively to new data.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Experimentation becomes smoother, since every run is backed by consistent and traceable data preparation. Teams no longer have to rebuild preprocessing logic for every project — they gain a reusable backbone that powers every model with the same high-quality standards.
+            Experimentation becomes smoother, since every run is backed by consistent and traceable data preparation. Teams no longer have to rebuild preprocessing logic for every project. They gain a reusable backbone that powers every model with the same high-quality standards.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-6">
             For companies scaling multimodal systems, deploying AI agents, or building foundational models, Odena transforms ingestion from a fragile manual process into a scientific, repeatable, and future-proof foundation. It&apos;s the silent engine that makes advanced AI truly possible.
@@ -222,7 +223,7 @@ export default function DataIngestionPage() {
       </section>
 
       {/* PERFORMANCE METRICS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center">Performance You Can Count On</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {performanceMetrics.map((item, idx) => (
@@ -236,7 +237,7 @@ export default function DataIngestionPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-6 text-center px-4 sm:px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-3">Ready to Build Your Data Pipeline?</h2>
           <p className="text-muted-foreground">Let&apos;s design an ingestion system that scales with your needs and keeps your data flowing reliably.</p>

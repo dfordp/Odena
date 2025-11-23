@@ -201,7 +201,7 @@ export const DecisionLayer: React.FC<{ tooltip?: string }> = ({ tooltip }) => {
 
   return (
     <svg viewBox="0 0 640 220" width="100%" height="440" className="block mx-auto">
-      <text x="40" y="22" style={{ fill: "var(--color-muted)", fontFamily: "var(--font-mono)", fontSize: 12 }}>Branching evaluator — instant operators</text>
+      <text x="40" y="22" style={{ fill: "var(--color-muted)", fontFamily: "var(--font-mono)", fontSize: 12 }}>Branching evaluator: instant operators</text>
 
       {/* root node */}
       <motion.rect x={280} y={60} width={80} height={48} rx={8} fill="transparent" stroke="var(--color-primary)" strokeWidth={1.4} animate={pulse} transition={{ duration: 1.8, repeat: Infinity }} />

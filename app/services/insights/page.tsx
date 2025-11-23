@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Data Insights Services – Context-Rich Intelligence & Cross-Domain Reasoning | Odena",
   description:
-    "Transform raw information into meaningful, context-rich intelligence. Odena reveals why things happen, not just what happened—uncovering cross-domain connections and strategic insights.",
+    "Transform raw information into meaningful, context-rich intelligence. Odena reveals why things happen, not just what happened, uncovering cross-domain connections and strategic insights.",
   keywords: [
     "data insights",
     "connected interpretation",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Data Insights – From Numbers to Narratives, From Data to Understanding",
     description:
-      "Odena transforms data into meaningful intelligence that reveals why things happen—uncovering cross-domain connections traditional systems miss.",
+      "Odena transforms data into meaningful intelligence that reveals why things happen, uncovering cross-domain connections traditional systems miss.",
     url: "https://www.odena.io/services/insights",
     siteName: "Odena",
     images: [
@@ -101,13 +101,13 @@ export default function DataInsightsPage() {
     <div className="min-h-screen bg-background text-foreground font-sans">
       
       {/* HERO */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 max-w-4xl mx-auto">
-        <div className="mb-4">
+      <section className="flex flex-col items-center pt-22 pb-12 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="mb-4 md:mb-6 w-full md:pl-12 mx-auto">
           <Link 
             href="/services" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition md:mb-2"
           >
-            ← Back to Services
+            ←<span className="underline underline-offset-[3px]">Back to Services</span>
           </Link>
         </div>
         
@@ -115,10 +115,10 @@ export default function DataInsightsPage() {
           From Numbers to Narratives: Intelligence That Explains Why
         </h1>
         
-        <p className="mt-4 sm:mt-6 text-base sm:text-md text-muted-foreground leading-relaxed max-w-3xl">
+        <p className="mt-4 text-base sm:text-md text-muted-foreground leading-relaxed max-w-[1050px] text-center">
           Most organizations collect enormous data but struggle to translate it into genuine understanding. Dashboards provide 
           numbers, not narratives; charts show patterns, but not purpose. Odena&apos;s Data Insights service turns raw information into 
-          meaningful, context-rich intelligence that reveals why things happen—not just what happened.
+          meaningful, context-rich intelligence that reveals why things happen, not just what happened.
         </p>
       </section>
 
@@ -143,12 +143,12 @@ export default function DataInsightsPage() {
       </section>
 
       {/* THE FUNDAMENTAL CHALLENGE */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4">The Challenge: Isolated Metrics Without Meaning</h2>
         
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
-            The industry&apos;s biggest challenge is not lack of data—it&apos;s the lack of connected interpretation. Teams are 
+            The industry&apos;s biggest challenge is not lack of data. It&apos;s the lack of connected interpretation. Teams are 
             often left guessing which patterns matter or how to act on them. Traditional analytics provide isolated metrics, 
             but miss the deeper interactions between data domains that drive real outcomes.
           </p>
@@ -161,7 +161,7 @@ export default function DataInsightsPage() {
           
           <p>
             This empowers organizations to make decisions with confidence, operate with foresight rather than hindsight, 
-            and build systems that evolve intelligently over time. With Odena, insights become a strategic weapon—your data 
+            and build systems that evolve intelligently over time. With Odena, insights become a strategic weapon. Your data 
             stops whispering and starts speaking clearly.
           </p>
         </div>
@@ -239,7 +239,7 @@ export default function DataInsightsPage() {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-6 max-w-2xl mx-auto">
-          Our pipeline doesn&apos;t just analyze data—it connects domains, uncovers relationships, and synthesizes 
+          Our pipeline doesn&apos;t just analyze data. It connects domains, uncovers relationships, and synthesizes 
           intelligence that reveals the deeper story behind your metrics.
         </p>
       </section>
@@ -262,14 +262,14 @@ export default function DataInsightsPage() {
       </section>
 
       {/* CROSS-DOMAIN CONNECTIONS */}
-      <section className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4">What We Uncover</h2>
         
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-2">Behavioral-System Interactions</h3>
             <p>
-              How user behavior patterns impact system performance, resource utilization, and operational stability—revealing 
+              How user behavior patterns impact system performance, resource utilization, and operational stability, revealing 
               optimization opportunities that single-domain analysis misses.
             </p>
           </div>
@@ -293,7 +293,7 @@ export default function DataInsightsPage() {
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-2">Temporal Evolution Patterns</h3>
             <p>
-              How market signals, customer preferences, and competitive dynamics evolve across time—identifying inflection 
+              How market signals, customer preferences, and competitive dynamics evolve across time, identifying inflection 
               points before they become widely recognized.
             </p>
           </div>
