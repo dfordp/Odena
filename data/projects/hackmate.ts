@@ -47,7 +47,7 @@ export const hackmateData: ContentBlock[] = [
   {
     type: "paragraph",
     content:
-      "Traditional collaborator discovery systems rely on long-form profiles, noisy recommendation algorithms, or feed-based browsing—resulting in low-quality signals and high abandonment rates. Hackmate investigates whether collaborators can be matched using extremely low-bandwidth input: a single binary decision. The system evaluates whether minimal interaction can still produce accurate behavioral signals, reliable matches, and scalable real-time performance.",
+      "Traditional collaborator discovery systems rely on long-form profiles, noisy recommendation algorithms, or feed-based browsing resulting in low-quality signals and high abandonment rates. Hackmate investigates whether collaborators can be matched using extremely low-bandwidth input: a single binary decision. The system evaluates whether minimal interaction can still produce accurate behavioral signals, reliable matches, and scalable real-time performance.",
   },
 
   /* -------------------------------------------------------
@@ -217,7 +217,7 @@ user:<user_id>      – HASH  (cached user profile data)
   {
     type: "paragraph",
     content:
-      "Even a single-bit input captures rich latent dimensions of compatibility—skill relevance, intent alignment, collaboration style, and project expectations. Hackmate shows that deterministic pipelines can outperform early ML models when datasets are small or behavior is still emerging.",
+      "Even a single-bit input captures rich latent dimensions of compatibility skill relevance, intent alignment, collaboration style, and project expectations. Hackmate shows that deterministic pipelines can outperform early ML models when datasets are small or behavior is still emerging.",
   },
 
   /* -------------------------------------------------------
