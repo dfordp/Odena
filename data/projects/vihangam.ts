@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa6";
 
 export const vihangamData: ContentBlock[] = [
   /* -------------------------------------------------------
-     PROJECT HERO IMAGE
+     HERO IMAGE
   ------------------------------------------------------- */
   {
     type: "image",
@@ -23,20 +23,17 @@ export const vihangamData: ContentBlock[] = [
   {
     type: "paragraph",
     content:
-      "Vihangam is a foundational, multi-resolution geospatial model covering the entire Indo-Pacific region. It merges satellite data across optical and SAR sensors from 5 m to 100 m resolution into a unified, zoomable 3D geospatial engine. Built for AI/ML teams, defense, climate science, and geospatial platforms, Vihangam provides harmonized, analytics-ready datasets for model training, monitoring systems, and operational decision-making.",
+      "Vihangam is a foundational, multi-resolution geospatial model built from first principles designed to unify decades of optical and SAR satellite missions from 5 m to 100 m resolution into a single, adaptive, analytics-ready baseline. Covering the entire Indo-Pacific, it powers AI/ML training, monitoring systems, and large-scale operational decisions with clean, harmonized and physically consistent geospatial outputs.",
   },
 
-  /* -------------------------------------------------------
-     IMAGE SLOT: GEOSPATIAL FLOW
-  ------------------------------------------------------- */
   {
     type: "image",
     src: "/vihangam-data.JPG",
-    alt: "Vihangam data flow",
+    alt: "Vihangam sensor fusion flow",
   },
 
   /* -------------------------------------------------------
-     HOW IT WAS BUILT
+     HOW IT WAS BUILT (ALIGNED WITH APPROACH 1 + 2)
   ------------------------------------------------------- */
   {
     type: "heading",
@@ -46,32 +43,29 @@ export const vihangamData: ContentBlock[] = [
   {
     type: "paragraph",
     content:
-      "Vihangam is engineered using a data-first architecture combining rigorous cross-sensor harmonization with a self-supervised, cross-scale transformer backbone. The system is optimized for noisy, high-variability remote-sensing conditions clouds, seasonal drift, differing radiometry, and multi-mission inconsistencies.",
+      "Vihangam follows Odena’s first-principles engineering philosophy: no template architectures, no black-box assumptions. Every component from harmonization to multi-scale fusion is built around the raw physics of Earth-observation signals, resolution mismatches, seasonal drift, and cross-sensor inconsistencies. The model relies on adaptive, self-reconfiguring pipelines that reshape themselves around sensor behavior, cloud cover, temporal variation, and scene complexity.",
   },
 
   {
     type: "list",
     style: "bulleted",
     items: [
-      "Cross-sensor harmonization across AWiFS, LISS-3/4, Sentinel-2, Landsat-8, and EOS-04 SAR.",
-      "Multi-temporal smoothing using Savitzky–Golay and Whittaker–Eilers filters.",
-      "PIF-based radiometric normalization and per-sensor physical alignment.",
-      "A multi-scale pyramid (5 m → 100 m) encoded as STAC-compliant tiles.",
-      "Self-supervised pretraining using Multi-MAE, multi-scale ViT, and Swin Transformer fusion.",
+      "Cross-sensor harmonization over AWiFS, LISS-3/4, Sentinel-2, Landsat-8, EOS-04 SAR.",
+      "Multi-temporal smoothing (Savitzky–Golay, Whittaker–Eilers) for stable long-range consistency.",
+      "PIF-based radiometric normalization and per-mission physical alignment.",
+      "A multi-resolution spatial pyramid (5m → 10m → 23m → 56m → 100m) encoded as STAC tiles.",
+      "Self-supervised learning via Multi-MAE, cross-scale ViT, and Swin-Transformer fusion.",
     ],
   },
 
-  /* -------------------------------------------------------
-     ARCHITECTURE IMAGE SLOT
-  ------------------------------------------------------- */
   {
     type: "image",
     src: "/vihangam-architecture.JPG",
-    alt: "Vihangam architecture",
+    alt: "Vihangam processing architecture",
   },
 
   /* -------------------------------------------------------
-     CORE ARCHITECTURE DETAILS
+     ARCHITECTURE (Approach 1 + 5)
   ------------------------------------------------------- */
   {
     type: "heading",
@@ -82,30 +76,27 @@ export const vihangamData: ContentBlock[] = [
     type: "list",
     style: "bulleted",
     items: [
-      "Cross-Scale Attention for fusing high-res and low-res features.",
-      "SAR-specific ingestion paths for EOS-04 with speckle-aware normalization.",
-      "Spectral-pathway fusion combining texture-level signals with global topographic cues.",
-      "3D reconstruction layers generating continuous terrain and semantic layers.",
+      "Cross-Scale Attention merging high-resolution and low-resolution features in a physically meaningful way.",
+      "SAR-aware ingestion with speckle-adaptive fusion modules for EOS-04.",
+      "Multi-headed spectral pathways preserving texture-level signals and long-range topographic structure.",
+      "3D reconstruction layers generating continuous terrain, semantic surfaces, and elevation-aware layers.",
     ],
   },
 
-  /* -------------------------------------------------------
-     3D MODEL IMAGE SLOT
-  ------------------------------------------------------- */
   {
     type: "image",
     src: "/vihangam-architecture2.JPG",
-    alt: "3D topographic reconstruction",
+    alt: "3D Indo-Pacific reconstruction",
   },
 
   {
     type: "paragraph",
     content:
-      "The model outputs multi-layer 3D maps land cover, terrain, SAR-derived structures, elevation layers creating a seamless, zoomable understanding of the Indo-Pacific geography.",
+      "These components allow Vihangam to construct a unified 3D representation of the Indo-Pacific terrain, land-cover, SAR-derived structure, and elevation layers forming a seamless, zoomable view that remains stable across missions, sensors, and resolutions.",
   },
 
   /* -------------------------------------------------------
-     INTEGRATION WITH ODENA
+     ODENA INTEGRATION (Approach 2 + 5)
   ------------------------------------------------------- */
   {
     type: "heading",
@@ -115,21 +106,23 @@ export const vihangamData: ContentBlock[] = [
   {
     type: "paragraph",
     content:
-      "Vihangam integrates natively into Odena’s distributed compute, packaging preprocessing, inference, and visualization into scalable microservices.",
+      "Vihangam plugs directly into Odena’s distributed compute stack. Each stage harmonization, preprocessing, inference, and 3D tile generation is deployed as a containerized micro-operator. This ensures scalability, observability, and clean boundaries between data flow and compute logic.",
   },
+
   {
     type: "list",
     style: "bulleted",
     items: [
-      "Preprocessing, harmonization, and inference as containerized services.",
-      "Model registry storing checkpoints, metadata, and reproducibility logs.",
-      "REST APIs for tile-based or bounding box-based inference.",
-      "A built-in 3D Indo-Pacific viewer for interactive exploration.",
-      "Cloud-ready connectors: S3, Azure Blob, GCP Storage, and custom object stores.",
+      "Harmonization, inference, and 3D mapping as isolated container services.",
+      "Versioned model registry capturing checkpoints, preprocessing logs, and lineage.",
+      "REST APIs for bounding-box inference, semantic outputs, and 3D mesh tile retrieval.",
+      "Interactive 3D Indo-Pacific viewer inside Odena for exploration and export.",
+      "Native support for S3, Azure Blob, GCP Storage, and private object-storage backends.",
     ],
   },
+
   /* -------------------------------------------------------
-     KEY TECHNICAL CAPABILITIES
+     CAPABILITIES
   ------------------------------------------------------- */
   {
     type: "heading",
@@ -140,17 +133,17 @@ export const vihangamData: ContentBlock[] = [
     type: "list",
     style: "bulleted",
     items: [
-      "Optical + SAR multi-sensor fusion across all major Indo-Pacific satellites.",
-      "Unified multi-resolution learning (5 m to 100 m pyramids).",
-      "Radiometric, spectral, and temporal harmonization using PIF/MAD normalization.",
-      "STAC-compliant metadata and COG tiles for scalable data governance.",
-      "High-quality outputs: cloud-free composites, semantic layers, 3D meshes, change maps.",
-      "Optimized for cloud-native and on-premise environments.",
+      "Fusion of optical + SAR data from all major Indo-Pacific satellites.",
+      "Unified multi-resolution learning spanning 5 m to 100 m.",
+      "Radiometric and temporal harmonization with PIF/MAD pipelines.",
+      "STAC-compliant metadata, COG tiles, and reproducible governance.",
+      "Outputs: cloud-free composites, semantic maps, terrain meshes, change detection.",
+      "Optimized for cloud-native clusters and on-premise high-security deployments.",
     ],
   },
 
   /* -------------------------------------------------------
-     APPLICATIONS
+     IMPACT
   ------------------------------------------------------- */
   {
     type: "heading",
@@ -161,12 +154,12 @@ export const vihangamData: ContentBlock[] = [
     type: "list",
     style: "bulleted",
     items: [
-      "Accurate LULC mapping across inconsistent satellite sources.",
-      "Near real-time disaster mapping using optical + SAR fusion.",
-      "Stable geospatial inputs for AI model training without sensor drift.",
-      "Climate monitoring, deforestation analysis, agricultural planning.",
-      "High-fidelity terrain reconstruction for national and regional planning.",
-      "Supports upcoming satellite missions and extraterrestrial datasets.",
+      "Accurate LULC mapping across mixed-resolution satellites.",
+      "Near real-time disaster mapping using fused optical + SAR imagery.",
+      "Stable geospatial baselines for training AI models without sensor drift.",
+      "Climate monitoring, deforestation tracking, agricultural planning.",
+      "High-fidelity topographic reconstruction for national and environmental planning.",
+      "Future-ready adaptable to new satellite missions and extraterrestrial datasets.",
     ],
   },
 
@@ -181,6 +174,6 @@ export const vihangamData: ContentBlock[] = [
   {
     type: "paragraph",
     content:
-      "Most geospatial workflows suffer from inconsistent sensors, variable resolutions, poor radiometric alignment, and difficulty scaling across regions. Vihangam solves this by unifying decades of satellite missions into a harmonized physical baseline and powering it with a modern, cross-scale self-supervised model. The result is a production-ready foundation for any geospatial AI today, and for future space missions.",
+      "Most geospatial pipelines break when faced with inconsistent sensors, changing resolutions, or poor radiometric alignment. Vihangam corrects these issues at the source by establishing a harmonized physical baseline and applying a cross-scale, self-supervised architecture on top of it. The result is a production-grade geospatial foundation for today's Earth-observation workloads and a future-proof layer for upcoming space missions.",
   },
 ];
