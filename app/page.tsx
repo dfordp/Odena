@@ -13,11 +13,13 @@ export default function Home() {
       {/* ===========================================================
           HERO SECTION
       ============================================================ */}
-      <section className="min-h-screen lg:min-h-0 pt-20 sm:pt-24 md:pt-20 lg:pt-14 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 relative overflow-hidden flex items-center">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12 w-full">
+      <section className="h-dvh lg:min-h-0 pt-16 sm:pt-20 md:pt-20 lg:pt-14 pb-6 sm:pb-10 md:pb-20 px-4 sm:px-6 relative overflow-hidden flex items-center">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-3 sm:gap-5 lg:gap-12 w-full h-full lg:h-auto">
           {/* Spline Element - Shown on top for mobile/tablet, on right side for desktop */}
-          <div className="w-full lg:hidden flex-1 flex items-center justify-center touch-none select-none relative">
-            <SplineAutoLoop />
+          <div className="w-[120%] sm:w-[110%] lg:w-full lg:hidden flex-[0_0_50%] sm:flex-[0_0_52%] max-h-[380px] sm:max-h-[420px] flex items-center justify-center touch-none select-none relative -mx-[10%] sm:-mx-[5%]">
+            <div className="w-full h-full scale-150 sm:scale-125">
+              <SplineAutoLoop />
+            </div>
             {/* Overlay to hide Spline logo */}
             <div 
               className="absolute bottom-3 right-3 w-37 h-12 pointer-events-none z-10 rounded-xl"
@@ -27,7 +29,7 @@ export default function Home() {
           </div>
 
           {/* Left: Text and Buttons */}
-          <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left md:pl-12">
+          <div className="flex-[0_0_50%] sm:flex-[0_0_48%] lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left md:pl-12">
             {/* Hero Text */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-semibold tracking-tight max-w-2xl leading-tight animate-fade-in">
               Make Sense of Your <span className="text-primary"> Data</span> Quickly, Accurately, Anytime
