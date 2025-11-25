@@ -123,7 +123,7 @@ export const projects : Project[] = [
         image: "/onlynerds.jpeg",
         alt: "OnlyNerds",
         title: "OnlyNerds – The Decentralized Learning Platform",
-        description: "An AI-driven career platform offering tailored resume tools, real-time industry insights, and adaptive skill assessments.",
+        description: "A decentralized, AI-powered learning platform built for autodidacts, builders, and technical creators who learn best by doing.",
         slug: "onlynerds-edtech",
         contentBlocks: onlynerdsData,
         seo: {
