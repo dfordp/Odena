@@ -71,6 +71,7 @@ export interface Project {
     slug: string;
     contentBlocks: ContentBlock[];
     seo?: ProjectSEO;
+    status: "Open for Partnership" | "Finished" | "in progress";
 }
 
 export const projects : Project[] = [
@@ -82,6 +83,7 @@ export const projects : Project[] = [
         description: "Multi-resolution foundational geospatial model built for the entire Indo-Pacific region, integrating satellite imagery across resolutions",
         slug: "vihangam-geospatial-model",
         contentBlocks : vihangamData,
+        status: "Open for Partnership",
         seo: {
             keywords: [
                 "geospatial model",
@@ -105,6 +107,7 @@ export const projects : Project[] = [
         description: "Swipe-based matchmaking platform designed to help builders discover potential co-founders, collaborators, or indie hackers",
         slug: "hackmate-match-making",
         contentBlocks: hackmateData,
+        status: "Open for Partnership",
         seo: {
             keywords: [
                 "co-founder matching",
@@ -126,6 +129,7 @@ export const projects : Project[] = [
         description: "A decentralized, AI-powered learning platform built for autodidacts, builders, and technical creators who learn best by doing.",
         slug: "onlynerds-edtech",
         contentBlocks: onlynerdsData,
+        status: "Open for Partnership",
         seo: {
             keywords: [
                 "decentralized learning",
@@ -146,6 +150,7 @@ export const projects : Project[] = [
         description: "An AI-driven career platform offering tailored resume tools, real-time industry insights, and adaptive skill assessments.",
         slug: "zenith-ai-career-coach",
         contentBlocks: zenithData,
+        status: "Finished",
         seo: {
             keywords: [
                 "AI career coach",
@@ -167,6 +172,7 @@ export const projects : Project[] = [
         description: "This application helps individuals by providing plant care assistance using Google's Gemini Pro models for vision and text analysis.",
         slug: "aarchid-monitoring-system",
         contentBlocks : aarchidData,
+        status: "Finished",
         seo: {
             keywords: [
                 "plant monitoring",
@@ -188,6 +194,7 @@ export const projects : Project[] = [
         description: "OpenLens focuses on community health, contribution quality, and actionable signals so maintainers can spend less time filtering spam or duplicates, and more time merging meaningful work.",
         slug: "openlens-dashboard",
         contentBlocks: openlensData,
+        status: "Finished",
         seo: {
             keywords: [
                 "GitHub dashboard",
@@ -208,6 +215,7 @@ export const projects : Project[] = [
         description: "Retold AI transforms full movies, long-form videos, or raw .mp4 files into AI-generated cinematic trailers and human-style story retellings.",
         slug: "retold-story",
         contentBlocks: retoldData,
+        status: "Open for Partnership",
         seo: {
             keywords: [
                 "AI video generation",

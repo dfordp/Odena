@@ -74,7 +74,18 @@ export default function Projects() {
 
       <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 max-w-6xl mx-auto grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <div key={project.id} className="flex flex-col justify-between group p-6 rounded-[10px] bg-amber-900/4 border border-amber-900/18">
+          <div key={project.id} className="relative flex flex-col justify-between group p-6 rounded-[10px] bg-amber-900/5 border border-amber-900/9">
+            <div
+              className={`absolute -top-3.5 right-3.5 px-3 py-1 text-[10px] uppercase tracking-widest font-medium rounded-xl border z-10 ${
+                project.status === "Open for Partnership"
+                  ? "bg-purple-50 text-black/75 border-purple-700/15 shadow-[2px_2px_3px_0_rgba(168,85,247,0.4)]"
+                  : project.status === "Finished"
+                  ? "bg-green-50 text-black/75 border-emerald-700/20 shadow-[2px_2px_3px_0_rgba(16,185,129,0.4)]"
+                  : "bg-amber-50 text-black/75 border-amber-600/15 shadow-[2px_2px_3px_0_rgba(245,158,11,0.4)]"
+              }`}
+            >
+              {project.status}
+            </div>
             <Link href={`/projects/${project.slug}`} className="block">
               <div className="relative w-full h-40 rounded-lg overflow-hidden">
                 <Image

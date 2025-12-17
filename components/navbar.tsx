@@ -18,9 +18,11 @@ import {
 
 export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isOurWorkOpen, setIsOurWorkOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const ourWorkDropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
@@ -28,6 +30,9 @@ export default function Navbar() {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false);
+      }
+      if (ourWorkDropdownRef.current && !ourWorkDropdownRef.current.contains(event.target as Node)) {
+        setIsOurWorkOpen(false);
       }
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setIsMobileMenuOpen(false);
@@ -178,29 +183,56 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Top Level Links */}
-            <Link
-              href="/projects"
-              className="block text-foreground hover:text-primary transition font-medium text-lg py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Projects
-            </Link>
+            {/* Our Work Section */}
+            <div className="space-y-2" ref={ourWorkDropdownRef}>
+              <button
+                onClick={() => setIsOurWorkOpen(!isOurWorkOpen)}
+                className="flex items-center justify-between w-full text-foreground hover:text-primary transition font-medium text-lg py-2 hover:cursor-pointer"
+              >
+                Our Work
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    isOurWorkOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
+              {isOurWorkOpen && (
+                <div className="pl-4 space-y-2 border-l-2 border-primary/30">
+                  <Link
+                    href="/projects"
+                    className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span>Projects</span>
+                  </Link>
+
+                  <Link
+                    href="/publications"
+                    className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span>Publications</span>
+                  </Link>
+
+                  <Link
+                    href="/blogs"
+                    className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span>Blogs</span>
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Top Level Links */}
             <Link
               href="/about"
               className="block text-foreground hover:text-primary transition font-medium text-lg py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
-            </Link>
-
-            <Link
-              href="/career"
-              className="block text-foreground hover:text-primary transition font-medium text-lg py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Career
             </Link>
           </div>
         </div>

@@ -16,14 +16,19 @@ import {
 
 export default function NavbarDesktop() {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [isOurWorkOpen, setIsOurWorkOpen] = useState(false);
     const [scrollProgress, setScrollProgress] = useState(0);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const ourWorkDropdownRef = useRef<HTMLDivElement>(null);
 
     // Close dropdown when clicking outside
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
             setIsServicesOpen(false);
+        }
+        if (ourWorkDropdownRef.current && !ourWorkDropdownRef.current.contains(event.target as Node)) {
+            setIsOurWorkOpen(false);
         }
         }
         document.addEventListener("mousedown", handleClickOutside);
@@ -204,26 +209,56 @@ export default function NavbarDesktop() {
                 )}
                 </div>
 
-                {/* TOP LEVEL LINKS */}
-                <Link
-                href="/projects"
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium text-base"
+                {/* OUR WORK DROPDOWN */}
+                <div className="relative" ref={ourWorkDropdownRef}>
+                <button
+                    onClick={() => setIsOurWorkOpen(!isOurWorkOpen)}
+                    className="flex items-center gap-1 text-foreground hover:text-primary transition-colors duration-200 font-medium text-base hover:cursor-pointer"
                 >
-                Projects
-                </Link>
+                    Our Work
+                    <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                        isOurWorkOpen ? "rotate-180" : ""
+                    }`}
+                    />
+                </button>
 
+                {isOurWorkOpen && (
+                    <div className="absolute top-full mt-3 left-0 w-48 border border-border/40 rounded-xl shadow-sm py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200" style={{ background: 'rgba(250, 246, 235, 0.98)', backdropFilter: 'blur(40px) saturate(180%)', WebkitBackdropFilter: 'blur(40px) saturate(180%)' }}>
+                    
+                    <Link 
+                        href="/projects" 
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
+                        onClick={() => setIsOurWorkOpen(false)}
+                    >
+                        <span>Projects</span>
+                    </Link>
+
+                    <Link
+                        href="/publications"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
+                        onClick={() => setIsOurWorkOpen(false)}
+                    >
+                        <span>Publications</span>
+                    </Link>
+
+                    <Link
+                        href="/blogs"
+                        className="flex gap-3 px-4 py-3 items-center hover:bg-pink-200/50 transition-colors duration-200 rounded-lg mx-2"
+                        onClick={() => setIsOurWorkOpen(false)}
+                    >
+                        <span>Blogs</span>
+                    </Link>
+                    </div>
+                )}
+                </div>
+
+                {/* TOP LEVEL LINKS */}
                 <Link
                 href="/about"
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium text-base"
                 >
                 About
-                </Link>
-
-                <Link
-                href="/career"
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium text-base"
-                >
-                Career
                 </Link>
 
             </div>

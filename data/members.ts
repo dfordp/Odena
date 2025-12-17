@@ -13,8 +13,8 @@ export const members: TeamMember[] = [
         role: "Research Systems, Adaptive Pipelines, and Automation",
         img: "/paranjai.jpeg",
         portfolio: "",
-        twitter: "",
-        linkedin: "https://linkedin.com/in/paranjai",
+        twitter: "https://x.com/pararumpu",
+        linkedin: "https://www.linkedin.com/in/paranjai-gusaria-781ab425a/",
     },
     {
         name: "Anant Kumar Sharma",

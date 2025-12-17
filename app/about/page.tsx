@@ -3,7 +3,7 @@ import { members } from "@/data/members";
 import { Metadata } from "next";
 import Image from "next/image";
 import { FaCode, FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 export const metadata: Metadata = {
   title: "About Odena – Research Collective Building Adaptive Data Systems",
@@ -95,6 +95,9 @@ export default function About() {
           Just contributors, engineers, and researchers who treat building like a sport.
         </p>
         <div className="flex justify-center gap-4 mb-12">
+          <a href="https://instagram.com/odena.labs" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
+            <FaInstagram/>
+          </a>
           <a href="https://x.com/Odenadotio" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition">
             <FaXTwitter/>
           </a>
