@@ -71,7 +71,7 @@ export interface Project {
     slug: string;
     contentBlocks: ContentBlock[];
     seo?: ProjectSEO;
-    status: "Open for Partnership" | "Finished" | "in progress";
+    status: "Open for Partnership" | "Finished" | "In Progress";
 }
 
 export const projects : Project[] = [
@@ -100,28 +100,6 @@ export const projects : Project[] = [
         },
     },
     {
-        id: "hackmate-match-making",
-        image: "/hackmate.jpeg",
-        alt: "HackMate",
-        title: "HackMate - The CoFounder MatchMaking",
-        description: "Swipe-based matchmaking platform designed to help builders discover potential co-founders, collaborators, or indie hackers",
-        slug: "hackmate-match-making",
-        contentBlocks: hackmateData,
-        status: "Open for Partnership",
-        seo: {
-            keywords: [
-                "co-founder matching",
-                "founder discovery",
-                "indie hackers",
-                "matchmaking platform",
-                "startup collaboration",
-                "team building",
-                "builder network",
-                "entrepreneurship",
-            ],
-        },
-    },
-    {
         id: "onlynerds-edtech",
         image: "/onlynerds.jpeg",
         alt: "OnlyNerds",
@@ -139,6 +117,50 @@ export const projects : Project[] = [
                 "learning platform",
                 "decentralized education",
                 "personalized learning",
+            ],
+        },
+    },
+    {
+        id: "retold-story",
+        image: "/retold.jpg",
+        alt: "Retold",
+        title: "Retold – Bring Stories Back To Life.",
+        description: "Retold AI transforms full movies, long-form videos, or raw .mp4 files into AI-generated cinematic trailers and human-style story retellings.",
+        slug: "retold-story",
+        contentBlocks: retoldData,
+        status: "In Progress",
+        seo: {
+            keywords: [
+                "AI video generation",
+                "trailer generation",
+                "video synthesis",
+                "story retelling",
+                "cinematic AI",
+                "video AI",
+                "generative video",
+                "movie trailers",
+            ],
+        },
+    },
+    {
+        id: "hackmate-match-making",
+        image: "/hackmate.jpeg",
+        alt: "HackMate",
+        title: "HackMate - The CoFounder MatchMaking",
+        description: "Swipe-based matchmaking platform designed to help builders discover potential co-founders, collaborators, or indie hackers",
+        slug: "hackmate-match-making",
+        contentBlocks: hackmateData,
+        status: "Finished",
+        seo: {
+            keywords: [
+                "co-founder matching",
+                "founder discovery",
+                "indie hackers",
+                "matchmaking platform",
+                "startup collaboration",
+                "team building",
+                "builder network",
+                "entrepreneurship",
             ],
         },
     },
@@ -204,28 +226,6 @@ export const projects : Project[] = [
                 "maintainer tools",
                 "repository insights",
                 "developer tools",
-            ],
-        },
-    },
-    {
-        id: "retold-story",
-        image: "/retold.jpg",
-        alt: "Retold",
-        title: "Retold – Bring Stories Back To Life.",
-        description: "Retold AI transforms full movies, long-form videos, or raw .mp4 files into AI-generated cinematic trailers and human-style story retellings.",
-        slug: "retold-story",
-        contentBlocks: retoldData,
-        status: "Open for Partnership",
-        seo: {
-            keywords: [
-                "AI video generation",
-                "trailer generation",
-                "video synthesis",
-                "story retelling",
-                "cinematic AI",
-                "video AI",
-                "generative video",
-                "movie trailers",
             ],
         },
     },

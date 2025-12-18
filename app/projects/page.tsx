@@ -1,63 +1,27 @@
+"use client";
+
 import CallToAction from "@/components/CallToAction";
 import { projects } from "@/data/projects";
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-export const metadata: Metadata = {
-  title: "Projects – Research Systems, Experiments & Technical Explorations | Odena",
-  description:
-    "Explore Odena’s portfolio of research systems, engineering experiments, and high-throughput data pipelines. From distributed compute to multimodal models, each project showcases our approach to building adaptive, production-ready infrastructure.",
-  keywords: [
-    "Odena projects",
-    "Odena research",
-    "AI engineering projects",
-    "machine learning systems",
-    "distributed systems portfolio",
-    "AI pipelines",
-    "geospatial models",
-    "foundational models",
-    "multimodal pipelines",
-    "computer vision research",
-    "data infrastructure",
-    "high throughput AI systems",
-    "research engineering",
-    "adaptive data systems"
-  ],
-  openGraph: {
-    title: "Odena Projects – Research Systems, Experiments & Infrastructure",
-    description:
-      "A curated collection of Odena's research systems and engineering experiments: geospatial models, adaptive engines, distributed compute meshes, multimodal workflows, and AI-driven data pipelines.",
-    url: "https://www.odena.io/projects",
-    siteName: "Odena",
-    images: [
-      {
-        url: "https://www.odena.io/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Odena – Research Projects and Technical Systems",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Odena Research Projects – Experiments & Intelligent Systems",
-    description:
-      "Dive into Odena’s most ambitious research: distributed compute layers, multimodal engines, geospatial models, adaptive data systems, and zero-shot operators.",
-    images: ["https://www.odena.io/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://www.odena.io/projects",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
+type FilterStatus = "all" | "Open for Partnership" | "Finished" | "In Progress";
 
 export default function Projects() {
+  const [selectedFilter, setSelectedFilter] = useState<FilterStatus>("all");
+
+  const filteredProjects = selectedFilter === "all" 
+    ? projects 
+    : projects.filter(project => project.status === selectedFilter);
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground font-sans">
       <section className="pt-24 sm:pt-28 md:pt-30 pb-2 px-4 sm:px-6 text-center">
@@ -72,42 +36,58 @@ export default function Projects() {
         </p>
       </section>
 
-      <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 max-w-6xl mx-auto grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <div key={project.id} className="relative flex flex-col justify-between group p-6 rounded-[10px] bg-amber-900/5 border border-amber-900/9">
-            <div
-              className={`absolute -top-3.5 right-3.5 px-3 py-1 text-[10px] uppercase tracking-widest font-medium rounded-xl border z-10 ${
-                project.status === "Open for Partnership"
-                  ? "bg-purple-50 text-black/75 border-purple-700/15 shadow-[2px_2px_3px_0_rgba(168,85,247,0.4)]"
-                  : project.status === "Finished"
-                  ? "bg-green-50 text-black/75 border-emerald-700/20 shadow-[2px_2px_3px_0_rgba(16,185,129,0.4)]"
-                  : "bg-amber-50 text-black/75 border-amber-600/15 shadow-[2px_2px_3px_0_rgba(245,158,11,0.4)]"
-              }`}
-            >
-              {project.status}
-            </div>
-            <Link href={`/projects/${project.slug}`} className="block">
-              <div className="relative w-full h-40 rounded-lg overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.alt}
-                  fill
-                  className="object-cover group-hover:scale-102 transition"
-                />
+      <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 max-w-6xl mx-auto">
+        <div className="mb-6">
+          <Select value={selectedFilter} onValueChange={(value) => setSelectedFilter(value as FilterStatus)}>
+            <SelectTrigger className="w-[200px] rounded-xl border-amber-900/15! bg-amber-100/60! hover:bg-amber-200/45! hover:border-amber-900/30! transition-all cursor-pointer focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0">
+              <SelectValue placeholder="Filter by status" />
+            </SelectTrigger>
+            <SelectContent className="rounded-xl border-amber-900/10 bg-amber-100! backdrop-blur-md">
+              <SelectItem value="all" className="rounded-lg cursor-pointer focus:bg-white/70! focus:text-foreground! data-highlighted:bg-white! data-highlighted:text-foreground! data-state-checked:bg-white!">All Projects</SelectItem>
+              <SelectItem value="Open for Partnership" className="rounded-lg cursor-pointer focus:bg-white/70! focus:text-foreground! data-highlighted:bg-white! data-highlighted:text-foreground! data-state-checked:bg-white!">Open for Partnership</SelectItem>
+              <SelectItem value="In Progress" className="rounded-lg cursor-pointer focus:bg-white/70! focus:text-foreground! data-highlighted:bg-white! data-highlighted:text-foreground! data-state-checked:bg-white!">In Progress</SelectItem>
+              <SelectItem value="Finished" className="rounded-lg cursor-pointer focus:bg-white/70! focus:text-foreground! data-highlighted:bg-white! data-highlighted:text-foreground! data-state-checked:bg-white!">Finished</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project) => (
+            <div key={project.id} className="relative flex flex-col justify-between group p-6 rounded-[10px] bg-amber-900/5 border border-amber-900/9">
+              <div
+                className={`absolute -top-3.5 right-3.5 px-3 py-1 text-[10px] uppercase tracking-widest font-medium rounded-xl border z-10 ${
+                  project.status === "Open for Partnership"
+                    ? "bg-purple-50 text-black/75 border-purple-700/15 shadow-[2px_2px_3px_0_rgba(168,85,247,0.4)]"
+                    : project.status === "Finished"
+                    ? "bg-green-50 text-black/75 border-emerald-700/20 shadow-[2px_2px_3px_0_rgba(16,185,129,0.4)]"
+                    : "bg-amber-50 text-black/75 border-amber-600/15 shadow-[2px_2px_3px_0_rgba(245,158,11,0.4)]"
+                }`}
+              >
+                {project.status}
               </div>
-              <h3 className="text-xl font-semibold mt-5">{project.title}</h3>
-            </Link>
-            <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
-              {project.description}
-            </p>
-            <Link
-              href={`/projects/${project.id}`}
-              className="inline-block mt-4 text-primary font-medium hover:underline"
-            >
-              Read more →
-            </Link>
-          </div>
-        ))}
+              <Link href={`/projects/${project.slug}`} className="block">
+                <div className="relative w-full h-40 rounded-lg overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.alt}
+                    fill
+                    className="object-cover group-hover:scale-102 transition"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mt-5">{project.title}</h3>
+              </Link>
+              <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
+                {project.description}
+              </p>
+              <Link
+                href={`/projects/${project.id}`}
+                className="inline-block mt-4 text-primary font-medium hover:underline"
+              >
+                Read more →
+              </Link>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="py-6 px-4 text-center">
