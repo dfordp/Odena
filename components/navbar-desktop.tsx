@@ -138,8 +138,14 @@ export default function NavbarDesktop() {
                         />
                     </button>
 
-                    {isServicesOpen && (
-                        <div className="absolute top-full mt-3 left-0 w-64 border border-border/40 rounded-xl shadow-sm py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200" style={{ background: 'rgba(250, 246, 235, 0.98)', backdropFilter: 'blur(40px) saturate(180%)', WebkitBackdropFilter: 'blur(40px) saturate(180%)' }}>
+                    <div
+                        className={`absolute top-full mt-3 left-0 w-64 border border-border/40 rounded-xl shadow-sm py-2 z-50 transition-all duration-200 ease-in-out ${
+                            isServicesOpen
+                                ? "opacity-100 translate-y-0 pointer-events-auto"
+                                : "opacity-0 -translate-y-2 pointer-events-none"
+                        }`}
+                        style={{ background: 'rgba(250, 246, 235, 0.98)', backdropFilter: 'blur(40px) saturate(180%)', WebkitBackdropFilter: 'blur(40px) saturate(180%)' }}
+                    >
                         
                         <Link 
                             href="/services/data-ranking" 
@@ -203,8 +209,7 @@ export default function NavbarDesktop() {
                             <Shield className="w-4 h-4 text-primary" />
                             <span>AI Safety & Regulation</span>
                         </Link>
-                        </div>
-                    )}
+                    </div>
                     </div>
 
                     {/* OUR WORK DROPDOWN */}
@@ -221,8 +226,14 @@ export default function NavbarDesktop() {
                         />
                     </button>
 
-                    {isOurWorkOpen && (
-                        <div className="absolute top-full mt-3 left-0 w-48 border border-border/40 rounded-xl shadow-sm py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200" style={{ background: 'rgba(250, 246, 235, 0.98)', backdropFilter: 'blur(40px) saturate(180%)', WebkitBackdropFilter: 'blur(40px) saturate(180%)' }}>
+                    <div
+                        className={`absolute top-full mt-3 left-0 w-48 border border-border/40 rounded-xl shadow-sm py-2 z-50 transition-all duration-200 ease-in-out ${
+                            isOurWorkOpen
+                                ? "opacity-100 translate-y-0 pointer-events-auto"
+                                : "opacity-0 -translate-y-2 pointer-events-none"
+                        }`}
+                        style={{ background: 'rgba(250, 246, 235, 0.98)', backdropFilter: 'blur(40px) saturate(180%)', WebkitBackdropFilter: 'blur(40px) saturate(180%)' }}
+                    >
                         
                         <Link 
                             href="/projects" 
@@ -247,8 +258,7 @@ export default function NavbarDesktop() {
                         >
                             <span>Blogs</span>
                         </Link>
-                        </div>
-                    )}
+                    </div>
                     </div>
 
                     {/* TOP LEVEL LINKS */}

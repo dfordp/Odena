@@ -9,8 +9,6 @@ import {
   SlidersHorizontal,
   Layers,
   BarChart3,
-  Menu,
-  X,
   Database,
   Zap,
   Shield,
@@ -25,6 +23,7 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const ourWorkDropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
   const router = useRouter();
 
   const handleScheduleCall = () => {
@@ -58,7 +57,13 @@ export default function Navbar() {
       if (ourWorkDropdownRef.current && !ourWorkDropdownRef.current.contains(event.target as Node)) {
         setIsOurWorkOpen(false);
       }
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      // Don't close mobile menu if clicking the toggle button
+      if (
+        mobileMenuRef.current && 
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        mobileMenuButtonRef.current &&
+        !mobileMenuButtonRef.current.contains(event.target as Node)
+      ) {
         setIsMobileMenuOpen(false);
       }
     }
@@ -106,23 +111,43 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE MENU BUTTON - Animated Hamburger */}
           <button
+            ref={mobileMenuButtonRef}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-foreground hover:text-primary transition"
+            className="p-2 text-foreground hover:text-primary transition relative w-10 h-10 flex items-center justify-center"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <div className="w-6 h-6 flex flex-col justify-center items-center gap-[5px]">
+              <span
+                className={`block h-0.5 w-full bg-current transition-all duration-300 ease-in-out origin-center ${
+                  isMobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
+                  isMobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-full bg-current transition-all duration-300 ease-in-out origin-center ${
+                  isMobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                }`}
+              />
+            </div>
           </button>
         </div>
       </nav>
 
       {/* MOBILE MENU */}
-      {isMobileMenuOpen && (
-        <div
-          ref={mobileMenuRef}
-          className="fixed top-16 sm:top-20 left-0 right-0 bg-[#faf6eb]/95 backdrop-blur-md border-b border-border shadow-lg pointer-events-auto max-h-[calc(100vh-5rem)] overflow-y-auto"
-        >
+      <div
+        ref={mobileMenuRef}
+        className={`fixed top-16 sm:top-20 left-0 right-0 bg-[#faf6eb]/95 backdrop-blur-md border-b border-border shadow-lg pointer-events-auto max-h-[calc(100vh-5rem)] overflow-y-auto transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+      >
           <div className="px-4 py-6 space-y-4">
             
             {/* Services Section */}
@@ -139,8 +164,13 @@ export default function Navbar() {
                 />
               </button>
 
-              {isServicesOpen && (
-                <div className="pl-4 space-y-2 border-l-2 border-primary/30">
+              <div
+                className={`pl-4 space-y-2 border-l-2 border-primary/30 overflow-hidden transition-all duration-300 ease-in-out ${
+                  isServicesOpen
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
                   <Link
                     href="/services/data-ranking"
                     className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
@@ -204,7 +234,6 @@ export default function Navbar() {
                     <span>AI Safety & Regulation</span>
                   </Link>
                 </div>
-              )}
             </div>
 
             {/* Our Work Section */}
@@ -221,8 +250,13 @@ export default function Navbar() {
                 />
               </button>
 
-              {isOurWorkOpen && (
-                <div className="pl-4 space-y-2 border-l-2 border-primary/30">
+              <div
+                className={`pl-4 space-y-2 border-l-2 border-primary/30 overflow-hidden transition-all duration-300 ease-in-out ${
+                  isOurWorkOpen
+                    ? "max-h-[300px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
                   <Link
                     href="/projects"
                     className="flex gap-3 py-2 items-center text-foreground hover:text-primary transition"
@@ -247,7 +281,6 @@ export default function Navbar() {
                     <span>Blogs</span>
                   </Link>
                 </div>
-              )}
             </div>
 
             {/* Top Level Links */}
@@ -262,13 +295,12 @@ export default function Navbar() {
             {/* Schedule a Call Button */}
             <button
               onClick={handleScheduleCall}
-              className="w-full mt-4 px-4 py-3 bg-black text-background rounded-full text-base font-medium hover:bg-black/80 transition-colors duration-200"
+              className="w-full mt-4 px-4 py-3 bg-black text-white rounded-full text-base font-medium hover:bg-black/80 transition-colors duration-200"
             >
               Schedule a Call
             </button>
           </div>
         </div>
-      )}
     </div>
   );
 }
