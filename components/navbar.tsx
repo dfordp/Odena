@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import {
   ChevronDown,
@@ -24,6 +25,29 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const ourWorkDropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const handleScheduleCall = () => {
+    setIsMobileMenuOpen(false);
+    
+    // Small delay to allow menu to close
+    setTimeout(() => {
+      const connectSection = document.getElementById("connect");
+      const calIframe = document.querySelector('[data-cal-namespace="openlens-discussion"]');
+      const calEmbed = document.querySelector('.cal-embed');
+      
+      if (connectSection) {
+        connectSection.scrollIntoView({ behavior: "smooth" });
+      } else if (calIframe || calEmbed) {
+        const calElement = calIframe || calEmbed;
+        if (calElement) {
+          calElement.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      } else {
+        router.push("/#connect");
+      }
+    }, 100);
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -234,6 +258,14 @@ export default function Navbar() {
             >
               About
             </Link>
+
+            {/* Schedule a Call Button */}
+            <button
+              onClick={handleScheduleCall}
+              className="w-full mt-4 px-4 py-3 bg-black text-background rounded-full text-base font-medium hover:bg-black/80 transition-colors duration-200"
+            >
+              Schedule a Call
+            </button>
           </div>
         </div>
       )}

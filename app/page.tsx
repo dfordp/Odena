@@ -29,7 +29,7 @@ export default function Home() {
           </div>
 
           {/* Left: Text and Buttons */}
-          <div className="flex-[0_0_50%] sm:flex-[0_0_48%] lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left md:pl-12">
+          <div className="flex-[0_0_50%] sm:flex-[0_0_48%] lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left md:pl-28">
             {/* Hero Text */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-semibold tracking-tight max-w-2xl leading-tight animate-fade-in">
               Make Sense of Your <span className="text-primary"> Data</span> Quickly, Accurately, Anytime

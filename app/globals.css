@@ -202,6 +202,7 @@ html {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   touch-action: manipulation;
+  overflow-x: hidden;
 }
 
 body {
@@ -211,6 +212,7 @@ body {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 @keyframes tooltipBounce {
