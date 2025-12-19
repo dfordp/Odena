@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import DomainNetworkMap from "@/components/DomainNetworkMap";
-import TargetingSection from "@/components/TargetingSection";
 import CallToAction from "@/components/CallToAction";
 import SplineAutoLoop from "@/components/SplineAutoLoop";
+import OdenaBentoGrid from "@/components/OdenaBentoGrid";
 
 export default function Home() {
 
@@ -76,11 +76,11 @@ export default function Home() {
       {/* ===========================================================
           WHAT WE ARE TARGETING
       ============================================================ */}
-      <section className="pt-8 px-6">
+      <section className="pt-8 px-4">
         <h2 className="text-3xl sm:text-4xl font-semibold text-center">
           What Are We Offering?
         </h2>
-        <TargetingSection/>
+        <OdenaBentoGrid />
       </section>
 
       {/* ===========================================================

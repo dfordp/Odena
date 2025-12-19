@@ -2,7 +2,6 @@
 
 import { motion, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { AdaptiveVisual, DecisionLayer, DynamicPipeline, MultiFormat, SelfMaintaining, StackCompatibility } from "./Visuals";
 
 export default function TargetingDial() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -38,17 +37,6 @@ export default function TargetingDial() {
       desc: "Built to drop cleanly into existing environments, scaling from prototypes to massive distributed workloads."
     }
   ];
-
-  const visuals = [
-    AdaptiveVisual,
-    DynamicPipeline,
-    DecisionLayer,
-    MultiFormat,
-    SelfMaintaining,
-    StackCompatibility
-  ];
-
-
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -144,10 +132,9 @@ export default function TargetingDial() {
         {/* RIGHT SIDE – DETAILS ALIGNED WITH ACTIVE TITLE */}
         <div className="w-full lg:w-[55vw] relative mt-8 lg:mt-0 px-4 lg:px-0">
           {items.map((item, i) => {
-            const Visual = visuals[i];
 
             return (
-               <motion.div
+              <motion.div
                 key={i}
                 className="absolute w-full flex flex-col gap-8 items-start"
                 animate={{
