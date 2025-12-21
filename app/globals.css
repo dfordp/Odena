@@ -203,6 +203,8 @@ html {
   text-size-adjust: 100%;
   touch-action: manipulation;
   overflow-x: hidden;
+  /* Performance optimizations for scroll */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -213,6 +215,26 @@ body {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   overflow-x: hidden;
+  /* Performance optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Performance optimization for all elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve scroll performance with GPU acceleration for animated elements */
+[class*="animate-"],
+svg,
+canvas,
+video {
+  will-change: auto;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 @keyframes tooltipBounce {

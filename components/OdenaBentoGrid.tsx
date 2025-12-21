@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const VisualAdaptiveModels = () => (
+const VisualAdaptiveModels = memo(() => (
     <div className="w-full h-full flex items-center justify-center p-4">
         <svg viewBox="0 0 200 250" className="w-full h-full">
         {/* Input Data Block */}
@@ -41,9 +41,10 @@ const VisualAdaptiveModels = () => (
         </defs>
         </svg>
     </div>
-);
+));
+VisualAdaptiveModels.displayName = 'VisualAdaptiveModels';
 
-const VisualDynamicChains = () => (
+const VisualDynamicChains = memo(() => (
     <div className="w-full h-full flex items-center justify-center p-6 relative overflow-hidden">
         {/* Isometric layers to represent dynamic chains */}
         <svg viewBox="0 0 300 150" className="w-full h-full">
@@ -66,11 +67,12 @@ const VisualDynamicChains = () => (
         <path d="M100 90 L 110 100" stroke="black" strokeWidth="1" markerEnd="url(#arrowhead-chains)" />
         </svg>
     </div>
-);
+));
+VisualDynamicChains.displayName = 'VisualDynamicChains';
 
-const VisualUnifiedFormats = () => (
+const VisualUnifiedFormats = memo(() => (
     <div className="w-full h-full p-4 flex flex-col justify-center relative">
-        <div className="bg-[radial-gradient(#000_1px,transparent_1px)] bg-size-[16px_16px] absolute inset-0 opacity-10"></div>
+        <div className="bg-[radial-gradient(#3b3b3b_2px,transparent_2.5px)] bg-size-[16px_16px] absolute inset-0 opacity-10"></div>
         <div className="relative grid grid-cols-2 gap-3 z-10 transform scale-90 md:scale-100 transition-transform">
         {['JSON', 'CSV', 'XML', 'LOGS'].map((fmt, i) => (
             <div key={fmt} className={`bg-white border-2 border-black p-2 text-center text-xs font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] ${i % 2 === 0 ? '-rotate-2' : 'rotate-2'}`}>
@@ -84,9 +86,10 @@ const VisualUnifiedFormats = () => (
         </div>
         </div>
     </div>
-);
+));
+VisualUnifiedFormats.displayName = 'VisualUnifiedFormats';
 
-const VisualRealTime = () => (
+const VisualRealTime = memo(() => (
     <div className="w-full h-full flex items-end justify-center pb-4 px-4">
         <div className="w-full border-b-2 border-black relative h-full max-h-[120px] flex items-end space-x-1">
             {[40, 70, 50, 90, 60, 80, 45, 95, 55, 85].map((h, i) => (
@@ -105,9 +108,10 @@ const VisualRealTime = () => (
             </div>
         </div>
     </div>
-);
+));
+VisualRealTime.displayName = 'VisualRealTime';
 
-const VisualSelfMaintaining = () => (
+const VisualSelfMaintaining = memo(() => (
     <div className="w-full h-full flex items-center justify-center p-4">
         <svg viewBox="0 0 200 100" className="w-3/4 max-w-md h-auto max-h-32">
         {/* Disorganized blocks */}
@@ -127,10 +131,11 @@ const VisualSelfMaintaining = () => (
         <text x="160" y="95" textAnchor="middle" fontFamily="monospace" fontSize="10">AUTO-CLEAN</text>
         </svg>
     </div>
-);
+));
+VisualSelfMaintaining.displayName = 'VisualSelfMaintaining';
 
-const VisualDeepStack = () => (
-        <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden bg-gray-50 p-4">
+const VisualDeepStack = memo(() => (
+        <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden bg-gray-50/20 p-4">
         <div className="font-mono text-xs mb-2 text-center w-full">
             <div className="border-b border-black pb-1">EXISTING_ENV</div>
         </div>
@@ -143,7 +148,8 @@ const VisualDeepStack = () => (
             </div>
         </div>
         </div>
-);
+));
+VisualDeepStack.displayName = 'VisualDeepStack';
 
 // --- Content Data with varied sizes ---
 
@@ -194,11 +200,11 @@ const items = [
 
 // --- Main Components ---
 
-const BentoCard = ({ title, desc, visual, className }: { title: string, desc: string, visual: React.ReactNode, className?: string }) => {
+const BentoCard = memo(({ title, desc, visual, className }: { title: string, desc: string, visual: React.ReactNode, className?: string }) => {
     return (
-        <div className={`bg-white/45 border-2 border-black/55 flex flex-col justify-between overflow-hidden relative group rounded-lg ${className}`}>
+        <div className={`bg-white/25 border-2 border-black/50 flex flex-col justify-between overflow-hidden relative group rounded-lg ${className}`}>
         {/* Content Section */}
-        <div className="p-6 z-10 bg-white/45 border-b-2 border-transparent group-hover:border-black/5 transition-colors">
+        <div className="p-6 z-10 bg-white/25 border-b-2 border-transparent group-hover:border-black/5 transition-colors">
             <h3 className="text-sm font-mono font-bold uppercase tracking-widest text-gray-900 mb-3">
                 {title}
             </h3>
@@ -208,13 +214,14 @@ const BentoCard = ({ title, desc, visual, className }: { title: string, desc: st
         </div>
         
         {/* Visual Section (Fills the remaining space) */}
-        <div className="grow relative bg-gray-50/50 group-hover:bg-gray-100/50 transition-colors duration-300 flex items-stretch justify-stretch">
+        <div className="grow relative bg-gray-50/10 group-hover:bg-gray-50/30 transition-colors duration-300 flex items-stretch justify-stretch">
             {/* The visual asset will stretch to fill this container */}
             {visual}
         </div>
         </div>
     );
-};
+});
+BentoCard.displayName = 'BentoCard';
 
 export default function OdenaBentoGrid() {
     return (

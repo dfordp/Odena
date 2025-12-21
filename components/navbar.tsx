@@ -83,15 +83,15 @@ export default function Navbar() {
       <nav
         className={`
           pointer-events-auto flex items-center justify-between 
-          w-full transition-all duration-300
+          w-full transition-all duration-150 ease-in-out
           ${scrolled
-            ? "w-[95%] max-w-6xl mt-2 sm:mt-4 rounded-2xl bg-background/60 backdrop-blur-md shadow-lg border border-border/50"
+            ? "w-full max-w-6xl mt-2 sm:mt-4 rounded-2xl bg-background/60 backdrop-blur-md shadow-lg border border-border/50"
             : "w-full mt-0 bg-transparent border-none rounded-none"
           }
         `}
       >
         <div
-          className={`flex items-center justify-between w-full transition-all duration-300
+          className={`flex items-center justify-between w-full transition-all duration-100 ease-in-out
             ${scrolled ? "px-4 sm:px-6 py-2 h-12 sm:h-14" : "px-4 sm:px-6 py-3 sm:py-4 h-16 sm:h-20"}
           `}
         >
@@ -103,10 +103,10 @@ export default function Navbar() {
               alt="Odena Logo"
               width={scrolled ? 45 : 60}
               height={scrolled ? 45 : 60}
-              className="transition-all duration-300 sm:w-auto sm:h-auto"
+              className="transition-all duration-150 ease-in-out sm:w-auto sm:h-auto"
               style={{
-                width: scrolled ? '45px' : '60px',
-                height: scrolled ? '45px' : '60px'
+                width: '60px',
+                height: '60px'
               }}
             />
           </Link>
@@ -120,17 +120,17 @@ export default function Navbar() {
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center gap-[5px]">
               <span
-                className={`block h-0.5 w-full bg-current transition-all duration-300 ease-in-out origin-center ${
+                className={`block h-0.5 w-full bg-current transition-all duration-200 ease-out origin-center ${
                   isMobileMenuOpen ? "rotate-45 translate-y-[7px]" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 w-full bg-current transition-all duration-300 ease-in-out ${
+                className={`block h-0.5 w-full bg-current transition-all duration-200 ease-out ${
                   isMobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
                 }`}
               />
               <span
-                className={`block h-0.5 w-full bg-current transition-all duration-300 ease-in-out origin-center ${
+                className={`block h-0.5 w-full bg-current transition-all duration-200 ease-out origin-center ${
                   isMobileMenuOpen ? "-rotate-45 -translate-y-[7px]" : ""
                 }`}
               />
@@ -142,7 +142,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       <div
         ref={mobileMenuRef}
-        className={`fixed top-16 sm:top-20 left-0 right-0 bg-[#faf6eb]/95 backdrop-blur-md border-b border-border shadow-lg pointer-events-auto max-h-[calc(100vh-5rem)] overflow-y-auto transition-all duration-300 ease-in-out ${
+        className={`fixed top-16 sm:top-20 left-0 right-0 bg-[#faf6eb]/95 backdrop-blur-md border-b border-border shadow-lg pointer-events-auto max-h-[calc(100vh-5rem)] overflow-y-auto transition-all duration-200 ease-out ${
           isMobileMenuOpen
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-4 pointer-events-none"
@@ -158,14 +158,14 @@ export default function Navbar() {
               >
                 Services
                 <ChevronDown
-                  className={`w-5 h-5 transition-transform duration-300 ${
+                  className={`w-5 h-5 transition-transform duration-200 ease-out ${
                     isServicesOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>
 
               <div
-                className={`pl-4 space-y-2 border-l-2 border-primary/30 overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`pl-4 space-y-2 border-l-2 border-primary/30 overflow-hidden transition-all duration-200 ease-out ${
                   isServicesOpen
                     ? "max-h-[500px] opacity-100"
                     : "max-h-0 opacity-0"
@@ -244,14 +244,14 @@ export default function Navbar() {
               >
                 Our Work
                 <ChevronDown
-                  className={`w-5 h-5 transition-transform duration-300 ${
+                  className={`w-5 h-5 transition-transform duration-200 ease-out ${
                     isOurWorkOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>
 
               <div
-                className={`pl-4 space-y-2 border-l-2 border-primary/30 overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`pl-4 space-y-2 border-l-2 border-primary/30 overflow-hidden transition-all duration-200 ease-out ${
                   isOurWorkOpen
                     ? "max-h-[300px] opacity-100"
                     : "max-h-0 opacity-0"

@@ -39,7 +39,7 @@ export default function Projects() {
       <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <div className="mb-6">
           <Select value={selectedFilter} onValueChange={(value) => setSelectedFilter(value as FilterStatus)}>
-            <SelectTrigger className="w-[200px] rounded-xl border-amber-900/15! bg-amber-100/60! hover:bg-amber-200/45! hover:border-amber-900/30! transition-all cursor-pointer focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0">
+            <SelectTrigger className="w-[200px] rounded-xl border-amber-900/25! bg-amber-200/40! hover:bg-amber-200/65! hover:border-amber-900/50! transition-all cursor-pointer focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0">
               <SelectValue placeholder="Filter by status" />
             </SelectTrigger>
             <SelectContent className="rounded-xl border-amber-900/10 bg-amber-100! backdrop-blur-md">
@@ -53,7 +53,7 @@ export default function Projects() {
 
         <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="relative flex flex-col justify-between group p-6 rounded-[10px] bg-amber-900/5 border border-amber-900/9">
+            <div key={project.id} className="relative flex flex-col justify-between group p-6 rounded-[10px] bg-amber-500/10 border border-amber-900/30">
               <div
                 className={`absolute -top-3.5 right-3.5 px-3 py-1 text-[10px] uppercase tracking-widest font-medium rounded-xl border z-10 ${
                   project.status === "Open for Partnership"

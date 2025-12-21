@@ -17,7 +17,7 @@ export default function Footer() {
                     alt="Odena Logo"
                     width={80}
                     height={80}
-                    className="transition-all duration-300"
+                    className="transition-all duration-300 -ml-1.5 sm:ml-0 scale-110 sm:scale-100"
                 />
                 </Link>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xs md:px-2">
@@ -41,10 +41,10 @@ export default function Footer() {
                 </li>
                 <li>
                     <Link 
-                    href="/projects" 
+                    href="/career" 
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                    Our Projects
+                    Careers
                     </Link>
                 </li>
                 <li>
@@ -53,14 +53,6 @@ export default function Footer() {
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                     Services
-                    </Link>
-                </li>
-                <li>
-                    <Link 
-                    href="/career" 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                    Careers
                     </Link>
                 </li>
                 </ul>
@@ -73,36 +65,28 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-3">
                 <li>
-                    <a 
-                    href="#" 
+                    <Link 
+                    href="/projects" 
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                    Documentation
-                    </a>
+                    Projects
+                    </Link>
                 </li>
                 <li>
-                    <a 
-                    href="#" 
+                    <Link 
+                    href="/publications" 
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                    Research Papers
-                    </a>
+                    Publications
+                    </Link>
                 </li>
                 <li>
-                    <a 
-                    href="#" 
+                    <Link 
+                    href="/blogs" 
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                    Blog
-                    </a>
-                </li>
-                <li>
-                    <a 
-                    href="#" 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                    API Reference
-                    </a>
+                    Blogs
+                    </Link>
                 </li>
                 </ul>
             </div>

@@ -63,7 +63,7 @@ export default function NavbarDesktop() {
     // Scroll handler
     useEffect(() => {
         const handler = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 10);
         };
         window.addEventListener("scroll", handler, { passive: true });
         return () => window.removeEventListener("scroll", handler);
@@ -100,12 +100,12 @@ export default function NavbarDesktop() {
             className={`
                 pointer-events-auto flex items-center justify-between
                 w-[75%] max-w-7xl mt-4 rounded-2xl
-                transition-all duration-400 ease-in-out
+                transition-all duration-200 ease-in-out
                 border border-transparent
                 relative
                 ${
                     scrolled
-                        ? "bg-background/80 backdrop-blur-md shadow-sm border-amber-950/10!"
+                        ? "bg-background/75 backdrop-blur-md shadow-sm border-amber-950/20!"
                         : "bg-transparent"
                 }
             `}
