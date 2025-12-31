@@ -15,7 +15,7 @@ export default function CallToAction() {
     <div className="w-full flex items-center px-2 sm:px-4 ">
       <Cal 
     namespace="openlens-discussion"
-    calLink="dilpreet-grover/odena-discussion"
+    calLink="paranjai-g-slf80z/30min"
     style={{width:"100%",height:"100%",overflow:"hidden"}}
     config={{"layout":"month_view"}}
     />
