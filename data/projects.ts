@@ -1,9 +1,5 @@
-import { aarchidData } from "./projects/aarchid";
-import { hackmateData } from "./projects/hackmate";
 import { zenithData } from "./projects/zenith";
-import { onlynerdsData } from "./projects/onlynerds";
 import { openlensData } from "./projects/openlens";
-import { retoldData } from "./projects/retold";
 import { vihangamData } from "./projects/vihangam";
 
 type HeadingBlock = {
