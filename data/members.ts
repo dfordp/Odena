@@ -32,12 +32,4 @@ export const members: TeamMember[] = [
         twitter: "",
         linkedin: "https://www.linkedin.com/in/dhruvsinghal6888/",
     },
-    {
-        name: "Dilpreet Grover",
-        role: "Solution Designer, Data Analyst, and Operations Specialist",
-        img: "/dilpreet.png",
-        portfolio: "https://www.dilpreetgrover.me/",
-        twitter: "https://x.com/dfordp11",
-        linkedin: "https://www.linkedin.com/in/dilpreet-grover-17726b224/",
-    },
 ];
